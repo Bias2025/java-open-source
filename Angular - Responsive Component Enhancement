@@ -1,0 +1,13 @@
+
+Make this Angular component fully responsive:
+- Implement Angular Flex Layout or CSS Grid
+- Add breakpoint-specific behavior
+- Use Angular CDK Layout module for breakpoint detection
+- Implement mobile-first design approach
+- Add touch gesture support where needed
+- Ensure accessibility across all screen sizes
+- Test on multiple device types
+
+Component to make responsive:
+[PASTE YOUR ANGULAR COMPONENT HERE]
+```
