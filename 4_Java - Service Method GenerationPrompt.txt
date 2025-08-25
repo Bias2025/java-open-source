@@ -1,0 +1,178 @@
+# CRAFT-OPTIMIZED SPRING BOOT SERVICE GENERATION PROMPT
+
+## C - CONTEXT (Environmental Understanding)
+CONTEXT:
+  system_type: "Spring Boot REST API Service Layer"
+  architecture_pattern: "Layered Architecture with Service/Repository separation"
+  deployment_target: "[SPECIFY: Kubernetes/AWS/On-Premise]"
+  expected_load: "[SPECIFY: requests/second, concurrent users]"
+  data_volume: "[SPECIFY: records count, growth rate]"
+  team_context: "Enterprise development team requiring production-ready code"
+  compliance_requirements: "[SPECIFY: GDPR/HIPAA/PCI-DSS/None]"
+
+## R - REQUIREMENTS (Explicit Specifications)
+REQUIREMENTS:
+  functional:
+    method_name: "[METHOD_NAME]"
+    business_purpose: "[DESCRIBE_WHAT_IT_SHOULD_DO - be specific about business logic]"
+    business_rules:
+      - "[RULE_1: e.g., validation constraints]"
+      - "[RULE_2: e.g., authorization checks]"
+      - "[RULE_3: e.g., data transformation rules]"
+    
+  technical:
+    parameters:
+      - name: "[PARAM_1_NAME]"
+        type: "[PARAM_1_TYPE]"
+        validation: "[VALIDATION_RULES]"
+        nullable: "[true/false]"
+      - name: "[PARAM_2_NAME]"
+        type: "[PARAM_2_TYPE]"
+        validation: "[VALIDATION_RULES]"
+    
+    return_type:
+      type: "[RETURN_TYPE]"
+      wrapped_in: "[Optional/ResponseEntity/CompletableFuture]"
+      error_cases: "[List possible error returns]"
+    
+    database_operations:
+      operation_type: "[CREATE/READ/UPDATE/DELETE/COMPLEX_QUERY]"
+      entities_involved: "[List entity names]"
+      transaction_scope: "[REQUIRED/SUPPORTS/REQUIRES_NEW]"
+      expected_query_complexity: "[Simple/Join/Subquery/Native]"
+      performance_requirements:
+        - max_latency_ms: "[NUMBER]"
+        - expected_result_size: "[NUMBER_OF_RECORDS]"
+    
+  non_functional:
+    performance:
+      - response_time_p99: "[X ms]"
+      - throughput: "[X requests/second]"
+    security:
+      - authentication_required: "[true/false]"
+      - authorization_roles: "[LIST_ROLES]"
+      - data_sensitivity: "[PUBLIC/INTERNAL/CONFIDENTIAL/SECRET]"
+    reliability:
+      - retry_strategy: "[EXPONENTIAL_BACKOFF/FIXED_DELAY/NONE]"
+      - circuit_breaker: "[true/false]"
+      - timeout_ms: "[NUMBER]"
+
+## A - ARCHITECTURE (Design Decisions)
+ARCHITECTURE:
+  layer_responsibilities:
+    service:
+      - "Business logic orchestration"
+      - "Transaction management"
+      - "Cross-cutting concerns (logging, security)"
+    repository:
+      - "Data access abstraction"
+      - "Query optimization"
+    dto:
+      - "Data transfer objects for API contracts"
+    entity:
+      - "Domain model representation"
+  
+  patterns_to_apply:
+    - pattern: "[Repository/DAO]"
+    - pattern: "[DTO/Entity mapping]"
+    - pattern: "[Builder/Factory for complex objects]"
+    - pattern: "[Strategy for business rules]"
+  
+  error_handling_strategy:
+    - "Custom exception hierarchy"
+    - "Global exception handler integration"
+    - "Error response standardization"
+
+## F - FRAMEWORK (Technical Stack)
+FRAMEWORK:
+  core:
+    java_version: "17"
+    spring_boot_version: "3.2.x"
+    build_tool: "[Maven/Gradle]"
+  
+  dependencies:
+    persistence:
+      - "Spring Data JPA"
+      - "Hibernate"
+      - "PostgreSQL Driver"
+    validation:
+      - "Jakarta Bean Validation"
+      - "Hibernate Validator"
+    utilities:
+      - "Lombok"
+      - "MapStruct (for DTO mapping)"
+      - "Apache Commons Lang3"
+    testing:
+      - "JUnit 5"
+      - "Mockito"
+      - "AssertJ"
+      - "TestContainers (for PostgreSQL)"
+    monitoring:
+      - "Micrometer"
+      - "SLF4J with Logback"
+  
+  specific_annotations_required:
+    - "@Service"
+    - "@Transactional(propagation = [SPECIFY])"
+    - "@Validated"
+    - "@Slf4j (Lombok)"
+    - "@RequiredArgsConstructor (Lombok)"
+
+## T - TESTING (Quality Assurance)
+TESTING:
+  unit_test_requirements:
+    - "Mock all external dependencies"
+    - "Test happy path"
+    - "Test each validation rule"
+    - "Test each exception scenario"
+    - "Test transaction rollback scenarios"
+    coverage_target: "90%+"
+  
+  integration_test_requirements:
+    - "Use @DataJpaTest for repository layer"
+    - "Use TestContainers for real PostgreSQL"
+    - "Test actual database constraints"
+
+## P - PERSONA (Code Style Preferences)
+PERSONA:
+  coding_standards:
+    - "Google Java Style Guide"
+    - "SOLID principles strictly enforced"
+    - "DRY principle applied"
+    - "Meaningful variable/method names"
+  
+  documentation_style:
+    - "JavaDoc for all public methods"
+    - "Inline comments for complex logic"
+    - "TODO comments for future improvements"
+
+## O - OUTPUT EXPECTATIONS
+OUTPUT:
+  must_include:
+    - "Complete service class implementation"
+    - "All required DTOs/Request/Response objects"
+    - "Custom exception classes"
+    - "Repository interface (if needed)"
+    - "Complete unit test class"
+    - "Integration test class"
+    - "curl examples for testing"
+    - "Performance optimization notes"
+  
+  code_characteristics:
+    - "Production-ready (no TODOs in main code)"
+    - "All edge cases handled"
+    - "Proper null safety"
+    - "Thread-safe implementation"
+    - "Optimized queries with proper indexes noted"
+
+## GENERATION INSTRUCTION
+Generate a complete, production-ready Spring Boot service method that:
+1. Implements ALL specified requirements above
+2. Includes comprehensive error handling
+3. Features detailed logging at appropriate levels
+4. Provides complete test coverage
+5. Documents performance characteristics
+6. Includes security considerations
+7. Follows enterprise best practices
+
+The code should be immediately deployable to production without modifications.
