@@ -1,0 +1,37 @@
+
+```
+Perform a comprehensive code review of this Java class and suggest improvements:
+
+**Review Areas:**
+1. **Architecture & Design Patterns**
+   - SOLID principles adherence
+   - Design pattern usage appropriateness
+   - Separation of concerns
+
+2. **Performance & Scalability**
+   - Algorithm efficiency
+   - Memory usage optimization
+   - Database query optimization
+   - Caching strategies
+
+3. **Security**
+   - Input validation and sanitization
+   - SQL injection prevention
+   - Authentication and authorization
+   - Sensitive data handling
+
+4. **Maintainability**
+   - Code readability and clarity
+   - Method and class size
+   - Documentation quality
+   - Test coverage
+
+5. **Spring Boot Best Practices**
+   - Annotation usage
+   - Configuration management
+   - Transaction handling
+   - Dependency injection
+
+Code to review:
+[PASTE YOUR JAVA CODE HERE]
+```
