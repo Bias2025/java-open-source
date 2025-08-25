@@ -1,0 +1,14 @@
+
+```
+Create an Angular form validator with regular expression for:
+- Field type: [EMAIL/PHONE/CUSTOM]
+- Validation rules: [LIST_REQUIREMENTS]
+- Error messages: [SPECIFY_ERROR_MESSAGES]
+
+Include:
+- Custom validator function
+- Proper TypeScript typing
+- Integration with reactive forms
+- Accessibility considerations
+- Internationalization support for error messages
+```
