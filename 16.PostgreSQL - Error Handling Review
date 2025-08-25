@@ -1,0 +1,21 @@
+
+```
+Review these PostgreSQL functions/procedures for robust error handling:
+- Exception block implementation
+- Transaction rollback strategies
+- Input parameter validation
+- Constraint violation handling
+- Deadlock detection and recovery
+- Performance monitoring for errors
+- Logging strategies for debugging
+
+Check for:
+- Proper SQLSTATE handling
+- Resource cleanup in exception blocks
+- Error message clarity
+- Security implications of error messages
+- AWS RDS specific error handling
+
+Code to review:
+[PASTE YOUR SQL CODE HERE]
+```
