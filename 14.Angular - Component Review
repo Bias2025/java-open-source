@@ -1,0 +1,38 @@
+
+```
+Conduct a thorough review of this Angular component and provide improvement suggestions:
+
+**Review Criteria:**
+1. **Architecture & Structure**
+   - Component responsibility clarity
+   - Service injection and usage
+   - State management approach
+   - Component communication patterns
+
+2. **Performance Optimization**
+   - Change detection strategy
+   - Template optimization
+   - Bundle size considerations
+   - Lazy loading implementation
+
+3. **User Experience**
+   - Accessibility compliance (WCAG)
+   - Responsive design implementation
+   - Loading states and error handling
+   - Form usability
+
+4. **Code Quality**
+   - TypeScript best practices
+   - RxJS operator efficiency
+   - Template syntax optimization
+   - Testing considerations
+
+5. **Angular Best Practices**
+   - Style guide compliance
+   - Lifecycle hook usage
+   - Pipe usage and custom pipes
+   - Directive implementation
+
+Component to review:
+[PASTE YOUR ANGULAR COMPONENT HERE]
+```
