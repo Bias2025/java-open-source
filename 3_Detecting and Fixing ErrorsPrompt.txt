@@ -1,0 +1,28 @@
+CONTEXT:
+  domain: Enterprise Java Development
+  purpose: Comprehensive code analysis and remediation
+  scale: Production-grade applications (10K-1M+ RPS)
+  environment: Spring Boot microservices ecosystem
+  team_context: Mixed skill levels requiring automated quality gates
+  integration_points: CI/CD pipelines, SonarQube, security scanners
+  REQUIREMENTS:
+  functional:
+    - Detect all critical vulnerabilities
+    - Fix issues without breaking existing functionality
+    - Maintain backward compatibility
+    - Generate regression tests for fixes
+  non_functional:
+    performance: Sub-100ms analysis time per class
+    accuracy: 99.9% detection rate for critical issues
+    coverage: OWASP Top 10, CWE Top 25
+    reporting: Actionable fixes with explanations
+    ARCHITECTURE:
+  analysis_pattern: Multi-pass static + runtime analysis
+  fix_strategy: Defensive programming with fail-safe defaults
+  validation: Pre/post condition verification
+  testing: Automated test generation for each fix
+  FRAMEWORK:
+  core: Java 17+, Spring Boot 3.x
+  analysis_tools: SpotBugs, PMD, Error Prone
+  testing: JUnit 5, Mockito, TestContainers
+  security: OWASP Dependency Check, Snyk
