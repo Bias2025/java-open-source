@@ -1,0 +1,202 @@
+# CRAFT-OPTIMIZED ANGULAR COMPONENT GENERATION PROMPT
+# Enhanced by Elite Engineering Collective
+
+## C - CONTEXT (Environmental Understanding)
+CONTEXT:
+  application_domain: "[BUSINESS_DOMAIN]"           # e.g., finance, healthcare, e-commerce
+  project_scale:
+    users: "[EXPECTED_USER_COUNT]"                 # e.g., 10K, 100K, 1M+
+    concurrent_sessions: "[PEAK_CONCURRENT]"        # e.g., 1000
+    data_volume: "[DATA_SCALE]"                    # e.g., GB/day
+  team_context:
+    angular_version: "[ANGULAR_VERSION]"           # e.g., 18.2.x
+    typescript_version: "[TS_VERSION]"             # e.g., 5.4.x
+    existing_patterns: "[CURRENT_PATTERNS]"        # e.g., standalone, signals, OnPush
+  integration_points:
+    backend_api: "[API_TYPE]"                      # e.g., REST, GraphQL, WebSocket
+    state_management: "[STATE_SOLUTION]"           # e.g., NgRx, Akita, signals
+    ui_library: "[UI_FRAMEWORK]"                   # e.g., Material, PrimeNG, custom
+  compliance_requirements: "[COMPLIANCE_NEEDS]"     # e.g., WCAG 2.1 AA, GDPR, HIPAA
+
+## R - REQUIREMENTS (Explicit Specifications)
+REQUIREMENTS:
+  component_identity:
+    name: "[COMPONENT_NAME]"                       # PascalCase, suffixed with 'Component'
+    selector: "[SELECTOR_NAME]"                    # kebab-case with app- prefix
+    purpose: "[DETAILED_PURPOSE_DESCRIPTION]"      # Clear business value statement
+    
+  functional_requirements:
+    inputs:
+      - name: "[INPUT_NAME]"
+        type: "[TS_TYPE]"
+        required: [true/false]
+        default: "[DEFAULT_VALUE]"
+        validation: "[VALIDATION_RULES]"
+        description: "[INPUT_PURPOSE]"
+    
+    outputs:
+      - name: "[OUTPUT_NAME]"
+        type: "EventEmitter<[PAYLOAD_TYPE]>"
+        trigger: "[WHEN_EMITTED]"
+        payload: "[PAYLOAD_STRUCTURE]"
+        description: "[OUTPUT_PURPOSE]"
+    
+    services:
+      - name: "[SERVICE_NAME]"
+        purpose: "[WHY_NEEDED]"
+        methods_used: "[LIST_METHODS]"
+        injection_token: "[TOKEN_IF_CUSTOM]"
+    
+    business_logic:
+      - "[BUSINESS_RULE_1]"
+      - "[BUSINESS_RULE_2]"
+    
+  non_functional_requirements:
+    performance:
+      render_time: "[MAX_MS]"                      # e.g., <100ms
+      change_detection: "[STRATEGY]"               # OnPush, Default
+      lazy_loading: [true/false]
+      virtual_scrolling: [true/false]
+    
+    accessibility:
+      wcag_level: "[A/AA/AAA]"
+      screen_reader: [true/false]
+      keyboard_navigation: [true/false]
+      aria_labels: "[REQUIRED_LABELS]"
+    
+    security:
+      sanitization: "[HTML/URL/STYLE]"
+      csp_compliance: [true/false]
+      xss_prevention: "[STRATEGIES]"
+    
+    testing:
+      coverage_target: "[PERCENTAGE]"              # e.g., 90%
+      test_types: "[unit/integration/e2e]"
+      mock_strategy: "[jasmine.spy/jest/custom]"
+
+## A - ARCHITECTURE (Design Decisions)
+ARCHITECTURE:
+  component_pattern: "[PATTERN]"                   # e.g., Smart/Dumb, Container/Presentational
+  state_management:
+    local_state: "[APPROACH]"                      # e.g., signals, BehaviorSubject
+    shared_state: "[APPROACH]"                     # e.g., service, store
+  
+  data_flow:
+    input_strategy: "[STRATEGY]"                   # e.g., immutable, defensive copy
+    output_strategy: "[STRATEGY]"                  # e.g., event-driven, callback
+    
+  lifecycle_hooks:
+    - hook: "[HOOK_NAME]"
+      purpose: "[WHY_NEEDED]"
+      implementation: "[WHAT_IT_DOES]"
+  
+  error_handling:
+    strategy: "[APPROACH]"                         # e.g., try-catch, error boundary
+    user_feedback: "[METHOD]"                      # e.g., toast, inline, modal
+    logging: "[APPROACH]"                          # e.g., console, remote service
+  
+  responsive_design:
+    breakpoints: "[BREAKPOINT_STRATEGY]"
+    mobile_first: [true/false]
+
+## F - FRAMEWORK (Technical Stack)
+FRAMEWORK:
+  angular_features:
+    standalone: [true/false]
+    signals: [true/false]
+    control_flow: "[new/@if/@for/ngIf/ngFor]"
+    
+  dependencies:
+    forms: "[reactive/template/none]"
+    http: "[HttpClient/custom/none]"
+    router: "[required/optional/none]"
+    animations: "[required/optional/none]"
+    
+  third_party:
+    ui_components: "[LIBRARY_LIST]"
+    utilities: "[LODASH/RAMDA/etc]"
+    validators: "[CLASS_VALIDATOR/etc]"
+    
+  build_optimizations:
+    tree_shaking: [true/false]
+    lazy_modules: "[MODULE_LIST]"
+    preload_strategy: "[STRATEGY]"
+
+## T - TECHNOLOGY (Implementation Details)
+TECHNOLOGY:
+  typescript_config:
+    strict_mode: true
+    null_checks: true
+    no_implicit_any: true
+    
+  code_generation_rules:
+    - "Use type-safe factories for test data"
+    - "Implement proper null/undefined handling"
+    - "Include comprehensive JSDoc comments"
+    - "Apply defensive programming patterns"
+    - "Use const assertions where applicable"
+    
+  naming_conventions:
+    properties: "camelCase"
+    methods: "camelCase"
+    constants: "UPPER_SNAKE_CASE"
+    interfaces: "PascalCase with 'I' prefix optional"
+    types: "PascalCase"
+
+## GENERATION DIRECTIVES
+GENERATE:
+  1. Complete TypeScript component class with:
+     - Full type annotations (no 'any' unless justified)
+     - Proper decorators (@Component, @Input, @Output)
+     - Constructor dependency injection with access modifiers
+     - OnPush change detection with proper immutability
+     - Comprehensive error handling
+     
+  2. Input validation including:
+     - Type guards for runtime safety
+     - Default value assignment
+     - Null/undefined handling
+     - Custom validators if needed
+     
+  3. Event emitters with:
+     - Strongly typed payloads
+     - Debounce/throttle where appropriate
+     - Error boundaries for emission failures
+     
+  4. Lifecycle implementation:
+     - Only necessary hooks (no empty methods)
+     - Proper cleanup in ngOnDestroy
+     - Performance optimizations in ngOnChanges
+     
+  5. Accessibility features:
+     - ARIA attributes
+     - Keyboard event handlers
+     - Focus management
+     - Screen reader announcements
+     
+  6. Unit test setup with:
+     - TestBed configuration
+     - Mock services using jasmine.createSpyObj
+     - Input/Output testing
+     - Lifecycle hook verification
+     - Edge case coverage
+     
+  7. Performance optimizations:
+     - TrackBy functions for lists
+     - Memo decorators where applicable
+     - Lazy loading considerations
+     - Change detection optimization
+     
+  8. Documentation:
+     - JSDoc for public methods
+     - Inline comments for complex logic
+     - Usage examples in header comment
+     - Performance notes where relevant
+
+## EXAMPLE INVOCATION
+@SPRING-FORGE generate angular-component:
+C: E-commerce platform, 100K users, Angular 18, Material UI
+R: Product card display with cart integration, WCAG AA compliant
+A: Smart component pattern, signal-based state, OnPush strategy
+F: Standalone component, reactive forms, HttpClient for API
+T: TypeScript strict mode, 90% test coverage target
