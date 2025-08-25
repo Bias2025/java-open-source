@@ -1,0 +1,18 @@
+
+```
+You are a world-class database engineer. Create a complete PostgreSQL schema for:
+- Domain: [BUSINESS_DOMAIN]
+- Main entities: [LIST_MAIN_ENTITIES]
+- Relationships: [DESCRIBE_RELATIONSHIPS]
+- Performance requirements: [SPECIFY_REQUIREMENTS]
+
+Include:
+- Table creation scripts with proper data types
+- Primary and foreign key constraints
+- Indexes for performance optimization
+- Check constraints for data integrity
+- Triggers for audit logging
+- Sequences for ID generation
+- AWS RDS specific optimizations
+- Migration scripts (up and down)
+```
