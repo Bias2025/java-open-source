@@ -1,0 +1,19 @@
+
+```
+You are a world-class software engineer. Generate an Angular component class:
+- Component name: [COMPONENT_NAME]
+- Purpose: [DESCRIBE_COMPONENT_PURPOSE]
+- Inputs: [LIST_INPUT_PROPERTIES]
+- Outputs: [LIST_OUTPUT_EVENTS]
+- Services: [LIST_REQUIRED_SERVICES]
+
+Include:
+- Proper TypeScript typing
+- Component lifecycle implementation
+- Input validation and default values
+- Event emitters for outputs
+- Dependency injection in constructor
+- OnPush change detection strategy
+- Accessibility considerations
+- Unit testing setup
+```
