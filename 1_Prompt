@@ -1,0 +1,135 @@
+# ENTERPRISE JAVA SOLID REFACTORING PROMPT v3.0
+# Generated Elite Development Collective
+
+## CONTEXT ESTABLISHMENT
+CONTEXT:
+  purpose: "Transform legacy Java code into SOLID-compliant, production-ready Spring Boot architecture"
+  domain: "${BUSINESS_DOMAIN}"
+  scale_requirements:
+    concurrent_users: "${EXPECTED_LOAD}"
+    throughput: "${TPS_REQUIREMENT}"
+    latency_p99: "<100ms"
+  team_context:
+    skill_level: "${TEAM_EXPERIENCE}"
+    existing_patterns: "${CURRENT_ARCHITECTURE}"
+  compliance:
+    - OWASP Top 10
+    - Clean Code principles
+    - Enterprise logging standards
+
+## REQUIREMENTS SPECIFICATION
+REQUIREMENTS:
+  functional:
+    - Apply all 5 SOLID principles with measurable outcomes
+    - Maintain 100% backward compatibility
+    - Preserve all existing business logic
+    - Enable future extensibility points
+  
+  non_functional:
+    performance:
+      - Method execution: <10ms for business logic
+      - Memory footprint: Reduce by 30%
+      - GC pressure: Minimize object creation
+    
+    quality:
+      - Test coverage: >90%
+      - Cyclomatic complexity: <10 per method
+      - Code duplication: <3%
+    
+    security:
+      - Input validation on all public methods
+      - Sanitization of all external data
+      - Audit logging for state changes
+
+## ARCHITECTURE BLUEPRINT
+ARCHITECTURE:
+  pattern: "Hexagonal Architecture with Domain-Driven Design"
+  layers:
+    presentation:
+      - REST Controllers with @RestController
+      - Request/Response DTOs with validation
+      - Global exception handling via @ControllerAdvice
+    
+    application:
+      - Service interfaces (ports)
+      - Use case implementations
+      - Transaction boundaries via @Transactional
+    
+    domain:
+      - Pure business entities
+      - Value objects
+      - Domain events
+      - Business rule validators
+    
+    infrastructure:
+      - Repository implementations (adapters)
+      - External service clients
+      - Configuration classes
+      - Aspect implementations
+
+## FRAMEWORK IMPLEMENTATION
+FRAMEWORK:
+  core_stack:
+    java: "17"
+    spring_boot: "3.2.x"
+    build: "Maven/Gradle with multi-module structure"
+  
+  dependencies:
+    validation: "Jakarta Bean Validation 3.0"
+    logging: "SLF4J with Logback"
+    testing: "JUnit 5 + Mockito + AssertJ"
+    metrics: "Micrometer"
+    documentation: "OpenAPI 3.0"
+
+## REFACTORING INSTRUCTIONS
+
+### PHASE 1: SOLID ANALYSIS
+Analyze the provided code for violations:
+1. **SRP Violations**: Identify classes with multiple responsibilities
+   - Look for: Multiple reasons to change
+   - Metric: Methods should have single purpose
+   - Output: List of responsibility clusters
+
+2. **OCP Violations**: Find modification-prone code
+   - Look for: Switch statements, if-else chains
+   - Pattern: Replace with Strategy/Template Method
+   - Output: Extension points needed
+
+3. **LSP Violations**: Detect substitution issues
+   - Look for: Type checking, instanceof operations
+   - Fix: Proper inheritance hierarchies
+   - Output: Contract violations
+
+4. **ISP Violations**: Identify fat interfaces
+   - Look for: Unused interface methods
+   - Fix: Role-based interface segregation
+   - Output: Interface decomposition plan
+
+5. **DIP Violations**: Find concrete dependencies
+   - Look for: Direct instantiation with 'new'
+   - Fix: Constructor/setter injection
+   - Output: Dependency injection points
+
+### PHASE 2: REFACTORING IMPLEMENTATION
+
+Generate the following structure:
+
+#### 2.1 Domain Layer
+```java
+// Pure domain entities with business rules
+@Entity
+@Table(name = "${TABLE_NAME}")
+public class ${EntityName} {
+    // Invariants enforced in constructors/setters
+    // No framework dependencies
+    // Rich domain model with behavior
+}
+
+// Value Objects for type safety
+public record ${ValueObject}(${fields}) {
+    public ${ValueObject} {
+        // Validation in compact constructor
+        Objects.requireNonNull(${field}, "${field} cannot be null");
+        // Additional validations
+    }
+}
