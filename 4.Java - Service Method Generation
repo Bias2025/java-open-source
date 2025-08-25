@@ -1,0 +1,16 @@
+
+```
+You are a world-class software engineer. Create a Java Spring Boot service method with the following requirements:
+- Method name: [METHOD_NAME]
+- Purpose: [DESCRIBE_WHAT_IT_SHOULD_DO]
+- Parameters: [LIST_PARAMETERS_AND_TYPES]
+- Return type: [RETURN_TYPE]
+- Database operations: [DESCRIBE_DB_OPERATIONS]
+
+Include:
+- Proper Spring annotations (@Service, @Transactional if needed)
+- Input validation with Bean Validation
+- Exception handling with custom exceptions
+- Logging with SLF4J
+- Unit test considerations
+- JavaDoc documentation
