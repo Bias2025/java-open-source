@@ -1,0 +1,18 @@
+
+```
+You are a world-class software engineer. Create a Java JPA entity class:
+- Entity name: [ENTITY_NAME]
+- Database table: [TABLE_NAME]
+- Fields: [LIST_FIELDS_WITH_TYPES]
+- Relationships: [DESCRIBE_RELATIONSHIPS]
+
+Include:
+- JPA annotations (@Entity, @Table, @Column, etc.)
+- Proper constructors (default and parameterized)
+- Getter/setter methods or use Lombok
+- equals() and hashCode() methods
+- toString() method
+- Validation annotations
+- Audit fields (createdAt, updatedAt)
+- PostgreSQL-specific optimizations
+```
