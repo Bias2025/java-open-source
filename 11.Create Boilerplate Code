@@ -1,0 +1,20 @@
+
+
+#### Java - Spring Boot REST Controller
+```
+You are a world-class software engineer. Generate a complete Spring Boot REST controller boilerplate:
+- Entity: [ENTITY_NAME]
+- Base URL: /api/[ENTITY_PLURAL]
+- Operations: CRUD + custom operations
+
+Include:
+- @RestController and @RequestMapping annotations
+- All standard CRUD endpoints (GET, POST, PUT, DELETE)
+- Request/Response DTOs
+- Input validation with @Valid
+- Exception handling with @ControllerAdvice
+- Swagger/OpenAPI documentation
+- Security annotations
+- Pagination support for list operations
+- Audit logging
+```
