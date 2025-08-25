@@ -1,0 +1,109 @@
+# CRAFT-TPO ANALYSIS FRAMEWORK
+# Context-Requirements-Architecture-Framework-Technology-Persona-Originality
+
+CONTEXT:
+  deployment_environment: AWS RDS PostgreSQL
+  database_version: ${PG_VERSION} # e.g., 15.4, 16.1
+  instance_class: ${INSTANCE_TYPE} # e.g., db.r6g.xlarge
+  expected_load: 
+    concurrent_connections: ${CONCURRENT_USERS}
+    transactions_per_second: ${TPS}
+    data_volume: ${DATA_SIZE}
+  compliance_requirements: ${COMPLIANCE} # GDPR, HIPAA, SOC2
+  integration_points:
+    upstream_services: ${SERVICES_LIST}
+    downstream_consumers: ${CONSUMERS_LIST}
+  team_context:
+    skill_level: ${TEAM_EXPERTISE}
+    existing_patterns: ${CURRENT_PATTERNS}
+
+REQUIREMENTS:
+  functional:
+    function_name: ${FUNCTION_NAME}
+    purpose: ${BUSINESS_PURPOSE}
+    parameters:
+      - name: ${PARAM_NAME}
+        type: ${PARAM_TYPE}
+        constraints: ${VALIDATION_RULES}
+        nullable: ${TRUE/FALSE}
+    return_type: ${RETURN_TYPE}
+    business_logic: ${DETAILED_LOGIC}
+  non_functional:
+    performance:
+      target_latency_p99: ${LATENCY_MS}
+      max_execution_time: ${TIMEOUT_MS}
+      resource_limits: ${CPU_MEMORY_CONSTRAINTS}
+    security:
+      injection_prevention: MANDATORY
+      role_based_access: ${RBAC_REQUIREMENTS}
+      audit_logging: ${AUDIT_LEVEL}
+    reliability:
+      error_handling: COMPREHENSIVE
+      transaction_safety: ${ISOLATION_LEVEL}
+      idempotency: ${REQUIRED/OPTIONAL}
+
+ARCHITECTURE:
+  design_pattern: ${PATTERN} # Stored Procedure, Trigger, Aggregate
+  execution_context:
+    volatility: ${IMMUTABLE/STABLE/VOLATILE}
+    parallel_safety: ${SAFE/RESTRICTED/UNSAFE}
+    security_definer: ${TRUE/FALSE}
+  optimization_strategy:
+    index_usage: ${INDEX_HINTS}
+    query_plan: ${EXECUTION_PLAN}
+    caching_strategy: ${CACHE_APPROACH}
+  error_strategy:
+    exception_handling: LAYERED
+    rollback_behavior: ${ROLLBACK_STRATEGY}
+    error_propagation: ${ERROR_CHAIN}
+
+FRAMEWORK:
+  postgresql_features:
+    version_specific: ${PG_FEATURES}
+    extensions_required: ${EXTENSIONS_LIST}
+    aws_rds_specific:
+      performance_insights: ENABLED
+      enhanced_monitoring: ENABLED
+      parameter_groups: ${CUSTOM_PARAMS}
+  query_optimization:
+    index_strategy: ${INDEX_TYPES}
+    statistics_target: ${STATS_CONFIG}
+    vacuum_strategy: ${AUTOVACUUM_SETTINGS}
+  monitoring:
+    metrics_collection: ${METRICS_APPROACH}
+    slow_query_logging: ENABLED
+    custom_metrics: ${BUSINESS_METRICS}
+
+TECHNOLOGY:
+  implementation_stack:
+    language: PL/pgSQL
+    additional_languages: ${PYTHON/PERL/TCL if needed}
+    json_handling: JSONB_OPTIMIZED
+    array_operations: ${ARRAY_STRATEGY}
+  aws_integration:
+    rds_proxy: ${ENABLED/DISABLED}
+    iam_authentication: ${IAM_CONFIG}
+    encryption: ${KMS_KEY_ID}
+  testing_framework:
+    unit_tests: pgTAP
+    performance_tests: ${LOAD_TEST_TOOL}
+    data_generators: ${MOCK_DATA_STRATEGY}
+
+PERSONA:
+  developer_context:
+    expertise_level: ${SENIOR/MID/JUNIOR}
+    preferred_style: ${DEFENSIVE/AGGRESSIVE}
+    documentation_depth: ${VERBOSE/STANDARD/MINIMAL}
+  code_standards:
+    naming_convention: ${SNAKE_CASE/CAMEL_CASE}
+    comment_style: ${INLINE/BLOCK}
+    error_message_format: ${STRUCTURED_JSON/TEXT}
+
+ORIGINALITY:
+  unique_requirements:
+    special_business_rules: ${CUSTOM_LOGIC}
+    edge_cases: ${EDGE_CASE_LIST}
+    performance_tricks: ${OPTIMIZATION_HACKS}
+  innovation_points:
+    novel_algorithms: ${ALGORITHM_DESCRIPTION}
+    custom_patterns: ${PATTERN_INNOVATIONS}
