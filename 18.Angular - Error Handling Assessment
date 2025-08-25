@@ -1,0 +1,21 @@
+
+```
+Review this Angular code for comprehensive error handling:
+- HTTP error interceptor implementation
+- Component-level error handling
+- Form validation error display
+- Async operation error management
+- User notification strategies
+- Fallback UI for error states
+- Error boundary implementation
+
+Evaluate:
+- RxJS error operators usage (catchError, retry)
+- Error state management
+- Accessibility of error messages
+- User experience during errors
+- Error tracking and monitoring
+
+Code to review:
+[PASTE YOUR ANGULAR CODE HERE]
+```
