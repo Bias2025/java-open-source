@@ -1,0 +1,177 @@
+# ============================================
+# DOCKERFILE GENERATION PROMPT
+# CRAFT-TPO Methodology Applied
+# ============================================
+
+CONTEXT:
+  application_name: "${APP_NAME}"
+  deployment_target: "${DEPLOYMENT_PLATFORM}" # AWS/Heroku/K8s/Docker Swarm
+  environment: "${ENVIRONMENT}" # dev/staging/production
+  scale_requirements:
+    expected_load: "${REQUESTS_PER_SECOND}"
+    memory_constraints: "${MAX_MEMORY}" # e.g., 512MB for Heroku free tier
+    cpu_limits: "${CPU_CORES}"
+  compliance:
+    security_standards: ["OWASP", "CIS Docker Benchmark"]
+    regulatory: "${COMPLIANCE_REQS}" # HIPAA/PCI-DSS/GDPR
+  
+REQUIREMENTS:
+  functional:
+    - Multi-stage build with layer optimization
+    - Spring Boot ${SPRING_BOOT_VERSION} compatibility
+    - JDK ${JAVA_VERSION} base image
+    - Environment variable injection for 12-factor app
+    - Port mapping flexibility (PORT env var support)
+    - Graceful shutdown handling
+  non_functional:
+    startup_time: "< ${STARTUP_TARGET} seconds"
+    image_size: "< ${SIZE_TARGET} MB"
+    security_score: "A+ on Docker Bench"
+    layer_caching: "maximize build cache hits"
+  operational:
+    - Health check endpoint configuration
+    - Metrics exposure for monitoring
+    - Log aggregation compatibility
+    - Secret management integration
+
+ARCHITECTURE:
+  build_strategy: "layered-jar"
+  layer_structure:
+    - dependencies # rarely changes
+    - spring-boot-loader # framework
+    - snapshot-dependencies # internal libs
+    - application # frequently changes
+  runtime_optimization:
+    jvm_flags: "${JVM_OPTIMIZATION_FLAGS}"
+    memory_calculation: "automatic via java-buildpack-memory-calculator"
+  security_hardening:
+    - Non-root user execution
+    - Minimal attack surface (distroless/alpine)
+    - No shell access in production
+    - Read-only filesystem where possible
+
+FRAMEWORK:
+  base_images:
+    builder: "openjdk:${JAVA_VERSION}-slim AS builder"
+    runtime: "${RUNTIME_IMAGE}" # distroless/alpine/slim
+  build_tools:
+    maven_version: "${MAVEN_VERSION}"
+    gradle_version: "${GRADLE_VERSION}"
+  deployment_specifics:
+    aws_ecs:
+      - awslogs driver configuration
+      - Task role permissions
+      - Secrets Manager integration
+    heroku:
+      - PORT environment variable mapping
+      - Memory constraints handling
+      - Dyno optimization
+    kubernetes:
+      - ConfigMap/Secret mounting points
+      - Liveness/Readiness probes
+      - Resource limits/requests
+
+TECHNOLOGY:
+  monitoring_integration:
+    - Prometheus metrics endpoint
+    - OpenTelemetry instrumentation
+    - Application Insights (if Azure)
+    - CloudWatch (if AWS)
+  logging:
+    format: "JSON structured logging"
+    drivers: ["json-file", "awslogs", "fluentd"]
+  networking:
+    protocols: ["HTTP/2", "gRPC support"]
+    tls_termination: "at load balancer"
+
+TESTING:
+  container_tests:
+    - Structure tests (container-structure-test)
+    - Security scanning (Trivy/Snyk)
+    - Performance baseline
+  integration_validation:
+    - Health check verification
+    - Environment variable injection
+    - Port binding flexibility
+    - Signal handling (SIGTERM)
+
+PERSONA:
+  team_expertise: "${TEAM_DOCKER_EXPERIENCE}" # beginner/intermediate/expert
+  maintenance_model: "${SUPPORT_MODEL}" # self-managed/platform-managed
+  deployment_frequency: "${DEPLOY_FREQUENCY}" # multiple-daily/weekly/monthly
+
+ORIGINALITY:
+  custom_requirements:
+    - ${UNIQUE_REQUIREMENT_1}
+    - ${UNIQUE_REQUIREMENT_2}
+  optimization_priorities: ["${PRIORITY_1}", "${PRIORITY_2}"] # size/speed/security
+  special_considerations:
+    - ${SPECIAL_CONSIDERATION_1}
+    - ${SPECIAL_CONSIDERATION_2}
+
+# ============================================
+# GENERATION DIRECTIVES
+# ============================================
+
+Generate a production-ready Dockerfile that:
+
+1. IMPLEMENTS multi-stage build pattern:
+   - Stage 1: Build/compile with full JDK
+   - Stage 2: Extract layers using Spring Boot's layertools
+   - Stage 3: Runtime with minimal base image
+
+2. INCLUDES environment flexibility:
+   - Dynamic port binding (PORT env var → server.port)
+   - Database URL parsing (DATABASE_URL → spring.datasource.*)
+   - Feature flags via environment
+   - Secrets injection patterns
+
+3. OPTIMIZES for production:
+   - JVM flags: -XX:+UseContainerSupport -XX:MaxRAMPercentage=75
+   - Memory calculation based on container limits
+   - Proper signal handling for graceful shutdown
+   - Fast startup with CDS/AppCDS if applicable
+
+4. SECURES the container:
+   - Run as non-root user (UID 1000)
+   - Drop unnecessary capabilities
+   - Read-only root filesystem option
+   - No package managers in final image
+
+5. PROVIDES operational excellence:
+   - HEALTHCHECK instruction with proper endpoint
+   - Labels for metadata/versioning
+   - Volume mounts for logs/temp files
+   - Proper ENTRYPOINT vs CMD usage
+
+6. INCLUDES supporting files:
+   - run_env.sh script for complex env var processing
+   - docker-compose.yml for local development
+   - .dockerignore for build optimization
+   - Build and run commands with examples
+
+# ============================================
+# EXPECTED OUTPUT STRUCTURE
+# ============================================
+
+## 1. Main Dockerfile
+## 2. run_env.sh script (if needed)
+## 3. .dockerignore file
+## 4. docker-compose.yml (development)
+## 5. Build commands (with explanations)
+## 6. Run commands (local/production variants)
+## 7. Validation commands (security/structure tests)
+## 8. Troubleshooting guide
+## 9. Performance tuning recommendations
+## 10. Security hardening checklist
+
+# ============================================
+# QUALITY METRICS
+# ============================================
+
+The generated Dockerfile must achieve:
+- Build time: < 2 minutes (with cache)
+- Image size: < 200MB (for standard Spring Boot app)
+- Container startup: < 10 seconds
+- Security scan: 0 critical vulnerabilities
+- Layer efficiency: < 10 layers in final image
