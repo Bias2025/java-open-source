@@ -1,0 +1,20 @@
+
+
+#### Java - Apply SOLID Principles
+```
+Refactor this Java code to follow SOLID principles:
+- Single Responsibility: Each class should have one job
+- Open/Closed: Open for extension, closed for modification
+- Liskov Substitution: Subtypes must be substitutable
+- Interface Segregation: Many specific interfaces over one general
+- Dependency Inversion: Depend on abstractions, not concretions
+
+Also apply:
+- Proper exception handling
+- Input validation
+- Logging with SLF4J
+- Unit test considerations
+
+Code to refactor:
+[PASTE YOUR JAVA CODE HERE]
+```
