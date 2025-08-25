@@ -1,0 +1,94 @@
+CONTEXT:
+  domain: Angular_Service_Development
+  integration_layer: HTTP_REST_API
+  architectural_pattern: Service_Layer_Pattern
+  scale_considerations:
+    - concurrent_requests: ${EXPECTED_RPS}
+    - data_volume: ${PAYLOAD_SIZE}
+    - cache_strategy: ${CACHE_REQUIREMENTS}
+  team_context:
+    - angular_version: ${ANGULAR_VERSION}
+    - rxjs_version: ${RXJS_VERSION}
+    - testing_framework: Jasmine/Karma
+  external_dependencies:
+    - backend_api: ${API_SPECIFICATION}
+    - authentication: ${AUTH_METHOD}
+    - interceptors: ${REQUIRED_INTERCEPTORS}
+    REQUIREMENTS:
+  functional:
+    - method_name: ${METHOD_NAME}
+    - http_operations: ${HTTP_METHODS_AND_ENDPOINTS}
+    - parameters: 
+      ${PARAMETER_LIST_WITH_TYPES}
+    - return_type: Observable<${RETURN_TYPE}>
+    - data_transformations: ${TRANSFORMATION_LOGIC}
+  
+  non_functional:
+    performance:
+      - response_time: <${MAX_LATENCY}ms
+      - retry_strategy: ${RETRY_POLICY}
+      - timeout: ${TIMEOUT_MS}ms
+    reliability:
+      - error_handling: comprehensive
+      - fallback_mechanism: ${FALLBACK_STRATEGY}
+      - circuit_breaker: ${CIRCUIT_BREAKER_CONFIG}
+    observability:
+      - logging_level: ${LOG_LEVEL}
+      - metrics: ${METRICS_TO_TRACK}
+      - tracing: ${DISTRIBUTED_TRACING}
+      ARCHITECTURE:
+  service_pattern: ${SERVICE_PATTERN}
+  layer_responsibilities:
+    - presentation: Component_Consumption
+    - service: Business_Logic_Orchestration
+    - http: API_Communication
+    - state: ${STATE_MANAGEMENT_APPROACH}
+  
+  data_flow:
+    - request_pipeline: Component→Service→HTTP→Interceptor→API
+    - response_pipeline: API→Interceptor→Transform→Cache→Component
+    - error_flow: Error→Interceptor→Handler→Fallback→Component
+  
+  caching_strategy:
+    - type: ${CACHE_TYPE} # memory/http/indexed_db
+    - ttl: ${CACHE_TTL}
+    - invalidation: ${CACHE_INVALIDATION_STRATEGY}
+    FRAMEWORK:
+  core:
+    - angular: ^${ANGULAR_VERSION}
+    - typescript: ~${TS_VERSION}
+    - rxjs: ^${RXJS_VERSION}
+  
+  http_layer:
+    - client: HttpClient
+    - interceptors: ${INTERCEPTOR_LIST}
+    - headers: ${STANDARD_HEADERS}
+  
+  testing:
+    - unit: Jasmine/Karma
+    - http_testing: HttpClientTestingModule
+    - mocking: jasmine.SpyObj
+    - coverage: >90%
+  
+  utilities:
+    - operators: ${RXJS_OPERATORS_NEEDED}
+    - error_handling: catchError/throwError
+    - retry: retry/retryWhen
+    TECHNOLOGY:
+  rxjs_operators:
+    - transformation: map/switchMap/mergeMap
+    - filtering: filter/distinctUntilChanged
+    - error_handling: catchError/retry/timeout
+    - caching: shareReplay/publishReplay
+  
+  type_safety:
+    - strict_mode: true
+    - null_checks: enabled
+    - index_signatures: validated
+  
+  interceptor_chain:
+    - auth: Bearer_Token_Injection
+    - logging: Request_Response_Logger
+    - error: Global_Error_Handler
+    - retry: Exponential_Backoff
+    
