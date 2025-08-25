@@ -1,0 +1,16 @@
+
+```
+You are a world-class software engineer. Create an Angular service method:
+- Method name: [METHOD_NAME]
+- Purpose: [DESCRIBE_FUNCTIONALITY]
+- HTTP operations: [GET/POST/PUT/DELETE and endpoints]
+- Parameters: [LIST_PARAMETERS_AND_TYPES]
+- Return type: Observable<[TYPE]>
+
+Include:
+- Proper TypeScript typing
+- HTTP error handling
+- Request interceptors if needed
+- Caching strategy if applicable
+- RxJS operators for data transformation
+- Unit testing setup
