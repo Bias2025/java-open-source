@@ -1,0 +1,16 @@
+
+```
+You are a world-class database engineer. Create a PostgreSQL function for AWS RDS:
+- Function name: [FUNCTION_NAME]
+- Purpose: [DESCRIBE_WHAT_IT_DOES]
+- Parameters: [LIST_PARAMETERS_AND_TYPES]
+- Return type: [RETURN_TYPE]
+- Business logic: [DESCRIBE_THE_LOGIC]
+
+Include:
+- Proper error handling with EXCEPTION blocks
+- Input parameter validation
+- Optimized queries with proper indexing hints
+- Security considerations (SQL injection prevention)
+- Performance optimization for AWS RDS
+- Documentation comments
