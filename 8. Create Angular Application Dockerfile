@@ -1,0 +1,20 @@
+
+```
+Create a production-ready Dockerfile for this Angular application:
+- Angular version: [VERSION]
+- Node.js version: [NODE_VERSION]
+- Build environment: [ENVIRONMENT]
+- Served by: nginx
+
+Include:
+- Multi-stage build (build and serve stages)
+- Nginx configuration for SPA routing
+- Security headers configuration
+- Gzip compression setup
+- Health check endpoint
+- Environment-specific configurations
+- AWS deployment optimization
+
+Application structure:
+[DESCRIBE APPLICATION STRUCTURE]
+```
