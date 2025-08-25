@@ -1,0 +1,21 @@
+
+```
+Review this Java code for proper error handling and suggest improvements:
+- Check for appropriate exception types
+- Verify proper exception propagation
+- Ensure resource cleanup (try-with-resources)
+- Validate error logging practices
+- Check for graceful degradation
+- Verify user-friendly error messages
+- Ensure security (no sensitive data in logs)
+
+Focus on:
+- Custom exception classes usage
+- Global exception handling (@ControllerAdvice)
+- Database transaction rollback scenarios
+- API error response formatting
+- Monitoring and alerting considerations
+
+Code to review:
+[PASTE YOUR JAVA CODE HERE]
+```
