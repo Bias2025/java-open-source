@@ -1,0 +1,16 @@
+
+```
+You are a world-class software engineer. Create a complete Angular feature module boilerplate:
+- Feature name: [FEATURE_NAME]
+- Components needed: [LIST_COMPONENTS]
+- Services needed: [LIST_SERVICES]
+- Routing requirements: [DESCRIBE_ROUTES]
+
+Generate:
+- Feature module with proper imports/exports
+- Routing module with lazy loading
+- Component boilerplates with basic structure
+- Service boilerplates with HTTP methods
+- Model interfaces and types
+- Barrel exports (index.ts files)
+- Basic unit test files
