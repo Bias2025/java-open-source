@@ -1,0 +1,20 @@
+
+```
+Generate a production-ready Dockerfile for this Java Spring Boot application:
+- Application JAR: [APP_NAME].jar
+- Java version: 17
+- Exposed port: [PORT_NUMBER]
+- Environment: Production
+
+Include:
+- Multi-stage build for optimization
+- Non-root user for security
+- Health check endpoint
+- Proper layer caching
+- AWS deployment considerations
+- Environment variable configuration
+- JVM tuning for containerized environment
+
+Application details:
+[PASTE APPLICATION DETAILS HERE]
+```
