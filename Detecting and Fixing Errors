@@ -1,0 +1,17 @@
+
+
+#### Java - Error Detection and Fixing
+```
+Analyze this Java code for potential bugs and fix them:
+- Null pointer exceptions
+- Resource leaks (unclosed streams, connections)
+- Thread safety issues
+- Memory leaks
+- Incorrect exception handling
+- Logic errors
+- Performance bottlenecks
+- Security vulnerabilities
+
+Code to analyze:
+[PASTE YOUR JAVA CODE HERE]
+```
