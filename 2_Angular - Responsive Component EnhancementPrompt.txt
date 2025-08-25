@@ -1,0 +1,105 @@
+PROMPT_METADATA:
+  version: "3.0.0"
+  optimization_level: "MAXIMUM"
+  target_llm: "Production-Grade Code Generation"
+  expected_output: "100% Functional Responsive Angular Component"
+  /**
+ *  CRAFT-TPO METHODOLOGY
+ * =====================================
+ * Context-Requirements-Architecture-Framework-Technology
+ * + Testing-Persona-Originality Analysis
+ */
+ CONTEXT:
+  objective: "Transform Angular component to enterprise-grade responsive implementation"
+  domain: "Frontend Engineering - Responsive Web Design"
+  scale_metrics:
+    viewport_range: "320px to 4K displays"
+    device_types: ["mobile", "tablet", "desktop", "tv"]
+    orientation_support: ["portrait", "landscape"]
+  performance_constraints:
+    first_contentful_paint: "<1.5s"
+    layout_shift: "<0.1"
+    touch_responsiveness: "<100ms"
+  team_context:
+    skill_level: "Senior Angular developers"
+    existing_stack: "Angular 17+, TypeScript 5.4+"
+  integration_requirements:
+    design_system: "Material Design / Custom"
+    accessibility: "WCAG 2.1 AA compliance"
+    browser_support: "Last 2 versions of major browsers"
+    REQUIREMENTS:
+  functional:
+    - Implement responsive layout using Angular Flex Layout API
+    - Configure CSS Grid as fallback mechanism
+    - Add Angular CDK BreakpointObserver integration
+    - Implement mobile-first progressive enhancement
+    - Add touch gesture support via HammerJS/CDK
+    - Ensure keyboard navigation across all breakpoints
+    
+  non_functional:
+    performance:
+      - Zero layout shift during resize
+      - Debounced resize handlers (16ms threshold)
+      - Lazy-loaded responsive images
+    accessibility:
+      - ARIA landmarks for all screen sizes
+      - Focus management across breakpoints
+      - Screen reader announcements for layout changes
+    scalability:
+      - Component reusability across projects
+      - Theme-able responsive utilities
+      - RTL/LTR support
+      
+  compliance:
+    - WCAG 2.1 AA standards
+    - Material Design responsive guidelines
+    - iOS/Android native app parity
+    ARCHITECTURE:
+  pattern: "Adaptive Component Architecture"
+  responsive_strategy:
+    primary: "Angular Flex Layout API"
+    secondary: "CSS Grid with @container queries"
+    fallback: "CSS Flexbox with media queries"
+    
+  breakpoint_system:
+    xs: { min: 0, max: 599 }     # Mobile portrait
+    sm: { min: 600, max: 959 }   # Mobile landscape/Tablet portrait
+    md: { min: 960, max: 1279 }  # Tablet landscape
+    lg: { min: 1280, max: 1919 } # Desktop
+    xl: { min: 1920 }             # Large desktop/TV
+    
+  component_layers:
+    presentation:
+      - "Responsive container wrapper"
+      - "Breakpoint-aware templates"
+      - "Gesture handlers"
+    behavior:
+      - "BreakpointObserver subscriptions"
+      - "Layout state management"
+      - "Touch/Mouse event normalization"
+    data:
+      - "Responsive configuration service"
+      - "Device capability detection"
+      FRAMEWORK:
+  core_dependencies:
+    "@angular/core": "^17.0.0"
+    "@angular/flex-layout": "^15.0.0"
+    "@angular/cdk": "^17.0.0"
+    
+  responsive_modules:
+    FlexLayoutModule:
+      directives: ["fxLayout", "fxFlex", "fxHide", "fxShow"]
+      responsive_api: ["fxLayout.xs", "fxFlex.md", "fxHide.lt-md"]
+      
+    CDK_Layout:
+      services: ["BreakpointObserver", "MediaMatcher"]
+      directives: ["CdkScrollable", "CdkVirtualScrollViewport"]
+      
+  gesture_support:
+    hammerjs: "^2.0.8"
+    custom_gestures: ["swipe", "pinch", "rotate"]
+    
+  testing_framework:
+    karma_viewport: "responsive-viewport-plugin"
+    cypress: "viewport testing commands"
+    browserstack: "real device testing"
