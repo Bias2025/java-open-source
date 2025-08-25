@@ -1,0 +1,38 @@
+
+```
+Review these PostgreSQL queries and database design for optimization opportunities:
+
+**Review Focus Areas:**
+1. **Query Performance**
+   - Execution plan analysis
+   - Index usage effectiveness
+   - Join optimization strategies
+   - Subquery vs CTE efficiency
+
+2. **Schema Design**
+   - Normalization appropriateness
+   - Index strategy effectiveness
+   - Constraint implementation
+   - Partitioning opportunities
+
+3. **AWS RDS Optimization**
+   - Parameter group configuration
+   - Read replica utilization
+   - Connection pooling strategies
+   - Monitoring and alerting setup
+
+4. **Security & Compliance**
+   - Access control implementation
+   - Data encryption strategies
+   - Audit logging completeness
+   - Backup and recovery plans
+
+5. **Scalability Considerations**
+   - Horizontal scaling possibilities
+   - Vertical scaling limitations
+   - Sharding strategies
+   - Caching layer integration
+
+Database code to review:
+[PASTE YOUR SQL CODE HERE]
+```
