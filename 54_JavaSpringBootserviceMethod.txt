@@ -1,0 +1,40 @@
+CONTEXT:
+  domain: Enterprise Spring Boot Application
+  scale: Standard REST API with database persistence
+  constraints: Maven-based, Java 11+, Spring Boot 2.x/3.x
+  team: Developers requiring production-ready code generation
+  integration: PostgreSQL database, RESTful endpoints, scheduled tasks
+  REQUIREMENTS:
+  functional:
+    - Three-layer architecture (Controller, Service, Persistence)
+    - Database CRUD operations
+    - REST API endpoints
+    - Dependency injection patterns
+  non_functional:
+    performance: Sub-100ms response time
+    security: Input validation, SQL injection prevention
+    scalability: Connection pooling, async processing
+    reliability: Transaction management, error handling
+  compliance: SOLID principles, Spring best practices
+  ARCHITECTURE:
+  pattern: Layered Architecture (MVC)
+  style: Spring Boot Microservice-ready
+  layers:
+    - presentation: REST Controllers with JSON/XML
+    - application: Service layer with business logic
+    - domain: Entity models and DTOs
+    - infrastructure: JPA repositories with PostgreSQL
+  data_flow: Controller → Service → Repository → Database
+  FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.x
+  persistence:
+    database: PostgreSQL 15+
+    orm: Spring Data JPA
+    migration: Flyway
+  messaging: Optional (Kafka/RabbitMQ)
+  caching: Spring Cache with Redis
+  monitoring: Actuator + Micrometer
+  deployment: Docker/Kubernetes ready
+  
