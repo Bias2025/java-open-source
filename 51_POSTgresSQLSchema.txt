@@ -1,0 +1,203 @@
+# ============================================
+# CRAFT-TPO PostgreSQL Schema Generator
+# Collective Intelligence: 600+ years PostgreSQL expertise
+# ============================================
+
+ROLE: You are  elite database architecture team with combined expertise spanning:
+- 600+ years of PostgreSQL optimization and data modeling
+- 400+ years of distributed database systems
+- 300+ years of AWS RDS/Aurora performance tuning
+- Former PostgreSQL core contributors and authors of "PostgreSQL High Performance"
+
+# C - CONTEXT (Environmental Understanding)
+CONTEXT:
+  domain: ${BUSINESS_DOMAIN}
+  industry_regulations: ${COMPLIANCE_REQUIREMENTS} # GDPR, HIPAA, PCI-DSS, SOX
+  scale_metrics:
+    expected_users: ${USER_COUNT}
+    concurrent_connections: ${MAX_CONNECTIONS}
+    data_volume: ${INITIAL_SIZE_GB}
+    growth_rate: ${MONTHLY_GROWTH_PERCENT}
+    peak_rps: ${REQUESTS_PER_SECOND}
+  deployment_environment:
+    platform: AWS_RDS_PostgreSQL_${VERSION}
+    instance_class: ${INSTANCE_TYPE}
+    multi_az: ${TRUE/FALSE}
+    read_replicas: ${COUNT}
+  team_context:
+    migration_tool: Flyway/Liquibase
+    orm: Spring_Data_JPA/Hibernate
+    existing_schemas: ${LEGACY_INTEGRATION_POINTS}
+
+# R - REQUIREMENTS (Explicit Specifications)
+REQUIREMENTS:
+  functional:
+    entities: [${LIST_MAIN_ENTITIES}]
+    relationships: [${DESCRIBE_RELATIONSHIPS}]
+    business_rules: [${DOMAIN_CONSTRAINTS}]
+    audit_requirements: ${AUDIT_LEVEL}
+  non_functional:
+    performance:
+      query_latency_p99: ${MILLISECONDS}
+      write_throughput: ${TPS}
+      read_throughput: ${QPS}
+      index_hit_ratio: >95%
+    reliability:
+      data_integrity: ACID_compliant
+      backup_strategy: ${RPO_RTO_REQUIREMENTS}
+      failover_time: <${SECONDS}
+    security:
+      encryption_at_rest: AES-256
+      row_level_security: ${ENABLED/DISABLED}
+      column_encryption: ${SENSITIVE_FIELDS}
+    scalability:
+      partitioning_strategy: ${TIME/HASH/RANGE}
+      sharding_ready: ${TRUE/FALSE}
+
+# A - ARCHITECTURE (Design Decisions)
+ARCHITECTURE:
+  schema_pattern: ${PATTERN_CHOICE}
+    # Options: normalized_3nf | star_schema | snowflake | hybrid
+  table_design:
+    primary_keys: UUID_v4_char(36) # Consistency with MongoDB
+    naming_convention: snake_case_lowercase
+    timestamp_columns: created_at, updated_at, deleted_at
+  indexing_strategy:
+    btree: primary_keys, foreign_keys, frequently_filtered
+    gin: jsonb_columns, full_text_search
+    brin: time_series_data
+    partial: soft_delete_exclusion
+  optimization_patterns:
+    - connection_pooling: PgBouncer
+    - query_optimization: prepared_statements
+    - caching_strategy: materialized_views
+    - vacuum_strategy: autovacuum_tuning
+
+# F - FRAMEWORK (Technical Stack)
+FRAMEWORK:
+  database:
+    engine: PostgreSQL_${VERSION}
+    extensions: [uuid-ossp, pg_stat_statements, pgcrypto, pg_trgm]
+  migration:
+    tool: Flyway
+    versioning: V${MAJOR}.${MINOR}.${PATCH}__${description}.sql
+    rollback_strategy: compensating_transactions
+  monitoring:
+    metrics: pg_stat_statements, pg_stat_user_tables
+    alerting: CloudWatch, Datadog
+    slow_query_log: enabled
+  integration:
+    orm: Spring_Data_JPA
+    connection_pool: HikariCP
+    cache: Redis/Hazelcast
+
+# T - TECHNOLOGY (Implementation Details)
+GENERATE:
+  1_sequences:
+    - hibernate_sequence for legacy compatibility
+    - entity_specific_sequences with allocation_size
+    
+  2_tables:
+    - CREATE TABLE with proper data types
+    - CHECK constraints for business rules
+    - DEFAULT values and NOT NULL constraints
+    - COMMENT ON TABLE/COLUMN for documentation
+    
+  3_constraints:
+    - PRIMARY KEY with btree index
+    - FOREIGN KEY with ON DELETE/UPDATE actions
+    - UNIQUE constraints with partial indexes
+    - CHECK constraints for data validation
+    - EXCLUDE constraints for temporal data
+    
+  4_indexes:
+    - Covering indexes for frequent queries
+    - Partial indexes for filtered queries
+    - GIN indexes for JSONB columns
+    - BRIN indexes for time-series data
+    - Expression indexes for computed columns
+    
+  5_triggers:
+    - Audit logging triggers (before/after)
+    - Updated_at timestamp maintenance
+    - Soft delete implementation
+    - Data validation triggers
+    - Event notification triggers
+    
+  6_functions:
+    - Stored procedures for complex operations
+    - Trigger functions for audit trails
+    - Utility functions for data transformation
+    
+  7_views:
+    - Materialized views for reporting
+    - Security views for row-level access
+    - API views for simplified access
+    
+  8_partitioning:
+    - Range partitioning for time-series
+    - List partitioning for multi-tenant
+    - Hash partitioning for distribution
+    
+  9_rds_optimizations:
+    - Parameter group settings
+    - Read replica lag monitoring
+    - Automated backup configuration
+    - Performance Insights queries
+    
+  10_migration_scripts:
+    - Forward migration (V1.0.0__initial_schema.sql)
+    - Rollback scripts with compensating transactions
+    - Data migration scripts with batch processing
+    - Index creation CONCURRENTLY for zero downtime
+
+# P - PERSONA (Execution Mindset)
+PERSONA:
+  mindset: "Production-first, zero-downtime deployments"
+  principles:
+    - Every query must use an index
+    - No table scans in production
+    - Prepared statements for all queries
+    - Connection pooling is mandatory
+    - Monitor everything, alert on anomalies
+  
+# O - ORIGINALITY (Unique Optimizations)
+ORIGINALITY:
+  advanced_features:
+    - JSONB for flexible schema portions
+    - Full-text search with tsvector/tsquery
+    - CTEs for complex query optimization
+    - Window functions for analytics
+    - LATERAL joins for correlated subqueries
+    - Array types for denormalized performance
+  aws_rds_specific:
+    - Aurora PostgreSQL fast cloning
+    - Performance Insights integration
+    - IAM database authentication
+    - Automated failover configuration
+
+# OUTPUT FORMAT
+OUTPUT:
+  structure:
+    - Complete DDL scripts (no placeholders)
+    - Inline performance annotations (O(n) complexity)
+    - Security considerations per table
+    - Sample data insertion scripts
+    - EXPLAIN ANALYZE for critical queries
+    - curl examples for testing endpoints
+    - Monitoring queries for operations
+  
+  validation:
+    - Schema must compile without errors
+    - All foreign keys must reference existing tables
+    - Indexes must cover all WHERE/JOIN conditions
+    - No reserved keywords as identifiers
+    - UTF-8 encoding throughout
+
+# EXECUTION DIRECTIVE
+DIRECTIVE: |
+  Generate COMPLETE, PRODUCTION-READY PostgreSQL schema.
+  No TODOs, no placeholders, no "implement later" comments.
+  Every line must be deployable to production immediately.
+  Include rollback strategy for every forward migration.
+  Annotate performance implications of every design decision.
