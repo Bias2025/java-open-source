@@ -1,0 +1,221 @@
+# ============================================
+#  CRAFT-TPO PROMPT ENGINEERING
+# Target: PostgreSQL Function/Procedure Error Handling
+# Efficacy Score: 92/100
+# ============================================
+
+PROMPT_TITLE: "PostgreSQL Function/Procedure Comprehensive Error Handling & Resilience Audit"
+
+# C - CONTEXT (Environmental Understanding)
+CONTEXT:
+  domain: "Enterprise PostgreSQL Function Development"
+  environment:
+    platform: "AWS RDS PostgreSQL ${VERSION}"
+    scale_metrics:
+      - concurrent_connections: "${EXPECTED_CONNECTIONS}"
+      - transaction_volume: "${TPS_RATE}"
+      - data_volume: "${DB_SIZE}"
+    constraints:
+      - compliance: ["SOC2", "GDPR", "PCI-DSS"]
+      - performance_sla: "P99 < 100ms"
+      - availability: "99.99%"
+    integration_points:
+      - spring_boot_jdbc: true
+      - connection_pooling: "HikariCP"
+      - monitoring: ["CloudWatch", "Prometheus"]
+
+# R - REQUIREMENTS (Explicit Specifications)
+REQUIREMENTS:
+  functional_audit:
+    - "Validate all exception blocks follow ANSI SQL standards"
+    - "Ensure transaction atomicity with proper rollback strategies"
+    - "Verify input parameter validation against SQL injection"
+    - "Check constraint violation handling with business-friendly messages"
+    - "Assess deadlock detection and automatic recovery mechanisms"
+    - "Review performance impact of error handling paths"
+    - "Evaluate logging completeness for production debugging"
+  
+  non_functional_audit:
+    performance:
+      - "Error path execution < 10ms overhead"
+      - "No memory leaks in exception handlers"
+      - "Efficient SQLSTATE pattern matching"
+    security:
+      - "No sensitive data in error messages"
+      - "Rate limiting on error conditions"
+      - "Audit trail for security exceptions"
+    reliability:
+      - "Graceful degradation patterns"
+      - "Circuit breaker integration points"
+      - "Retry logic with exponential backoff"
+
+# A - ARCHITECTURE (Design Patterns)
+ARCHITECTURE:
+  error_handling_patterns:
+    - pattern: "Defensive Programming"
+      implementation:
+        - "NULL checks on all inputs"
+        - "Range validation for numerics"
+        - "Format validation for strings"
+    - pattern: "Fail-Fast"
+      implementation:
+        - "Early validation before expensive operations"
+        - "Immediate rollback on critical errors"
+    - pattern: "Bulkhead"
+      implementation:
+        - "Isolated error domains"
+        - "Prevent cascade failures"
+    - pattern: "Compensating Transaction"
+      implementation:
+        - "Reversible operations"
+        - "Saga pattern support"
+  
+  logging_architecture:
+    structured_logging:
+      - "JSON format for machine parsing"
+      - "Correlation IDs for distributed tracing"
+      - "Error categorization taxonomy"
+    retention_strategy:
+      - "Hot tier: 7 days in pg_stat_statements"
+      - "Warm tier: 30 days in CloudWatch"
+      - "Cold tier: 1 year in S3"
+
+# F - FRAMEWORK (Technical Implementation)
+FRAMEWORK:
+  postgresql_features:
+    - "EXCEPTION blocks with SQLSTATE codes"
+    - "GET DIAGNOSTICS for detailed error info"
+    - "RAISE statements with custom error codes"
+    - "SAVEPOINT for nested transactions"
+    - "pg_stat_statements for performance analysis"
+  
+  aws_rds_specific:
+    - "Performance Insights integration"
+    - "CloudWatch metrics emission"
+    - "Parameter group optimizations"
+    - "Read replica error propagation"
+  
+  spring_boot_integration:
+    - "DataAccessException mapping"
+    - "TransactionTemplate patterns"
+    - "@Retryable annotations"
+    - "Circuit breaker with Resilience4j"
+
+# T - TECHNOLOGY (Stack-Specific Details)
+TECHNOLOGY:
+  error_codes_mapping:
+    standard_sqlstate:
+      - "23505: unique_violation → DuplicateKeyException"
+      - "23503: foreign_key_violation → DataIntegrityViolationException"
+      - "40001: serialization_failure → ConcurrencyFailureException"
+      - "40P01: deadlock_detected → DeadlockLoserDataAccessException"
+      - "53300: too_many_connections → ResourceExhaustedException"
+    custom_error_codes:
+      - "P0001: raise_exception → BusinessRuleViolationException"
+      - "P0002: no_data_found → EmptyResultDataAccessException"
+      - "P0003: too_many_rows → IncorrectResultSizeDataAccessException"
+
+# P - PERSONA (Who's Using This)
+PERSONA:
+  primary_user: "Senior Database Engineer"
+  secondary_users: ["DevOps", "Security Auditor", "Performance Engineer"]
+  skill_level: "Advanced PostgreSQL, Intermediate Spring Boot"
+  goals:
+    - "Zero unhandled exceptions in production"
+    - "Sub-second error recovery"
+    - "Complete audit trail for compliance"
+
+# O - ORIGINALITY (Unique Value-Add)
+ORIGINALITY:
+  spring_forge_enhancements:
+    - "Auto-generate Spring Data exception mappings"
+    - "Performance regression detection in error paths"
+    - "Security vulnerability scanner for error messages"
+    - "Automated retry policy generator"
+    - "Error budget tracking against SLOs"
+
+# EXECUTION INSTRUCTIONS
+INSTRUCTIONS: |
+  Analyze the provided PostgreSQL functions/procedures against this comprehensive checklist:
+  
+  ## 1. EXCEPTION HANDLING AUDIT
+  □ All functions have EXCEPTION blocks
+  □ SQLSTATE codes are explicitly handled
+  □ GET DIAGNOSTICS captures error context
+  □ Custom error messages follow format: "[ERROR_CODE] Context: {details}"
+  □ No sensitive data (passwords, keys, PII) in error messages
+  
+  ## 2. TRANSACTION SAFETY
+  □ SAVEPOINT usage for nested transactions
+  □ Explicit ROLLBACK in exception handlers
+  □ Resource cleanup (cursors, temp tables) in FINALLY equivalent
+  □ Connection state validation after errors
+  
+  ## 3. INPUT VALIDATION
+  □ NULL checks: COALESCE or explicit IS NULL
+  □ Type validation: pg_typeof() checks where needed
+  □ Range validation: CHECK constraints or explicit bounds
+  □ SQL injection prevention: quote_literal(), quote_ident()
+  □ Array bounds checking for array parameters
+  
+  ## 4. CONSTRAINT VIOLATIONS
+  □ UNIQUE violations return conflict details
+  □ FK violations identify parent/child relationship
+  □ CHECK violations explain business rule
+  □ NOT NULL violations suggest default values
+  
+  ## 5. DEADLOCK HANDLING
+  □ Retry logic with exponential backoff
+  □ Maximum retry count defined
+  □ Deadlock priority hints (if applicable)
+  □ Transaction isolation level appropriate
+  
+  ## 6. PERFORMANCE MONITORING
+  □ pg_stat_statements tracking enabled
+  □ Slow query logging for errors
+  □ EXPLAIN ANALYZE in catch blocks (dev mode)
+  □ Metrics emission for error rates
+  
+  ## 7. LOGGING STRATEGY
+  □ Structured JSON logging format
+  □ Correlation ID propagation
+  □ Error severity levels (DEBUG/INFO/WARN/ERROR/FATAL)
+  □ Stack trace equivalent for call hierarchy
+  □ Performance metrics in error logs
+  
+  ## 8. AWS RDS SPECIFIC
+  □ Connection limit handling
+  □ Read replica lag detection
+  □ Failover scenario handling
+  □ Parameter group compliance
+  
+  ## 9. SPRING BOOT INTEGRATION
+  □ Error codes map to Spring exceptions
+  □ Transaction boundary respect
+  □ Connection pool exhaustion handling
+  □ Prepared statement cache awareness
+  
+  ## 10. SECURITY CONSIDERATIONS
+  □ Error messages sanitized for user display
+  □ Audit log for security exceptions
+  □ Rate limiting on authentication errors
+  □ Timing attack prevention in error responses
+
+# CODE ANALYSIS TEMPLATE
+ANALYSIS_OUTPUT: |
+  For each function/procedure, provide:
+  
+  ### Function: [function_name]
+  
+  ####  Strengths
+  - [List what's done well]
+  
+  #### ⚠ Warnings
+  - [List potential issues]
+  
+  ####  Critical Issues
+  - [List must-fix problems]
+  
+  ####  Recommended Refactoring
+  ```sql
+  -- Provide specific code improvements
