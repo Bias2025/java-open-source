@@ -1,0 +1,174 @@
+PROMPT_TEMPLATE:
+  name: "AWS RDS PostgreSQL Schema Architect - Enterprise Grade"
+  version: "4.0.0"
+  compatibility: "PostgreSQL 14-16, AWS RDS/Aurora, Spring Boot 3.x"
+  forge_signature: "SPRING-FORGE-DB-ARCH-2024"
+CONTEXT:
+  domain: ${BUSINESS_DOMAIN}
+  aws_deployment:
+    service: [RDS_PostgreSQL/Aurora_PostgreSQL]
+    instance_class: ${INSTANCE_TYPE}  # db.r6g.xlarge minimum for production
+    storage_type: [gp3/io1/io2]
+    allocated_storage: ${GB}
+    max_allocated_storage: ${GB}  # Auto-scaling limit
+    multi_az: ${BOOLEAN}
+    read_replicas: 
+      count: ${NUMBER}
+      regions: [${REGIONS}]
+    parameter_group: ${CUSTOM_PG_NAME}
+    option_group: ${OPTIONS}
+  scale_metrics:
+    current_load: ${RPS}
+    peak_load: ${RPS}
+    data_volume: ${TB}
+    growth_rate: ${PERCENT_MONTHLY}
+    connection_pool_size: ${NUMBER}
+  compliance:
+    encryption_at_rest: [AWS_KMS_KEY_ID]
+    encryption_in_transit: [TLS_VERSION]
+    backup_retention: ${DAYS}
+    point_in_time_recovery: ${BOOLEAN}
+    standards: [${COMPLIANCE_LIST}]
+REQUIREMENTS:
+  functional:
+    entities:
+      - name: ${ENTITY_NAME}
+        estimated_rows: ${COUNT}
+        growth_pattern: [LINEAR/EXPONENTIAL/SEASONAL]
+        access_pattern: [OLTP/OLAP/HYBRID]
+        hot_data_percentage: ${PERCENT}
+    relationships:
+      - type: ${RELATIONSHIP_TYPE}
+        cardinality: ${RATIO}
+        join_frequency: ${PER_SECOND}
+  non_functional:
+    performance:
+      query_latency_p50: ${MS}
+      query_latency_p99: ${MS}
+      write_throughput: ${TPS}
+      read_throughput: ${QPS}
+      connection_limits: ${MAX_CONNECTIONS}
+    availability:
+      rto: ${MINUTES}  # Recovery Time Objective
+      rpo: ${MINUTES}  # Recovery Point Objective
+      uptime_sla: ${PERCENT}
+    rds_specific:
+      iops_provisioned: ${NUMBER}
+      throughput_mibps: ${NUMBER}
+      performance_insights: ${ENABLED}
+      enhanced_monitoring: ${INTERVAL_SECONDS}
+ARCHITECTURE:
+  schema_design:
+    pattern: [NORMALIZED/DENORMALIZED/HYBRID]
+    sharding_strategy: [NONE/HORIZONTAL/VERTICAL]
+    multi_tenant: [SHARED_SCHEMA/SEPARATE_SCHEMA/SEPARATE_DATABASE]
+  partitioning:
+    strategy: [RANGE/LIST/HASH/COMPOSITE]
+    partition_key: ${COLUMN}
+    partition_count: ${NUMBER}
+    maintenance_window: ${CRON}
+  indexing:
+    primary_keys: [SERIAL/UUID/COMPOSITE]
+    btree_indexes: [${COLUMNS}]
+    gin_indexes: [${JSONB_COLUMNS}]
+    gist_indexes: [${GEOMETRY_COLUMNS}]
+    brin_indexes: [${TIME_SERIES_COLUMNS}]
+    partial_indexes: [${FILTERED_COLUMNS}]
+    covering_indexes: [${INCLUDE_COLUMNS}]
+  caching:
+    query_cache: [PREPARED_STATEMENTS]
+    result_cache: [REDIS/ELASTICACHE]
+    connection_pool: [PGBOUNCER/RDS_PROXY]
+FRAMEWORK:
+  aws_rds:
+    postgresql_version: ${VERSION}  # 14.x, 15.x, 16.x
+    engine_mode: [PROVISIONED/SERVERLESS_V2]
+    extensions:
+      - uuid-ossp
+      - pg_stat_statements
+      - pgcrypto
+      - pg_trgm
+      - postgres_fdw
+      - aws_s3  # For S3 integration
+  spring_boot:
+    version: ${SPRING_VERSION}
+    data_jpa_version: ${JPA_VERSION}
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl_auto: validate  # Never auto in production
+      batch_size: ${BATCH_SIZE}
+      fetch_size: ${FETCH_SIZE}
+      order_inserts: true
+      order_updates: true
+    hikari:
+      maximum_pool_size: ${POOL_SIZE}
+      minimum_idle: ${MIN_IDLE}
+      connection_timeout: ${MS}
+      leak_detection_threshold: ${MS}
+  migration:
+    tool: Flyway
+    version: ${FLYWAY_VERSION}
+    baseline_on_migrate: false
+    out_of_order: false
+    validate_on_migrate: true
+TECHNOLOGY:
+  optimization:
+    query_optimization:
+      - cost_threshold: ${NUMBER}
+      - parallel_workers: ${NUMBER}
+      - work_mem: ${MB}
+      - effective_cache_size: ${GB}
+    vacuum_settings:
+      - autovacuum_vacuum_scale_factor: ${DECIMAL}
+      - autovacuum_analyze_scale_factor: ${DECIMAL}
+      - autovacuum_max_workers: ${NUMBER}
+    statistics:
+      - default_statistics_target: ${NUMBER}
+      - track_io_timing: on
+      - track_functions: all
+  monitoring:
+    aws_native:
+      - CloudWatch metrics
+      - Performance Insights
+      - Enhanced Monitoring
+      - CloudWatch Logs
+    custom:
+      - pg_stat_statements analysis
+      - slow_query_log parsing
+      - connection_pool metrics
+      - replication lag monitoring
+  security:
+    network:
+      - VPC isolation
+      - Security groups
+      - SSL/TLS enforcement
+    access:
+      - IAM authentication
+      - Secrets Manager rotation
+      - Row Level Security (RLS)
+      - Column encryption (pgcrypto)
+PERSONA:
+  team:
+    size: ${NUMBER}
+    expertise_distribution:
+      - senior_engineers: ${NUMBER}
+      - mid_level: ${NUMBER}
+      - junior: ${NUMBER}
+    aws_experience: [BEGINNER/INTERMEDIATE/EXPERT]
+    postgresql_experience: [YEARS]
+  existing_infrastructure:
+    current_database: ${CURRENT_DB}
+    migration_complexity: [LOW/MEDIUM/HIGH]
+    data_volume_to_migrate: ${GB}
+    downtime_tolerance: ${MINUTES}
+ORIGINALITY:
+  special_requirements:
+    - ${UNIQUE_FEATURE_1}  # e.g., "JSONB heavy workload"
+    - ${UNIQUE_FEATURE_2}  # e.g., "Time-series partitioning"
+    - ${UNIQUE_FEATURE_3}  # e.g., "Multi-region active-active"
+  innovation_areas:
+    - ${INNOVATION_1}  # e.g., "ML-driven index recommendations"
+    - ${INNOVATION_2}  # e.g., "Automated partition management"
+  constraints:
+    - ${CONSTRAINT_1}  # e.g., "Must maintain compatibility with legacy app"
+    - ${CONSTRAINT_2}  # e.g., "Zero-downtime migration required"
