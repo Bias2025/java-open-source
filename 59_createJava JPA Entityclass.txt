@@ -1,0 +1,108 @@
+# CRAFT-TPO ANALYSIS FOR JPA ENTITY GENERATION
+# Context-Requirements-Architecture-Framework-Technology-Testing-Persona-Originality
+
+CONTEXT:
+  purpose: "Generate production-ready JPA entity with enterprise patterns"
+  domain: "[BUSINESS_DOMAIN]"
+  database: "PostgreSQL [VERSION]"
+  scale_metrics:
+    expected_rows: "[VOLUME]"
+    read_write_ratio: "[RATIO]"
+    concurrent_users: "[NUMBER]"
+  compliance: "[GDPR/HIPAA/PCI-DSS/NONE]"
+  team_maturity: "[JUNIOR/MID/SENIOR]"
+
+REQUIREMENTS:
+  entity_specification:
+    name: "[ENTITY_NAME]"
+    table: "[TABLE_NAME]"
+    schema: "[SCHEMA_NAME]"
+    fields:
+      - name: "[FIELD_NAME]"
+        type: "[JAVA_TYPE]"
+        column: "[COLUMN_NAME]"
+        constraints: "[NOT_NULL/UNIQUE/CHECK]"
+        validation: "[SIZE/PATTERN/EMAIL/FUTURE]"
+    
+  relationships:
+    - type: "[ONE_TO_MANY/MANY_TO_ONE/MANY_TO_MANY/ONE_TO_ONE]"
+      target_entity: "[TARGET_ENTITY]"
+      join_strategy: "[JOIN_TABLE/JOIN_COLUMN]"
+      cascade: "[ALL/PERSIST/MERGE/REMOVE]"
+      fetch: "[LAZY/EAGER]"
+      orphan_removal: "[TRUE/FALSE]"
+    
+  performance_requirements:
+    index_strategy: "[BTREE/HASH/GIN/GIST]"
+    query_patterns: "[POINT_LOOKUP/RANGE_SCAN/FULL_TEXT]"
+    cache_strategy: "[L2_CACHE/QUERY_CACHE/NONE]"
+    batch_size: "[NUMBER]"
+
+ARCHITECTURE:
+  patterns:
+    - "Aggregate Root (DDD)"
+    - "Soft Delete Pattern"
+    - "Optimistic Locking"
+    - "Audit Trail"
+    - "Multi-tenancy: [SCHEMA/COLUMN/NONE]"
+  
+  postgresql_optimizations:
+    - "JSONB columns for semi-structured data"
+    - "Array types for collections"
+    - "UUID primary keys"
+    - "Partial indexes"
+    - "Generated columns"
+
+FRAMEWORK:
+  core_stack:
+    java: "[17/21]"
+    spring_boot: "[3.1.x/3.2.x]"
+    jpa_provider: "Hibernate [6.x]"
+  
+  dependencies:
+    - "spring-boot-starter-data-jpa"
+    - "postgresql driver"
+    - "lombok: [YES/NO]"
+    - "validation-api"
+    - "hibernate-envers: [YES/NO]"
+    - "jackson-annotations"
+  
+  additional_libraries:
+    - "MapStruct for DTO mapping"
+    - "Hibernate Types for PostgreSQL"
+    - "Spring Data JPA Specifications"
+
+TECHNOLOGY:
+  database_features:
+    - "PostgreSQL native types (UUID, JSONB, Arrays)"
+    - "Full-text search (tsvector/tsquery)"
+    - "Temporal tables"
+    - "Partitioning strategy"
+  
+  spring_data_features:
+    - "Custom repository methods"
+    - "Projections"
+    - "Specifications"
+    - "Auditing"
+
+TESTING:
+  strategies:
+    - "TestContainers with PostgreSQL"
+    - "@DataJpaTest slices"
+    - "Repository integration tests"
+    - "Constraint validation tests"
+  
+  coverage_targets:
+    unit: "95%"
+    integration: "85%"
+    mutation: "75%"
+
+PERSONA:
+  developer_context: "Enterprise Java architect with 15+ years experience"
+  code_style: "Clean, documented, production-ready"
+  best_practices: "SOLID, DDD, defensive programming"
+
+ORIGINALITY:
+  unique_requirements: "[SPECIFIC_BUSINESS_RULES]"
+  custom_validators: "[BUSINESS_VALIDATION_LOGIC]"
+  domain_events: "[EVENTS_TO_PUBLISH]"
