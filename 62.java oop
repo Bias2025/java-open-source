@@ -1,0 +1,121 @@
+// You are a world-class Java architect and OOP design expert with 25+ years of experience in enterprise-grade software development,
+// specializing in object-oriented programming principles, modern Java features, and production-ready design patterns.
+//
+// CONTEXT: Create comprehensive Java 17 application demonstrating all four core OOP principles (Abstraction, Encapsulation, Inheritance, Polymorphism)
+// for [PROJECT_NAME] working with [DOMAIN_NAME] domain entities focused on [BUSINESS_PURPOSE] using enterprise-grade design patterns
+//
+// REQUIREMENTS:
+// Functional: Complete implementation of Abstraction with abstract classes and interfaces, Comprehensive Encapsulation with proper data hiding and access control, Advanced Inheritance with class hierarchies and method overriding, Sophisticated Polymorphism with runtime method dispatch and interface implementations, Modern Java 17 features including records, sealed classes, pattern matching, and text blocks, Design pattern implementations (Factory, Strategy, Observer, Template Method), Generic programming with type safety and bounded wildcards, Exception handling with custom exception hierarchies, Collection framework usage with modern stream operations, Functional programming integration with lambda expressions and method references
+// Non-Functional: Enterprise-grade code quality with clean architecture principles, High performance with memory-efficient implementations, Thread-safe operations for concurrent environments, Comprehensive documentation with JavaDoc and architectural decisions, Maintainable code structure with SOLID principles adherence, Testable design with dependency injection and mocking support, Scalable architecture supporting future enhancements, Production-ready error handling and logging
+//
+// ARCHITECTURE: Layered architecture with proper separation of concerns, Domain-driven design with rich domain models, Dependency injection with inversion of control, Clean architecture with ports and adapters pattern, SOLID principles implementation throughout codebase, Design patterns applied appropriately for each scenario, Modular design with package-by-feature organization, Service-oriented architecture with well-defined boundaries
+//
+// TESTING: Comprehensive unit testing with JUnit 5, Integration testing with TestContainers, Mock testing with Mockito, Property-based testing with QuickTheories, Behavior-driven development with Cucumber, Test-driven development practices, Code coverage analysis with JaCoCo, Mutation testing with PiTest, Performance testing with JMH benchmarks
+//
+// CONSTRAINTS:
+// Quality: Minimum 95% code coverage with meaningful tests, Clean code principles with proper naming and structure, SOLID principles adherence throughout the application, Comprehensive JavaDoc documentation with examples, SonarQube quality gates compliance, Design pattern usage with proper implementation, Thread-safety considerations for concurrent access
+// Performance: Memory-efficient object creation and management, CPU optimization with efficient algorithms, Garbage collection friendly code with object pooling, Stream operations optimization for large collections, Caching strategies for frequently accessed data, Database access optimization with connection pooling
+// Security: Input validation with proper sanitization, Access control with role-based permissions, Secure coding practices with vulnerability prevention, Data encryption for sensitive information, Audit logging for security events, Exception handling without information leakage
+//
+// FRAMEWORKS: Java 17, JUnit 5, Mockito, AssertJ, Jackson, SLF4J with Logback, Maven/Gradle build tools, Spring Framework (optional), Hibernate (optional)
+//
+// ORIGINALITY REQUIREMENTS:
+// - Create COMPREHENSIVE OOP implementation specific to [DOMAIN_NAME] business domain and [PROJECT_NAME] requirements
+// - Generate SOPHISTICATED class hierarchies demonstrating real-world [BUSINESS_PURPOSE] inheritance scenarios
+// - Implement ADVANCED abstraction layers specific to [DOMAIN_NAME] operations and business workflows
+// - Design ENTERPRISE-GRADE encapsulation patterns for [PROJECT_NAME] data protection and security requirements
+// - Create COMPLEX polymorphism examples showcasing [BUSINESS_PURPOSE] runtime behavior and dynamic dispatch
+// - Generate MODERN Java 17 feature usage including sealed classes, records, and pattern matching for [DOMAIN_NAME]
+// - Implement PRODUCTION-READY design patterns tailored to [PROJECT_NAME] architectural requirements
+// - Create COMPREHENSIVE exception handling specific to [DOMAIN_NAME] business rules and error scenarios
+// - Design ADVANCED generic programming examples for [PROJECT_NAME] type safety and reusability
+// - Generate DETAILED documentation explaining OOP principles application in [BUSINESS_PURPOSE] context
+//
+// Generate comprehensive Java 17 OOP implementation that:
+// - Creates COMPLETE demonstration of all four OOP principles with real-world [DOMAIN_NAME] examples
+// - Implements SOPHISTICATED abstraction using abstract classes and interfaces for [PROJECT_NAME] operations
+// - Develops COMPREHENSIVE encapsulation with proper access modifiers and data hiding for [BUSINESS_PURPOSE]
+// - Generates ADVANCED inheritance hierarchies showcasing method overriding and polymorphic behavior
+// - Creates COMPLEX polymorphism examples with interface implementations and runtime method dispatch
+// - Implements MODERN Java 17 features including records, sealed classes, and pattern matching
+// - Develops ENTERPRISE-GRADE design patterns appropriate for [DOMAIN_NAME] business requirements
+// - Generates PRODUCTION-READY code with comprehensive error handling and logging
+// - Creates DETAILED testing suite demonstrating OOP principle validation and behavior verification
+// - Implements MAINTAINABLE architecture with clear separation of concerns and modularity
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE JAVA 17 OOP PRINCIPLES IMPLEMENTATION
+ * This enterprise-grade prompt generates COMPLETE, production-ready OOP demonstration with:
+ * 
+ * COMPREHENSIVE ABSTRACTION IMPLEMENTATION:
+ * - Abstract classes with template methods and common behavior definition
+ * - Interface hierarchies with default and static methods for contract definition
+ * - Functional interfaces with lambda expressions and method references
+ * - Generic abstractions with bounded type parameters and wildcards
+ * - Service abstractions with dependency injection and inversion of control
+ * - Data access abstractions with repository and specification patterns
+ * - Business process abstractions with strategy and command patterns
+ * - API abstractions with facade and adapter patterns for external integration
+ * 
+ * ADVANCED ENCAPSULATION PATTERNS:
+ * - Private fields with controlled access through getter/setter methods
+ * - Immutable objects with defensive copying and builder patterns
+ * - Package-private access for internal API design and module boundaries
+ * - Data validation with encapsulated business rules and constraints
+ * - State management with encapsulated lifecycle and transition logic
+ * - Security encapsulation with role-based access control and permissions
+ * - Configuration encapsulation with environment-specific property management
+ * - Error handling encapsulation with custom exception hierarchies
+ * 
+ * SOPHISTICATED INHERITANCE HIERARCHIES:
+ * - Class inheritance with proper method overriding and super calls
+ * - Interface inheritance with multiple inheritance and diamond problem resolution
+ * - Abstract class hierarchies with template method pattern implementation
+ * - Composition over inheritance with delegation and wrapper patterns
+ * - Mixin patterns using interface default methods for behavior composition
+ * - Sealed classes for controlled inheritance hierarchies and pattern matching
+ * - Generic inheritance with covariance and contravariance examples
+ * - Annotation inheritance with custom annotations and meta-annotations
+ * 
+ * COMPLEX POLYMORPHISM DEMONSTRATIONS:
+ * - Method overloading with different parameter types and counts
+ * - Method overriding with runtime method dispatch and virtual method calls
+ * - Interface polymorphism with multiple implementations and strategy patterns
+ * - Generic polymorphism with type erasure and bridge methods
+ * - Parametric polymorphism with bounded wildcards and type constraints
+ * - Ad-hoc polymorphism with operator overloading simulation
+ * - Subtype polymorphism with Liskov substitution principle adherence
+ * - Dynamic polymorphism with reflection and proxy patterns
+ * 
+ * MODERN JAVA 17 FEATURES:
+ * - Records for immutable data classes with automatic methods generation
+ * - Sealed classes for controlled class hierarchies and exhaustive pattern matching
+ * - Pattern matching with instanceof and switch expressions
+ * - Text blocks for readable multi-line string literals
+ * - Local variable type inference with var keyword usage
+ * - Enhanced switch expressions with yield statements
+ * - Stream API enhancements with new collectors and operations
+ * - Optional enhancements with new methods and chaining operations
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (InventorySystem, BankingPlatform, HealthcarePortal, etc.)
+ * - [DOMAIN_NAME] → Your business domain (inventory, banking, healthcare, ecommerce, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (inventory management, financial services, patient care, etc.)
+ * - [ENTITY_NAME] → Your core entity (Product, Account, Patient, Order, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, FinanceInc, HealthTech, etc.)
+ * - [MODULE_NAME] → Your module name (core, domain, service, repository, etc.)
+ * - [PACKAGE_NAME] → Your package name (com.company.project, org.enterprise.system, etc.)
+ * 
+ * OOP IMPLEMENTATION CUSTOMIZATIONS:
+ * - Define your specific domain entities and their relationships
+ * - Specify your business rules and validation requirements
+ * - Configure your inheritance hierarchies and polymorphic behaviors
+ * - Set up your abstraction layers and interface contracts
+ * - Define your encapsulation boundaries and access control policies
+ * - Configure your design pattern implementations and architectural decisions
+ * - Specify your testing requirements and validation strategies
+ * - Define your documentation standards and code quality metrics
+ * 
+ * The more specific your [DOMAIN_NAME] and [BUSINESS_PURPOSE] context, the more tailored and realistic the OOP implementation will be!
+ */
+
