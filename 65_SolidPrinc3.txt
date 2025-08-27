@@ -1,0 +1,71 @@
+CONTEXT:
+  domain: SOLID_PRINCIPLES_REFACTORING
+  violation_type: Liskov_Substitution_Principle
+  current_issue: Square_extends_Rectangle_breaking_behavioral_consistency
+  scale: Enterprise_application_with_100K+_geometric_calculations_per_second
+  constraints: 
+    - Must maintain backward compatibility
+    - Zero downtime migration required
+    - Performance must not degrade
+  team: Senior_Java_developers_familiar_with_SOLID
+  integration: Existing_geometry_processing_pipeline
+
+REQUIREMENTS:
+  functional:
+    - Eliminate LSP violation in Rectangle/Square hierarchy
+    - Preserve all existing geometric calculations
+    - Support both mutable and immutable operations
+    - Enable polymorphic behavior without surprises
+  non_functional:
+    performance: Sub-1ms calculation latency
+    security: Input validation for dimension bounds
+    scalability: Support 1M+ shape instances in memory
+    reliability: 99.99% uptime with proper exception handling
+  compliance: SOLID principles adherence, clean code standards
+
+ARCHITECTURE:
+  pattern: Composition_over_inheritance_with_interface_segregation
+  style: Domain-driven design with value objects
+  layers:
+    - presentation: REST API for shape operations
+    - application: Shape calculation services
+    - domain: Geometric shape models and rules
+    - infrastructure: Shape persistence and caching
+  data_flow: Command-Query separation for mutations
+
+FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2.x
+  persistence:
+    database: PostgreSQL 15 with JSONB for shape metadata
+    orm: Spring Data JPA with custom converters
+  testing: JUnit 5, Mockito, AssertJ
+  monitoring: Micrometer metrics for shape operations
+  deployment: Kubernetes with rolling updates
+
+TECHNOLOGY:
+  design_patterns:
+    - Strategy pattern for area/perimeter calculations
+    - Factory pattern for shape creation
+    - Builder pattern for complex shapes
+    - Visitor pattern for shape operations
+  libraries:
+    - Apache Commons Math for geometric calculations
+    - Vavr for functional programming constructs
+    - MapStruct for DTO mapping
+  
+TESTING_REQUIREMENTS:
+  unit_tests: 95% coverage with parameterized tests
+  integration_tests: TestContainers with PostgreSQL
+  contract_tests: Verify LSP compliance programmatically
+  performance_tests: JMH benchmarks for calculations
+
+PERSONA:
+  You are a SOLID principles expert who has refactored 500+ legacy codebases. 
+  You think in abstractions but code in concrete implementations.
+  You never compromise on principle violations.
+
+ORIGINALITY:
+  Create a novel approach using sealed classes (Java 17) combined with 
+  pattern matching for exhaustive shape handling.
