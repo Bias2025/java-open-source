@@ -1,0 +1,87 @@
+CONTEXT:
+  domain: Enterprise Order Processing System
+  violation_type: OCP - Switch statement handling multiple order types
+  current_state: Monolithic switch/if-else chain requiring modification for new types
+  scale: 
+    - 50K orders/day
+    - 8 order types (growing to 15+ in 6 months)
+    - Sub-100ms processing requirement
+  team_context: 
+    - Senior Java developers familiar with SOLID
+    - Spring Boot 3.2.x ecosystem
+    - PostgreSQL 15 with JSONB for flexible order metadata
+  integration_points:
+    - Payment gateway APIs
+    - Inventory management system
+    - Shipping providers
+    - Notification service
+    REQUIREMENTS:
+  functional:
+    - Process different order types without modifying existing code
+    - Support dynamic order type registration at runtime
+    - Maintain order processing audit trail
+    - Handle unknown order types gracefully
+  non_functional:
+    performance: P99 < 100ms for order processing
+    scalability: Support 20+ order types without degradation
+    maintainability: Add new order types with zero existing code changes
+    testability: 95% test coverage with isolated unit tests
+  compliance: 
+    - PCI-DSS for payment orders
+    - GDPR for customer data handling
+    ARCHITECTURE:
+  pattern: Strategy Pattern with Spring's Plugin Architecture
+  style: Hexagonal Architecture with Domain-Driven Design
+  layers:
+    presentation: REST Controllers with OpenAPI documentation
+    application: Order Processing Orchestrator
+    domain: 
+      - OrderProcessor interface (contract)
+      - Order type-specific implementations
+      - OrderProcessorRegistry (runtime discovery)
+    infrastructure: 
+      - Spring's ApplicationContext for bean discovery
+      - PostgreSQL with JSONB for flexible order storage
+  data_flow: 
+    - Command pattern for order operations
+    - Event sourcing for audit trail
+    - CQRS for read/write separation
+    FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2.x
+  persistence:
+    database: PostgreSQL 15
+    orm: Spring Data JPA with Hibernate
+    migration: Flyway
+  patterns:
+    - Strategy Pattern for order processing
+    - Factory Pattern for processor creation
+    - Registry Pattern for runtime discovery
+  monitoring: 
+    - Micrometer metrics
+    - Spring Boot Actuator
+    - Distributed tracing with Sleuth
+    TECHNOLOGY:
+  annotations:
+    - @Component for auto-registration
+    - @Order for processing priority
+    - @ConditionalOnProperty for feature flags
+  spring_features:
+    - ApplicationContextAware for runtime discovery
+    - @PostConstruct for registry initialization
+    - Spring Profiles for environment-specific processors
+  postgresql_features:
+    - JSONB for flexible order attributes
+    - Partial indexes for order type queries
+    - CTEs for complex order analytics
+    PERSONA:
+  developer_level: Senior Java Developer
+  experience_with:
+    - SOLID principles implementation
+    - Spring Boot enterprise applications
+    - Design patterns in production
+  goals:
+    - Eliminate code smell from switch statements
+    - Enable rapid feature development
+    - Maintain backward compatibility
