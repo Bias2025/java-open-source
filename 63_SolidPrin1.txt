@@ -1,0 +1,48 @@
+CONTEXT:
+  domain: Enterprise Java Development
+  focus: SOLID Principles Refactoring
+  primary_violation: Single Responsibility Principle (SRP)
+  target_class: ReportGenerator
+  complexity: Multiple responsibilities conflated
+  team_context: Senior developers requiring production-grade refactoring
+  integration: Spring Boot ecosystem with potential AOP requirements
+  REQUIREMENTS:
+  functional:
+    - Identify ALL SOLID principle violations in provided code
+    - Refactor to strict SOLID adherence
+    - Maintain backward compatibility
+    - Preserve all business functionality
+  non_functional:
+    performance: No degradation from original
+    maintainability: Significant improvement via separation of concerns
+    testability: Each class independently testable
+    extensibility: Easy addition of new report formats/data sources
+  compliance: Clean Code, SOLID, DRY, KISS principles
+  ARCHITECTURE:
+  pattern: Strategy + Template Method + Repository
+  style: Domain-Driven Design with clear boundaries
+  layers:
+    - presentation: Report delivery mechanism
+    - application: Report orchestration
+    - domain: Report business rules
+    - infrastructure: Data fetching, formatting, persistence
+  separation_strategy:
+    - Extract data fetching → Repository pattern
+    - Extract formatting → Strategy pattern
+    - Extract report generation → Template method
+    - Extract cross-cutting concerns → AOP
+    FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.x
+  patterns:
+    dependency_injection: Constructor injection only
+    configuration: @Configuration classes
+    aspects: Spring AOP for cross-cutting
+  testing:
+    unit: JUnit 5 + Mockito
+    integration: @SpringBootTest
+  quality:
+    coverage: 90%+ per class
+    complexity: Cyclomatic < 5 per method
+    
