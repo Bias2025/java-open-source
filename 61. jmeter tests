@@ -1,0 +1,115 @@
+# Apache JMeter Performance Test as Code Generation Prompt - CRAFT Format
+
+```java
+// You are a world-class performance testing architect and JMeter expert with 20+ years of experience in enterprise-grade load testing,
+// specializing in JMeter Java DSL, performance test automation, and production-scale performance validation frameworks.
+//
+// CONTEXT: Generate comprehensive Apache JMeter performance tests as code using JMeter Java DSL for [PROJECT_NAME] application
+// testing [ENTITY_NAME] operations in [DOMAIN_NAME] domain for [BUSINESS_PURPOSE] performance validation and scalability testing
+//
+// REQUIREMENTS:
+// Functional: Complete JMeter test plan with 10 concurrent users, 30-second ramp-up period for 60-second duration, HTTP request samplers for CRUD operations, Response assertions for 200 OK status code validation, JTL result writer for comprehensive test result logging, Parameterized environment configuration for flexible deployment testing, Thread group configuration with realistic user simulation, Timer implementation for realistic user behavior, Pre-processors for dynamic data generation, Post-processors for response data extraction, Listeners for real-time monitoring and reporting, CSV data configuration for data-driven testing
+// Non-Functional: High-performance test execution with minimal overhead, Scalable test architecture supporting distributed testing, Comprehensive reporting with detailed performance metrics, Memory-efficient test execution for large-scale testing, Real-time monitoring with live performance dashboards, CI/CD integration with automated test execution, Environment-specific configuration management, Thread-safe test execution with proper resource management, Extensible test framework for additional test scenarios
+//
+// ARCHITECTURE: Modular test design with reusable components, Page Object Model adaptation for API testing, Factory pattern for test element creation, Builder pattern for complex test configuration, Strategy pattern for different load testing scenarios, Template method pattern for common test workflows, Configuration management with environment abstraction, Test data management with external data sources
+//
+// TESTING: Performance baseline establishment with response time benchmarks, Load testing with realistic user concurrency, Stress testing with breaking point identification, Spike testing with sudden load increase scenarios, Volume testing with large data set processing, Endurance testing with extended duration runs, Scalability testing with incremental load increases, Regression testing with performance comparison, Database performance impact assessment under load
+//
+// CONSTRAINTS:
+// Quality: Accurate performance measurement with statistical validity, Consistent test execution across different environments, Comprehensive test coverage for all critical user journeys, Clean and maintainable test code with proper documentation, Reliable test results with minimal variance between runs, Proper error handling and test recovery mechanisms, Version control compatibility with team collaboration
+// Performance: Test execution overhead <5% of system resources, Memory usage optimization for large-scale testing, CPU utilization efficiency during test execution, Network bandwidth optimization for distributed testing, Database connection management for concurrent testing, File I/O optimization for result logging, Thread synchronization for accurate timing measurements
+// Security: Secure credential management in test configuration, Test data privacy with sensitive information protection, Network security compliance during distributed testing, Authentication token management with proper lifecycle, SSL/TLS configuration for secure protocol testing, Access control for test execution and results, Audit trail for test execution and modifications
+//
+// FRAMEWORKS: JMeter Java DSL 1.x, Apache JMeter 5.x, Maven/Gradle for build management, JUnit 5 for test framework integration, TestNG for advanced test configuration, Jenkins for CI/CD integration, Docker for containerized test execution
+//
+// ORIGINALITY REQUIREMENTS:
+// - Create COMPREHENSIVE JMeter test plan specific to [PROJECT_NAME] and [ENTITY_NAME] performance requirements
+// - Generate REALISTIC load testing scenarios tailored to [DOMAIN_NAME] business workflows and [BUSINESS_PURPOSE] usage patterns
+// - Implement SOPHISTICATED user simulation patterns for [PROJECT_NAME] typical user behavior and interaction flows
+// - Design ADVANCED parameterization strategies for [ENVIRONMENT]-specific testing with dynamic configuration management
+// - Create ENTERPRISE-GRADE reporting and monitoring for [BUSINESS_PURPOSE] performance metrics and KPIs
+// - Generate PRODUCTION-READY test data management for [DOMAIN_NAME] realistic data scenarios and edge cases
+// - Implement COMPREHENSIVE assertion strategies for [ENTITY_NAME] response validation and business rule verification
+// - Create SOPHISTICATED distributed testing configuration for [PROJECT_NAME] scalability and high-availability testing
+// - Design ADVANCED CI/CD integration for [PROJECT_NAME] automated performance regression testing
+// - Generate DETAILED documentation with [DOMAIN_NAME] performance testing best practices and troubleshooting guides
+//
+// Generate comprehensive JMeter Java DSL performance test implementation that:
+// - Creates COMPLETE test plan with 10 users, 30-second ramp-up, 60-second duration configuration
+// - Implements COMPREHENSIVE HTTP request samplers for all [ENTITY_NAME] CRUD operations with proper headers and authentication
+// - Develops ADVANCED response assertions for 200 OK status validation and custom business rule verification
+// - Generates PRODUCTION-READY JTL writer configuration with detailed logging and custom metrics collection
+// - Creates SOPHISTICATED environment parameterization for flexible [PROJECT_NAME] deployment testing
+// - Implements ENTERPRISE-GRADE thread group management with realistic user behavior simulation
+// - Develops COMPREHENSIVE test data management with CSV data sources and dynamic data generation
+// - Generates ADVANCED monitoring and reporting with real-time performance dashboards and alerting
+// - Creates COMPLETE CI/CD integration with automated test execution and performance regression detection
+// - Implements DETAILED documentation with usage examples and [DOMAIN_NAME] performance testing guidelines
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE JMETER JAVA DSL TEST GENERATION
+ * This enterprise-grade prompt generates COMPLETE, production-ready performance testing solution with:
+ * 
+ * COMPREHENSIVE TEST PLAN STRUCTURE:
+ * - Complete thread group configuration with 10 users, 30s ramp-up, 60s duration
+ * - Advanced HTTP request samplers for all CRUD operations with proper configuration
+ * - Sophisticated response assertions for status codes and business rule validation
+ * - Production-ready JTL writer with custom metrics and detailed logging
+ * - Environment parameterization with flexible configuration management
+ * - Timer implementation for realistic user behavior simulation
+ * - Pre/post processors for dynamic data handling and response extraction
+ * - Listeners for real-time monitoring and comprehensive reporting
+ * 
+ * ADVANCED PERFORMANCE TESTING PATTERNS:
+ * - Realistic user simulation with think times and behavior patterns
+ * - Data-driven testing with CSV data sources and dynamic parameters
+ * - Correlation handling for session management and dynamic values
+ * - Error handling with retry mechanisms and graceful degradation
+ * - Resource management with connection pooling and cleanup
+ * - Memory optimization for large-scale and long-duration testing
+ * - Thread synchronization for accurate performance measurement
+ * - Distributed testing configuration for high-load scenarios
+ * 
+ * ENTERPRISE MONITORING AND REPORTING:
+ * - Real-time performance dashboards with key metrics visualization
+ * - Custom listeners for business-specific performance indicators
+ * - Automated alerting for performance threshold violations
+ * - Comprehensive result analysis with statistical reporting
+ * - Performance trend analysis with historical data comparison
+ * - Bottleneck identification with detailed resource utilization metrics
+ * - SLA compliance monitoring with automated pass/fail criteria
+ * - Integration with APM tools for end-to-end performance visibility
+ * 
+ * PRODUCTION-READY INFRASTRUCTURE:
+ * - Maven/Gradle integration for build and dependency management
+ * - CI/CD pipeline integration with Jenkins, GitLab, or GitHub Actions
+ * - Docker containerization for consistent test execution environments
+ * - Environment-specific configuration with property file management
+ * - Test data management with external data sources and generators
+ * - Result storage integration with databases and file systems
+ * - Distributed testing support with multiple load generators
+ * - Security configuration with credential management and encryption
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (ECommerceAPI, HealthcarePortal, BankingSystem, etc.)
+ * - [ENTITY_NAME] → Your core entity (Product, Patient, Account, Order, etc.)
+ * - [DOMAIN_NAME] → Your business domain (ecommerce, healthcare, finance, logistics, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (online shopping, patient care, financial transactions, etc.)
+ * - [ENVIRONMENT] → Your target environment (dev, staging, prod, load-test, etc.)
+ * - [API_BASE_URL] → Your API base URL (https://api.company.com, localhost:8080, etc.)
+ * - [API_VERSION] → Your API version (v1, v2, 2023-01, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, HealthTech, FinanceInc, etc.)
+ * 
+ * JMETER PERFORMANCE TEST CUSTOMIZATIONS:
+ * - Define your specific performance requirements and SLA thresholds
+ * - Specify your load testing scenarios and user behavior patterns
+ * - Configure your test data requirements and generation strategies
+ * - Set up your monitoring and alerting preferences
+ * - Define your CI/CD integration requirements and automation triggers
+ * - Configure your distributed testing setup and resource allocation
+ * - Specify your reporting and analysis requirements
+ * - Define your security and compliance requirements for testing
+ * 
+ * The more specific your [DOMAIN_NAME] and [BUSINESS_PURPOSE] context, the more tailored and effective the performance testing will be!
+ */
+
