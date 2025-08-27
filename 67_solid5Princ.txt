@@ -1,0 +1,91 @@
+CRAFT-DIP-ANALYSIS:
+ pattern: "Dependency Inversion Principle Violation Resolution"
+  debug_capability: "LINE_BY_LINE_ANALYSIS"
+  migration_tool: "Flyway-9.22.0"
+  CONTEXT:
+  violation_type: "CONCRETE_DEPENDENCY"
+  current_state:
+    class: "PaymentService"
+    depends_on: "StripeApi (concrete implementation)"
+    coupling: "TIGHT"
+    testability: "POOR"
+    extensibility: "LOCKED"
+  
+  business_impact:
+    vendor_lock: "HIGH"
+    test_complexity: "EXTREME"
+    maintenance_cost: "$45K/year"
+    
+  technical_debt:
+    code_smell: "Inappropriate Intimacy"
+    solid_violations: ["DIP", "OCP"]
+    test_coverage: "12% (blocked by concrete deps)"
+    REQUIREMENTS:
+  functional:
+    - "Decouple PaymentService from StripeApi concrete class"
+    - "Enable runtime payment gateway switching"
+    - "Support multiple payment providers simultaneously"
+    - "Maintain backward compatibility during migration"
+    
+  non_functional:
+    performance: "Zero latency increase post-refactor"
+    testing: "Achieve 95% test coverage"
+    deployment: "Zero-downtime migration via Flyway"
+    monitoring: "Track gateway performance per provider"
+    
+  compliance:
+    - "PCI-DSS Level 1 maintained"
+    - "GDPR payment data handling"
+    - "SOC2 Type II audit trail"
+    ARCHITECTURE:
+  pattern: "HEXAGONAL_WITH_PORTS_ADAPTERS"
+  
+  abstraction_layer:
+    interface: "PaymentGateway"
+    location: "domain.ports.outbound"
+    methods:
+      - "processPayment(PaymentRequest): PaymentResult"
+      - "refundPayment(RefundRequest): RefundResult"
+      - "getTransactionStatus(String): TransactionStatus"
+      - "validateCredentials(): ValidationResult"
+  
+  implementation_strategy:
+    adapters:
+      - "StripePaymentAdapter implements PaymentGateway"
+      - "PayPalPaymentAdapter implements PaymentGateway"
+      - "SquarePaymentAdapter implements PaymentGateway"
+    
+  dependency_flow:
+    before: "PaymentService -> StripeApi"
+    after: "PaymentService -> PaymentGateway <- StripePaymentAdapter -> StripeApi"
+    FRAMEWORK:
+  core:
+    java: "17"
+    spring_boot: "3.2.0"
+    
+  dependency_injection:
+    strategy: "CONSTRUCTOR_INJECTION"
+    annotations: ["@Component", "@Qualifier", "@Primary"]
+    
+  migration:
+    tool: "Flyway 9.22.0"
+    strategy: "PARALLEL_RUN_DEPRECATION"
+    
+  testing:
+    unit: "JUnit 5 + Mockito"
+    integration: "TestContainers + WireMock"
+    contract: "Spring Cloud Contract"
+    TECHNOLOGY:
+  monitoring:
+    - "Micrometer metrics per gateway"
+    - "Distributed tracing with Sleuth"
+    - "Custom health indicators per provider"
+    
+  resilience:
+    circuit_breaker: "Resilience4j"
+    retry_policy: "Exponential backoff with jitter"
+    fallback: "Secondary gateway auto-switch"
+    
+  configuration:
+    management: "Spring Cloud Config"
+    feature_flags: "LaunchDarkly integration"
