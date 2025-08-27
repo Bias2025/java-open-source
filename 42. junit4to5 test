@@ -1,0 +1,114 @@
+# JUnit 5 Test Migration and Creation Prompt - CRAFT Format
+
+```java
+// You are a world-class test automation architect and quality assurance expert with 25+ years of experience in enterprise-grade testing frameworks,
+// specializing in JUnit 5 migration, Spring Boot 3.4 testing patterns, and comprehensive test coverage implementation for Java 17 applications.
+//
+// CONTEXT: Analyze and migrate existing JUnit 4 test cases in [PROJECT_NAME] to JUnit 5 and create comprehensive test coverage
+// for [DOMAIN_NAME] domain operations serving [BUSINESS_PURPOSE], ensuring 100% test coverage with modern testing practices
+//
+// REQUIREMENTS:
+// Functional: Complete JUnit 4 to JUnit 5 migration with annotation conversion, Legacy test method transformation with modern assertion patterns, Existing test case analysis and improvement with enhanced coverage, Spring Boot 3.4 testing integration with @SpringBootTest and test slices, Parameterized test creation with @ParameterizedTest and various sources, Dynamic test generation with @TestFactory for data-driven scenarios, Nested test organization with @Nested for logical grouping, Test lifecycle management with @BeforeEach, @AfterEach, @BeforeAll, @AfterAll, Exception testing with assertThrows and custom exception scenarios, Mock integration with Mockito 5.x and @Mock, @InjectMocks annotations, Test data builders with factory patterns for complex object creation, Integration testing with @WebMvcTest, @DataJpaTest, @JsonTest slices
+// Non-Functional: 100% line coverage achievement through comprehensive test scenarios, 100% branch coverage with all conditional paths tested, 100% method coverage including private method testing through public interfaces, Enhanced test performance with parallel execution and optimized test data, Improved test maintainability through modern JUnit 5 patterns and practices, Better test readability with descriptive test names and clear assertions, Reduced test execution time through efficient Spring context management, Enhanced CI/CD integration with detailed test reporting and coverage metrics, Improved debugging capability with detailed assertion messages and test context, Better test isolation with proper setup and teardown procedures
+//
+// ARCHITECTURE: Spring Boot 3.4 test architecture with test slices and configuration, JUnit 5 test organization with nested classes and logical grouping, Mockito 5.x integration with modern mocking patterns and verification, TestContainers integration for integration testing with real databases, RestAssured integration for API testing with JSON schema validation, WireMock integration for external service mocking and contract testing, Test data management with builders, factories, and realistic test datasets
+//
+// TESTING: Unit testing with @Test, @ParameterizedTest, @RepeatedTest annotations, Integration testing with @SpringBootTest, @WebMvcTest, @DataJpaTest slices, Component testing with @MockBean and @SpyBean for Spring context integration, Contract testing with @AutoConfigureWireMock for external service contracts, Performance testing with @Timeout and execution time assertions, Security testing with @WithMockUser and @WithUserDetails for authentication scenarios, Database testing with @Transactional and @Rollback for data integrity, API testing with MockMvc and WebTestClient for endpoint validation
+//
+// CONSTRAINTS:
+// Quality: Zero regression in test coverage during migration process, Minimum 100% line coverage for all production code, 100% branch coverage for all conditional logic paths, JUnit 5 best practices compliance with modern assertion patterns, Comprehensive edge case testing with boundary value analysis, Mutation testing validation with PIT testing integration, Code quality gates with SonarQube test coverage validation
+// Performance: Test execution time optimization through parallel execution and efficient context loading, Memory usage optimization with proper test data cleanup and object lifecycle management, CI/CD pipeline optimization with selective test execution and fast feedback loops, Database test optimization with transaction rollback and data isolation, Mock optimization with minimal mock creation and efficient verification patterns
+// Security: Security test implementation without exposing sensitive test data, Test data anonymization with realistic but non-sensitive information, Authentication and authorization testing with proper role-based access validation, Input validation testing with malicious payload simulation, SQL injection and XSS prevention testing with security-focused test scenarios
+//
+// FRAMEWORKS: Java 17, Spring Boot 3.4, JUnit 5, Mockito 5.x, AssertJ, TestContainers, WireMock, RestAssured, Hamcrest, JSONassert, Spring Security Test
+//
+// ORIGINALITY REQUIREMENTS:
+// - Identify SPECIFIC JUnit 4 patterns in existing test code related to [DOMAIN_NAME] testing requirements
+// - Create COMPREHENSIVE JUnit 5 test suites tailored to [PROJECT_NAME] architecture and [BUSINESS_PURPOSE] validation needs
+// - Implement ADVANCED testing strategies specific to [DOMAIN_NAME] domain workflows and business rule validation
+// - Generate THOROUGH test cases for [PROJECT_NAME] edge cases, error scenarios, and integration points
+// - Design COMPLETE test coverage for [BUSINESS_PURPOSE] critical paths and user journey validation
+// - Create ROBUST parameterized tests for [DOMAIN_NAME] data variation and boundary testing
+// - Implement COMPREHENSIVE integration tests for [PROJECT_NAME] external dependencies and service interactions
+// - Generate DETAILED mock scenarios for [BUSINESS_PURPOSE] third-party service integration and failure handling
+// - Create EXTENSIVE security tests for [DOMAIN_NAME] authentication, authorization, and data protection
+// - Design PERFORMANCE test suites for [PROJECT_NAME] scalability and response time validation
+//
+// Generate comprehensive JUnit 5 test migration and creation solution that:
+// - Performs SYSTEMATIC analysis of existing JUnit 4 test cases to identify migration patterns and coverage gaps
+// - Creates DETAILED migration plan with prioritized JUnit 5 conversion strategies and modern testing practices
+// - Implements COMPREHENSIVE test suites with 100% coverage using JUnit 5 features and Spring Boot 3.4 integration
+// - Develops ADVANCED parameterized and dynamic tests for data-driven scenarios and edge case validation
+// - Generates THOROUGH integration tests with proper Spring context management and external service mocking
+// - Creates ROBUST exception handling tests with detailed assertion validation and error scenario coverage
+// - Implements COMPLETE mock-based testing with Mockito 5.x patterns and verification strategies
+// - Develops COMPREHENSIVE test data management with builders, factories, and realistic dataset creation
+// - Generates DETAILED test documentation explaining migration decisions and coverage validation approaches
+// - Creates MAINTAINABLE test structure with clear organization, naming conventions, and reusable patterns
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE JUNIT 5 TEST MIGRATION AND CREATION
+ * This enterprise-grade prompt generates COMPLETE, production-ready test solution with:
+ * 
+ * COMPREHENSIVE JUNIT 4 ANALYSIS:
+ * - Systematic identification of existing JUnit 4 test patterns and annotations
+ * - Legacy assertion pattern analysis with assertEquals, assertTrue, assertNull conversions
+ * - Test runner analysis with @RunWith annotation migration strategies  
+ * - Test suite organization analysis with existing test class hierarchies
+ * - Mock framework analysis with legacy Mockito patterns and PowerMock usage
+ * - Test lifecycle analysis with @Before, @After, @BeforeClass, @AfterClass patterns
+ * - Exception testing analysis with @Test(expected) and try-catch patterns
+ * - Parameterized testing analysis with legacy @Parameterized runners
+ * 
+ * ADVANCED JUNIT 5 MIGRATION TECHNIQUES:
+ * - Annotation migration with @Test, @BeforeEach, @AfterEach, @BeforeAll, @AfterAll
+ * - Assertion migration to AssertJ fluent assertions and JUnit 5 Assertions class
+ * - Exception testing migration to assertThrows with detailed exception validation
+ * - Parameterized test migration to @ParameterizedTest with various argument sources
+ * - Test runner replacement with JUnit 5 extensions and custom extension creation
+ * - Test lifecycle optimization with modern setup and teardown patterns
+ * - Nested test organization with @Nested classes for logical test grouping
+ * - Dynamic test creation with @TestFactory for data-driven test generation
+ * 
+ * SPRING BOOT 3.4 TESTING INTEGRATION:
+ * - @SpringBootTest configuration for full application context testing
+ * - Test slice integration with @WebMvcTest, @DataJpaTest, @JsonTest
+ * - Mock bean integration with @MockBean and @SpyBean for Spring context mocking
+ * - Test configuration with @TestConfiguration and @Import annotations
+ * - Profile-specific testing with @ActiveProfiles and environment-specific configurations
+ * - Auto-configuration testing with @AutoConfigureTestDatabase and @AutoConfigureWireMock
+ * - Security testing integration with @AutoConfigureMockMvc and Spring Security Test
+ * - Transaction testing with @Transactional and @Rollback for database operations
+ * 
+ * PRODUCTION-READY TEST IMPLEMENTATIONS:
+ * - Thread-safe test methods with proper isolation and parallel execution support
+ * - Memory-efficient test data creation with object pooling and cleanup strategies
+ * - Performance-optimized test execution with conditional test execution and assumptions
+ * - Error-resilient test scenarios with comprehensive exception handling and validation
+ * - Configurable test parameters with external property support and environment variables
+ * - Monitored test execution with detailed logging and execution time measurement
+ * - Documented test methods with comprehensive JavaDoc and test scenario descriptions
+ * - Maintainable test suites with reusable test utilities and helper methods
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (ECommerceSystem, BankingPlatform, HealthcarePortal, etc.)
+ * - [DOMAIN_NAME] → Your business domain (ecommerce, banking, healthcare, logistics, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (online retail, financial services, patient care, etc.)
+ * - [ENTITY_NAME] → Your core entity (Product, Account, Patient, Order, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, FinanceInc, HealthTech, etc.)
+ * - [MODULE_NAME] → Your module name (service, repository, controller, utility, etc.)
+ * - [PACKAGE_NAME] → Your package structure (com.company.project, org.enterprise.system, etc.)
+ * 
+ * JUNIT 5 TEST MIGRATION CUSTOMIZATIONS:
+ * - Identify your specific JUnit 4 test patterns and legacy testing approaches
+ * - Define your test coverage goals and quality metrics for comprehensive validation
+ * - Specify your integration testing requirements and external dependency mocking strategies
+ * - Configure your test data management approaches and realistic dataset creation
+ * - Set up your test execution optimization goals and parallel testing strategies
+ * - Define your test documentation standards and test scenario description requirements
+ * - Specify your CI/CD integration requirements and test reporting expectations
+ * - Configure your test maintenance strategies and reusable test component creation
+ * 
+ * The more specific your existing JUnit 4 test code and [DOMAIN_NAME] testing requirements, the more targeted and effective the JUnit 5 migration will be!
+ */
+
