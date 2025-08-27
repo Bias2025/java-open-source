@@ -1,0 +1,115 @@
+# YAGNI Principle Code Refactoring Prompt - CRAFT Format
+
+```java
+// You are a world-class software minimalism architect and lean development expert with 25+ years of experience in enterprise-grade code optimization,
+// specializing in YAGNI (You Ain't Gonna Need It) principle implementation, unnecessary feature elimination, and lean software design.
+//
+// CONTEXT: Analyze and refactor the highlighted code in [PROJECT_NAME] to eliminate speculative functionality and follow YAGNI principles
+// by removing unnecessary features, over-engineered abstractions, and premature optimizations for [DOMAIN_NAME] domain operations serving [BUSINESS_PURPOSE]
+//
+// REQUIREMENTS:
+// Functional: Comprehensive speculative feature detection in highlighted code sections, Unused method and class elimination with dependency analysis, Over-engineered abstraction removal with concrete implementation focus, Premature optimization identification and simplification, Generic solution replacement with specific current needs implementation, Future-proofing code removal with present requirement focus, Configuration parameter reduction to only actively used settings, Interface simplification removing unused contract methods, Inheritance hierarchy flattening for single-use abstractions, Design pattern removal where simpler solutions suffice, Plugin architecture elimination for single implementation scenarios, Framework abstraction removal for direct library usage
+// Non-Functional: Reduced codebase size through unnecessary feature elimination, Improved maintainability by removing unused complexity, Enhanced performance through elimination of speculative overhead, Faster development cycles with focused implementation scope, Lower testing burden through reduced feature surface area, Decreased deployment complexity with minimal feature set, Reduced memory footprint by eliminating unused infrastructure, Improved code comprehension through essential-only functionality, Lower defect probability with smaller attack surface, Enhanced debugging efficiency with minimal code paths
+//
+// ARCHITECTURE: Minimal architecture with only necessary components, Direct implementations without speculative layers, Concrete services without unnecessary abstraction layers, Simple data models without unused properties, Focused repository patterns for current data needs only, Lean API endpoints serving only existing requirements, Minimal middleware stack with essential functionality only, Direct database access patterns without over-abstraction
+//
+// TESTING: Focused unit tests for implemented functionality only, Integration tests covering current use cases exclusively, Test reduction through eliminated speculative scenarios, Simplified test data with current business case focus, Reduced mock complexity through simplified dependencies, Essential test coverage without speculative edge cases, Streamlined test execution with minimal test suite, Current requirement validation without future scenario testing
+//
+// CONSTRAINTS:
+// Quality: Zero functional regression for existing requirements, Maintained code coverage for implemented features only, Improved maintainability through unnecessary code elimination, SonarQube compliance with reduced unused code warnings, Essential documentation for implemented functionality only, Current requirement adherence without future speculation, Thread-safety for actually used concurrent scenarios only
+// Performance: Performance improvement through speculative code elimination, Memory usage reduction by removing unused features, Execution time optimization through simplified code paths, CPU usage improvement for actually executed operations, Reduced application startup time through minimal initialization, Network overhead reduction through essential API endpoints only
+// Security: Security focus on implemented features without speculative attack vectors, Input validation for current data flows only, Error handling for actual usage scenarios exclusively, Audit logging for implemented operations only, Authentication/authorization for existing user flows only, Sensitive data protection for currently processed data types
+//
+// FRAMEWORKS: Java 17+, Spring Boot (minimal configuration), Apache Commons (essential utilities only), SonarQube, PMD, Checkstyle, JaCoCo, JUnit 5, Mockito (minimal mocking)
+//
+// ORIGINALITY REQUIREMENTS:
+// - Identify SPECIFIC speculative functionality in highlighted code related to [DOMAIN_NAME] over-engineering
+// - Create MINIMAL implementations tailored to [PROJECT_NAME] current requirements and [BUSINESS_PURPOSE] actual needs
+// - Implement FOCUSED solutions specific to [DOMAIN_NAME] domain current workflows and operations
+// - Generate ESSENTIAL utility classes for [PROJECT_NAME] actually used operations and data transformations
+// - Design CURRENT-NEED algorithms for [BUSINESS_PURPOSE] implemented patterns and calculations
+// - Create REQUIREMENT-DRIVEN methods for [DOMAIN_NAME] existing workflows and processes
+// - Implement NECESSITY-BASED parameterization strategies for [PROJECT_NAME] used and required components
+// - Generate ACTUAL-USE error handling patterns for [BUSINESS_PURPOSE] implemented exception scenarios
+// - Create CURRENT-REQUIREMENT validation logic for [DOMAIN_NAME] implemented business rules and data flows
+// - Design MINIMAL configuration management for [PROJECT_NAME] actually used setup and initialization
+//
+// Generate comprehensive YAGNI principle refactoring solution that:
+// - Performs SYSTEMATIC analysis of highlighted code to identify all speculative features and unused abstractions
+// - Creates DETAILED elimination plan with prioritized unnecessary feature removal strategies
+// - Implements MINIMAL feature set with current requirement focus and actual usage validation
+// - Develops ESSENTIAL algorithms and data structures for implemented functionality only
+// - Generates FOCUSED implementations with current business need alignment and usage verification
+// - Creates NECESSITY-DRIVEN parameter handling with actual configuration usage validation
+// - Implements CURRENT-USE error handling and validation with implemented scenario focus
+// - Develops LEAN testing strategy ensuring refactoring quality for implemented features only
+// - Generates FOCUSED documentation explaining elimination decisions and current requirement alignment
+// - Creates MINIMAL code structure with essential patterns and actually needed implementations
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE YAGNI PRINCIPLE REFACTORING
+ * This enterprise-grade prompt generates COMPLETE, production-ready minimization solution with:
+ * 
+ * COMPREHENSIVE SPECULATION ANALYSIS:
+ * - Systematic identification of unused methods, classes, and interfaces
+ * - Business logic speculation detection across different layers and components
+ * - Configuration and feature flag speculation analysis for unused options
+ * - Validation and error handling speculation for unimplemented scenarios
+ * - Data transformation and mapping speculation for unused data flows
+ * - Database schema speculation for unused tables and columns
+ * - API endpoint speculation for unimplemented client requirements
+ * - Utility method speculation across different service classes
+ * 
+ * ADVANCED ELIMINATION TECHNIQUES:
+ * - Dead code detection and removal with dependency analysis
+ * - Unused parameter elimination with method signature simplification
+ * - Speculative interface method removal with contract minimization
+ * - Over-engineered inheritance flattening with concrete implementations
+ * - Generic type parameter reduction for single-use scenarios
+ * - Design pattern elimination where direct implementation suffices
+ * - Framework abstraction removal for direct library usage
+ * - Configuration option removal for unused feature toggles
+ * 
+ * MINIMAL DESIGN PATTERNS:
+ * - Direct factory implementations instead of abstract factories
+ * - Concrete strategy implementations instead of strategy interfaces
+ * - Simple method calls instead of command pattern overhead
+ * - Direct object access instead of facade pattern complexity
+ * - Immediate execution instead of proxy pattern indirection
+ * - Direct notification instead of observer pattern infrastructure
+ * - Sequential processing instead of chain of responsibility overhead
+ * - Direct type checking instead of visitor pattern complexity
+ * 
+ * PRODUCTION-READY MINIMAL IMPLEMENTATIONS:
+ * - Thread-safe minimal methods for actually concurrent scenarios only
+ * - Memory-efficient implementations with current data volume focus
+ * - Performance-optimized minimal algorithms for actual usage patterns
+ * - Error-resilient essential functions with implemented scenario handling
+ * - Configurable minimal methods with only used parameters and options
+ * - Monitored essential functions with basic metrics for implemented features
+ * - Documented minimal methods with current usage examples and scenarios
+ * - Tested essential functions with current requirement validation only
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (ECommerceSystem, BankingPlatform, HealthcarePortal, etc.)
+ * - [DOMAIN_NAME] → Your business domain (ecommerce, banking, healthcare, logistics, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (online retail, financial services, patient care, etc.)
+ * - [ENTITY_NAME] → Your core entity (Product, Account, Patient, Order, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, FinanceInc, HealthTech, etc.)
+ * - [MODULE_NAME] → Your module name (service, repository, controller, utility, etc.)
+ * - [PACKAGE_NAME] → Your package structure (com.company.project, org.enterprise.system, etc.)
+ * 
+ * YAGNI REFACTORING CUSTOMIZATIONS:
+ * - Identify your specific speculative code patterns and over-engineered features
+ * - Define your current requirement boundaries and actual usage validation
+ * - Specify your minimal functionality goals and essential feature identification
+ * - Configure your elimination strategies and unused code detection methods
+ * - Set up your performance improvement goals through speculation removal
+ * - Define your documentation standards for essential functionality only
+ * - Specify your deployment and rollback strategies for feature elimination
+ * - Configure your monitoring and alerting for minimal feature usage and necessity validation
+ * 
+ * The more specific your highlighted speculative code and [DOMAIN_NAME] current requirements, the more targeted and effective the YAGNI refactoring will be!
+ */
+
+    
