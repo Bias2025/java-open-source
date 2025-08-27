@@ -1,0 +1,119 @@
+# DRY Principle Code Refactoring Prompt - CRAFT Format
+
+```java
+// You are a world-class software refactoring architect and clean code expert with 25+ years of experience in enterprise-grade code optimization,
+// specializing in DRY (Don't Repeat Yourself) principle implementation, code consolidation patterns, and maintainable software design.
+//
+// CONTEXT: Analyze and refactor the highlighted code in [PROJECT_NAME] to eliminate duplication and follow DRY principles
+// by creating reusable helper functions for [DOMAIN_NAME] domain operations serving [BUSINESS_PURPOSE]
+//
+// REQUIREMENTS:
+// Functional: Comprehensive duplication detection in highlighted code sections, Helper function extraction with parameterized logic, Common behavior consolidation with proper abstraction, Reusable utility method creation with generic implementations, Template method pattern for workflow standardization, Strategy pattern for varying algorithm implementations, Factory method pattern for object creation consolidation, Builder pattern for complex parameter handling, Configuration consolidation for repeated setup patterns, Validation logic centralization with reusable rules, Error handling standardization with consistent patterns, Logging consolidation with structured message formatting
+// Non-Functional: Maintainable code structure with reduced complexity, Improved readability through consolidated logic, Enhanced testability with isolated helper functions, Performance optimization through efficient reuse, Memory usage reduction by eliminating redundant code paths, Faster development cycles with reusable components, Lower maintenance costs through centralized implementations, Type safety with generic helper functions, Thread safety for concurrent usage scenarios
+//
+// ARCHITECTURE: Clean architecture principles with shared utility layers, SOLID principles enforcement through proper abstraction, Layered architecture with cross-cutting concern extraction, Modular design with reusable component libraries, Domain-driven design with common domain services, Microservices patterns with shared utility libraries, Aspect-oriented programming for cross-cutting concerns, Dependency injection optimization for shared components
+//
+// TESTING: Comprehensive unit testing of extracted helper functions, Integration testing of refactored components, Regression testing to ensure functionality preservation, Performance testing of optimized implementations, Mock testing for helper function dependencies, Property-based testing for generic helper methods, Mutation testing for extracted utility logic, Contract testing for shared interface implementations
+//
+// CONSTRAINTS:
+// Quality: Zero functional regression during refactoring process, Minimum 95% code coverage maintenance after refactoring, Clean code principles with improved maintainability scores, SonarQube quality gates compliance with reduced duplication metrics, Comprehensive documentation for extracted helper functions, Design pattern adherence with proper abstraction levels, Thread-safety guaranteed for reusable components
+// Performance: No performance degradation during refactoring process, Memory usage optimization through efficient code reuse, Execution time improvement through optimized implementations, CPU usage optimization for frequently called helper functions, Cache-friendly helper function design, Minimal object allocation in utility methods
+// Security: Security pattern consolidation without introducing vulnerabilities, Input validation centralization with comprehensive checks, Error handling security through standardized exception responses, Audit logging consistency through unified logging helpers, Authentication/authorization logic centralization, Sensitive data handling standardization
+//
+// FRAMEWORKS: Java 17+, Spring Framework, Apache Commons, Google Guava, SonarQube, PMD, Checkstyle, JaCoCo, JUnit 5, Mockito
+//
+// ORIGINALITY REQUIREMENTS:
+// - Identify SPECIFIC duplication patterns in highlighted code related to [DOMAIN_NAME] business logic
+// - Create SOPHISTICATED helper functions tailored to [PROJECT_NAME] architecture and [BUSINESS_PURPOSE] requirements
+// - Implement ADVANCED abstraction strategies specific to [DOMAIN_NAME] domain workflows and operations
+// - Generate COMPREHENSIVE utility classes for [PROJECT_NAME] common operations and data transformations
+// - Design ENTERPRISE-GRADE generic solutions for [BUSINESS_PURPOSE] repeated patterns and algorithms
+// - Create PRODUCTION-READY template methods for [DOMAIN_NAME] standardized workflows and processes
+// - Implement ADVANCED parameterization strategies for [PROJECT_NAME] flexible and reusable components
+// - Generate SOPHISTICATED error handling consolidation for [BUSINESS_PURPOSE] consistent exception management
+// - Create COMPREHENSIVE validation frameworks for [DOMAIN_NAME] business rules and data integrity
+// - Design MAINTAINABLE configuration management for [PROJECT_NAME] setup and initialization patterns
+//
+// Generate comprehensive DRY principle refactoring solution that:
+// - Performs SYSTEMATIC analysis of highlighted code to identify all duplication patterns and repetitive logic
+// - Creates DETAILED refactoring plan with prioritized helper function extraction strategies
+// - Implements COMPREHENSIVE helper function library with generic and domain-specific utilities
+// - Develops ADVANCED parameterization techniques for flexible and reusable component design
+// - Generates PRODUCTION-READY template methods and abstract classes for workflow standardization
+// - Creates SOPHISTICATED configuration and setup consolidation for repeated initialization patterns
+// - Implements ENTERPRISE-GRADE error handling and validation centralization
+// - Develops COMPREHENSIVE testing strategy ensuring refactoring quality and regression prevention
+// - Generates DETAILED documentation explaining refactoring decisions and helper function usage
+// - Creates MAINTAINABLE code structure with clear separation of concerns and improved readability
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE DRY PRINCIPLE REFACTORING
+ * This enterprise-grade prompt generates COMPLETE, production-ready refactoring solution with:
+ * 
+ * COMPREHENSIVE DUPLICATION ANALYSIS:
+ * - Systematic identification of repeated code patterns and logic blocks
+ * - Business logic duplication detection across different methods and classes
+ * - Configuration and setup pattern duplication analysis
+ * - Validation and error handling duplication identification
+ * - Data transformation and mapping pattern duplicates
+ * - Database access pattern duplication across repository methods
+ * - API endpoint duplication in controller layers
+ * - Utility method duplication across different service classes
+ * 
+ * ADVANCED HELPER FUNCTION EXTRACTION:
+ * - Generic utility methods with type parameters and bounded wildcards
+ * - Domain-specific helper functions with business context awareness
+ * - Template method implementations for standardized workflows
+ * - Strategy pattern helpers for varying algorithm implementations
+ * - Factory method helpers for object creation consolidation
+ * - Builder pattern helpers for complex parameter management
+ * - Validation helper functions with configurable rules and constraints
+ * - Transformation helper methods for data mapping and conversion
+ * 
+ * ENTERPRISE DESIGN PATTERNS:
+ * - Abstract factory for related helper function families
+ * - Command pattern for operation encapsulation and reuse
+ * - Decorator pattern for helper function enhancement and composition
+ * - Facade pattern for complex helper function orchestration
+ * - Proxy pattern for helper function access control and monitoring
+ * - Observer pattern for helper function event notification
+ * - Chain of responsibility for sequential helper function execution
+ * - Visitor pattern for helper function operation variations
+ * 
+ * PRODUCTION-READY IMPLEMENTATIONS:
+ * - Thread-safe helper functions with proper synchronization
+ * - Memory-efficient implementations with object pooling and reuse
+ * - Performance-optimized algorithms with caching and memoization
+ * - Error-resilient helper functions with comprehensive exception handling
+ * - Configurable helper functions with external property support
+ * - Monitored helper functions with metrics and logging integration
+ * - Documented helper functions with comprehensive JavaDoc and examples
+ * - Tested helper functions with unit tests and integration validation
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (ECommerceSystem, BankingPlatform, HealthcarePortal, etc.)
+ * - [DOMAIN_NAME] → Your business domain (ecommerce, banking, healthcare, logistics, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (online retail, financial services, patient care, etc.)
+ * - [ENTITY_NAME] → Your core entity (Product, Account, Patient, Order, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, FinanceInc, HealthTech, etc.)
+ * - [MODULE_NAME] → Your module name (service, repository, controller, utility, etc.)
+ * - [PACKAGE_NAME] → Your package structure (com.company.project, org.enterprise.system, etc.)
+ * 
+ * DRY REFACTORING CUSTOMIZATIONS:
+ * - Identify your specific code duplication patterns and repeated logic blocks
+ * - Define your helper function design preferences and naming conventions
+ * - Specify your abstraction levels and design pattern implementations
+ * - Configure your testing requirements and validation strategies
+ * - Set up your performance optimization goals and measurement criteria
+ * - Define your documentation standards and code quality metrics
+ * - Specify your deployment and rollback strategies for refactoring changes
+ * - Configure your monitoring and alerting for helper function usage and performance
+ * 
+ * The more specific your highlighted code and [DOMAIN_NAME] context, the more targeted and effective the DRY refactoring will be!
+ */
+
+## COMPREHENSIVE DRY PRINCIPLE REFACTORING FRAMEWORK
+
+### Phase 1: Duplication Analysis and Pattern Identification
+**Enterprise [DOMAIN_NAME] Code Duplication Assessment**
+
