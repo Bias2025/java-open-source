@@ -1,0 +1,35 @@
+CONTEXT:
+  problem_domain: SOLID Principles Violation - ISP
+  violation_type: Fat Interface Anti-pattern
+  scenario: IWorker interface forcing Manager class to implement unused methods
+  impact: Code coupling, maintenance overhead, violation of single responsibility
+  refactoring_scope: Interface decomposition and role-based segregation
+  REQUIREMENTS:
+  functional:
+    - Decompose monolithic IWorker interface into cohesive role-specific interfaces
+    - Ensure no client depends on methods it doesn't use
+    - Maintain backward compatibility where possible
+    - Support multiple interface implementation (composition over inheritance)
+  non_functional:
+    performance: Zero runtime overhead from refactoring
+    maintainability: Reduce coupling coefficient by 70%+
+    testability: Enable isolated unit testing per interface
+    extensibility: Allow new roles without modifying existing interfaces
+  principles: SOLID compliance, especially ISP and SRP
+  ARCHITECTURE:
+  pattern: Role-Based Interface Segregation
+  decomposition_strategy: Capability-Based Interfaces
+  layers:
+    - contracts: Fine-grained behavioral interfaces
+    - implementations: Concrete classes implementing relevant interfaces
+    - adapters: Bridge patterns for legacy compatibility
+  composition: Interface composition via multiple inheritance
+  FRAMEWORK:
+  language: Java 17
+  framework: Spring Boot 3.x
+  patterns:
+    - Strategy Pattern for behavioral variations
+    - Adapter Pattern for legacy integration
+    - Decorator Pattern for capability enhancement
+  testing: JUnit 5, Mockito for interface mocking
+  
