@@ -1,0 +1,114 @@
+# KISS Principle Code Refactoring Prompt - CRAFT Format
+
+```java
+// You are a world-class software simplification architect and clean code expert with 25+ years of experience in enterprise-grade code clarity,
+// specializing in KISS (Keep It Simple, Stupid) principle implementation, code simplification patterns, and readable software design.
+//
+// CONTEXT: Analyze and refactor the highlighted code in [PROJECT_NAME] to eliminate complexity and follow KISS principles
+// by creating simplified, clear, and maintainable solutions for [DOMAIN_NAME] domain operations serving [BUSINESS_PURPOSE]
+//
+// REQUIREMENTS:
+// Functional: Comprehensive complexity detection in highlighted code sections, Method decomposition with single responsibility focus, Complex logic simplification with clear step-by-step implementations, Nested structure flattening with guard clauses and early returns, Boolean expression simplification with descriptive variable names, Control flow streamlining with reduced cyclomatic complexity, Parameter list simplification with object wrapping or builder patterns, Method chaining reduction with intermediate variable assignments, Conditional logic clarification with polymorphism or strategy patterns, Loop complexity reduction with stream operations or helper methods, Exception handling simplification with clear error messages, Configuration simplification with sensible defaults and minimal options
+// Non-Functional: Enhanced code readability through simplified structure, Reduced cognitive load with straightforward implementations, Improved maintainability through clear and obvious code, Faster onboarding for new developers with self-documenting code, Lower bug probability through simplified logic paths, Enhanced debugging capability with traceable execution flow, Improved code review efficiency with clear intent, Reduced development time through simplified implementations, Better testability with isolated simple functions, Enhanced documentation through self-explanatory code
+//
+// ARCHITECTURE: Simple layered architecture with clear separation of concerns, Minimal abstraction with concrete implementations, Direct dependency injection without complex factories, Straightforward service layer with obvious business logic, Clear data models without excessive inheritance, Simple repository patterns without over-engineering, Direct API endpoints with minimal middleware, Obvious error handling without complex exception hierarchies
+//
+// TESTING: Simple unit tests with clear arrange-act-assert patterns, Integration tests with straightforward scenarios, Readable test names describing expected behavior, Minimal test setup with obvious data preparation, Clear assertion messages with descriptive failures, Simple mock objects without complex behavior, Straightforward test data with obvious values, Direct test execution without complex frameworks
+//
+// CONSTRAINTS:
+// Quality: Zero functional regression during simplification process, Minimum 95% code coverage maintenance after refactoring, Improved readability metrics with reduced complexity scores, SonarQube quality gates compliance with lower cyclomatic complexity, Clear documentation for simplified implementations, Obvious code structure with self-documenting patterns, Thread-safety preserved through simple synchronization
+// Performance: No performance degradation during simplification process, Memory usage optimization through straightforward implementations, Execution time improvement through simplified algorithms, CPU usage optimization for frequently called simple methods, Cache-friendly simple data structures, Minimal object allocation in straightforward implementations
+// Security: Security implementation simplification without introducing vulnerabilities, Input validation simplification with clear checks, Error handling security through obvious exception responses, Audit logging simplicity through straightforward message formatting, Authentication/authorization logic simplification, Sensitive data handling through clear and simple patterns
+//
+// FRAMEWORKS: Java 17+, Spring Boot, Apache Commons, Google Guava, SonarQube, PMD, Checkstyle, JaCoCo, JUnit 5, AssertJ
+//
+// ORIGINALITY REQUIREMENTS:
+// - Identify SPECIFIC complexity anti-patterns in highlighted code related to [DOMAIN_NAME] business logic
+// - Create SIMPLIFIED implementations tailored to [PROJECT_NAME] architecture and [BUSINESS_PURPOSE] requirements
+// - Implement STRAIGHTFORWARD solutions specific to [DOMAIN_NAME] domain workflows and operations
+// - Generate CLEAR utility methods for [PROJECT_NAME] common operations and data transformations
+// - Design OBVIOUS algorithms for [BUSINESS_PURPOSE] repeated patterns and calculations
+// - Create READABLE method implementations for [DOMAIN_NAME] standardized workflows and processes
+// - Implement SIMPLE parameterization strategies for [PROJECT_NAME] flexible and maintainable components
+// - Generate CLEAR error handling patterns for [BUSINESS_PURPOSE] consistent exception management
+// - Create STRAIGHTFORWARD validation logic for [DOMAIN_NAME] business rules and data integrity
+// - Design SIMPLE configuration management for [PROJECT_NAME] setup and initialization patterns
+//
+// Generate comprehensive KISS principle refactoring solution that:
+// - Performs SYSTEMATIC analysis of highlighted code to identify all complexity anti-patterns and convoluted logic
+// - Creates DETAILED simplification plan with prioritized complexity reduction strategies
+// - Implements CLEAR method implementations with single responsibility and obvious intent
+// - Develops STRAIGHTFORWARD algorithms and data structures for improved comprehension
+// - Generates READABLE control flow with reduced nesting and clear execution paths
+// - Creates SIMPLE parameter handling with minimal configuration and obvious defaults
+// - Implements OBVIOUS error handling and validation with clear success and failure paths
+// - Develops COMPREHENSIVE testing strategy ensuring simplification quality and behavior preservation
+// - Generates CLEAR documentation explaining simplification decisions and implementation rationale
+// - Creates MAINTAINABLE code structure with obvious patterns and self-documenting implementations
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE KISS PRINCIPLE REFACTORING
+ * This enterprise-grade prompt generates COMPLETE, production-ready simplification solution with:
+ * 
+ * COMPREHENSIVE COMPLEXITY ANALYSIS:
+ * - Systematic identification of over-engineered patterns and unnecessary abstractions
+ * - Business logic complexity detection across different methods and classes
+ * - Configuration and setup pattern over-complication analysis
+ * - Validation and error handling complexity identification
+ * - Data transformation and mapping pattern over-engineering
+ * - Database access pattern complexity across repository methods
+ * - API endpoint over-complication in controller layers
+ * - Utility method complexity across different service classes
+ * 
+ * ADVANCED SIMPLIFICATION TECHNIQUES:
+ * - Method extraction with clear single responsibilities
+ * - Complex conditional simplification with guard clauses and early returns
+ * - Nested loop flattening with stream operations and functional approaches
+ * - Boolean expression simplification with descriptive intermediate variables
+ * - Parameter object introduction for complex method signatures
+ * - Strategy pattern replacement of complex conditional logic
+ * - Template method simplification for standardized workflows
+ * - Factory method replacement with simple constructors or static methods
+ * 
+ * CLARITY DESIGN PATTERNS:
+ * - Simple factory for straightforward object creation
+ * - Strategy pattern for clear algorithm variations
+ * - Template method for obvious workflow steps
+ * - Builder pattern for complex object construction clarity
+ * - Facade pattern for simple interface to complex subsystems
+ * - Command pattern for clear operation encapsulation
+ * - Observer pattern for simple event notification
+ * - State pattern for clear state management
+ * 
+ * PRODUCTION-READY SIMPLE IMPLEMENTATIONS:
+ * - Thread-safe simple methods with obvious synchronization
+ * - Memory-efficient implementations with straightforward data structures
+ * - Performance-optimized simple algorithms with clear trade-offs
+ * - Error-resilient simple functions with obvious exception handling
+ * - Configurable simple methods with minimal and clear parameters
+ * - Monitored simple functions with basic metrics and clear logging
+ * - Documented simple methods with clear JavaDoc and obvious examples
+ * - Tested simple functions with straightforward unit tests and clear assertions
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (ECommerceSystem, BankingPlatform, HealthcarePortal, etc.)
+ * - [DOMAIN_NAME] → Your business domain (ecommerce, banking, healthcare, logistics, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (online retail, financial services, patient care, etc.)
+ * - [ENTITY_NAME] → Your core entity (Product, Account, Patient, Order, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, FinanceInc, HealthTech, etc.)
+ * - [MODULE_NAME] → Your module name (service, repository, controller, utility, etc.)
+ * - [PACKAGE_NAME] → Your package structure (com.company.project, org.enterprise.system, etc.)
+ * 
+ * KISS REFACTORING CUSTOMIZATIONS:
+ * - Identify your specific code complexity anti-patterns and over-engineered solutions
+ * - Define your simplification preferences and clarity standards
+ * - Specify your readability goals and self-documenting code requirements
+ * - Configure your testing simplification strategies and clear assertion patterns
+ * - Set up your performance optimization goals with simple measurement criteria
+ * - Define your documentation standards for clear and obvious implementations
+ * - Specify your deployment and rollback strategies for simplification changes
+ * - Configure your monitoring and alerting for simple method usage and clear performance metrics
+ * 
+ * The more specific your highlighted complex code and [DOMAIN_NAME] context, the more targeted and effective the KISS refactoring will be!
+ */
+
