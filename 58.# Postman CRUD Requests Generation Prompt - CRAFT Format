@@ -1,0 +1,115 @@
+# Postman CRUD Requests Generation Prompt - CRAFT Format
+
+```java
+// You are a world-class API testing architect and Postman expert with 15+ years of experience in enterprise-grade API automation,
+// specializing in comprehensive REST API testing, Postman collection design, and production-ready API validation frameworks.
+//
+// CONTEXT: Generate a complete Postman collection with CRUD operation requests for [PROJECT_NAME] Spring Boot application
+// working with [ENTITY_NAME] entity in [DOMAIN_NAME] domain for [BUSINESS_PURPOSE] API testing and validation
+//
+// REQUIREMENTS:
+// Functional: Complete CRUD operations testing (Create, Read, Update, Delete), Advanced query parameter testing with filtering and pagination, Request body validation with multiple data scenarios, Response validation with comprehensive assertions, Authentication and authorization testing for all endpoints, Error scenario testing with invalid inputs and edge cases, Batch operations testing for bulk data processing, File upload/download testing for document handling, Search and filtering functionality validation, Business rule validation through API endpoints, Data integrity testing across related entities, API versioning support with backward compatibility testing
+// Non-Functional: Performance testing scenarios with response time validation, Load testing with concurrent request execution, Security testing with authentication bypass attempts, Rate limiting validation with throttling scenarios, Data privacy testing with sensitive information handling, Comprehensive documentation with usage examples, Environment-specific testing (dev, staging, prod), Automated test execution with Newman CLI integration, CI/CD pipeline integration with test reporting, Mock server integration for development testing
+//
+// ARCHITECTURE: RESTful API testing architecture with proper endpoint organization, Collection hierarchy with logical folder structure, Environment management with variable abstraction, Pre-request script automation for dynamic data generation, Test script automation with comprehensive assertions, Data-driven testing with CSV/JSON data sources, Workflow automation with request chaining, Error handling with graceful failure reporting
+//
+// TESTING: Comprehensive positive and negative test scenarios, Boundary value testing with edge case validation, Integration testing with database state verification, Contract testing for API specification compliance, Security testing for authentication and authorization, Performance benchmarking with response time assertions, Data validation testing with schema compliance, Regression testing with automated execution, Smoke testing for critical path validation
+//
+// CONSTRAINTS:
+// Quality: Comprehensive test coverage for all API endpoints and scenarios, Clean and maintainable Postman collection structure, Detailed documentation with examples and usage guidelines, Parameterized requests for environment flexibility, Robust error handling and validation, Consistent naming conventions and organization, Version control compatibility with team collaboration
+// Performance: Response time validation <500ms for CRUD operations, Concurrent request handling validation, Load testing scenarios with realistic data volumes, Memory usage validation during bulk operations, Database performance impact assessment, API rate limiting compliance validation
+// Security: Authentication token management with secure handling, Authorization testing for role-based access control, Input validation testing to prevent injection attacks, Sensitive data masking in request/response logging, API key management with secure storage, HTTPS enforcement validation, CORS policy testing
+//
+// FRAMEWORKS: Postman 10.x, Newman CLI, JSON Schema validation, Chai assertion library, JavaScript for pre-request and test scripts, CSV/JSON data files for data-driven testing
+//
+// ORIGINALITY REQUIREMENTS:
+// - Create COMPREHENSIVE Postman collection specific to [PROJECT_NAME] and [ENTITY_NAME] domain operations
+// - Generate REALISTIC test data scenarios tailored to [DOMAIN_NAME] business requirements and [BUSINESS_PURPOSE] workflows
+// - Implement SOPHISTICATED request chaining for complex [ENTITY_NAME] workflow testing
+// - Design ADVANCED authentication flows specific to [PROJECT_NAME] security requirements
+// - Create ENTERPRISE-GRADE error testing scenarios for [DOMAIN_NAME] business rule validation
+// - Generate COMPREHENSIVE performance testing requests for [BUSINESS_PURPOSE] load scenarios
+// - Implement PRODUCTION-READY environment management for [PROJECT_NAME] deployment stages
+// - Create DETAILED documentation with [DOMAIN_NAME] business context and usage examples
+// - Design ADVANCED data validation scripts for [ENTITY_NAME] field validation and business rules
+// - Generate SOPHISTICATED automation scripts for [PROJECT_NAME] CI/CD pipeline integration
+//
+// Generate comprehensive Postman collection that:
+// - Creates COMPLETE CRUD operation requests with all HTTP methods and proper request structures
+// - Implements COMPREHENSIVE test scenarios covering positive, negative, and edge cases for [ENTITY_NAME] operations
+// - Develops ADVANCED authentication and authorization testing for [PROJECT_NAME] security requirements
+// - Generates REALISTIC test data with [DOMAIN_NAME]-specific business scenarios and validation rules
+// - Creates SOPHISTICATED request chaining and workflow automation for complex [BUSINESS_PURPOSE] operations
+// - Implements PRODUCTION-READY environment management with [PROJECT_NAME] deployment configuration
+// - Develops COMPREHENSIVE validation scripts with detailed assertions and business rule verification
+// - Generates ENTERPRISE-GRADE documentation with usage examples and [DOMAIN_NAME] context
+// - Creates ADVANCED performance and load testing scenarios for [PROJECT_NAME] scalability validation
+// - Implements COMPLETE error handling and reporting with [BUSINESS_PURPOSE] specific error scenarios
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE POSTMAN CRUD COLLECTION GENERATION
+ * This enterprise-grade prompt generates COMPLETE, production-ready Postman collection with:
+ * 
+ * COMPREHENSIVE CRUD OPERATIONS:
+ * - Complete Create operations with validation scenarios and business rules
+ * - Advanced Read operations with filtering, pagination, and search capabilities
+ * - Sophisticated Update operations with partial updates and optimistic locking
+ * - Secure Delete operations with soft delete and cascade validation
+ * - Bulk operations for efficient data processing and performance testing
+ * - Related entity operations with proper relationship handling
+ * - File upload/download operations with security validation
+ * - Complex query operations with advanced filtering and sorting
+ * 
+ * ADVANCED TEST AUTOMATION:
+ * - Comprehensive pre-request scripts for dynamic data generation
+ * - Sophisticated test scripts with detailed assertions and validation
+ * - Business rule validation with custom JavaScript functions
+ * - Response schema validation with JSON Schema compliance
+ * - Performance benchmarking with response time tracking
+ * - Data integrity validation across multiple requests
+ * - Error scenario automation with comprehensive coverage
+ * - Workflow automation with request dependency management
+ * 
+ * ENTERPRISE SECURITY TESTING:
+ * - Authentication flow testing with multiple auth methods
+ * - Authorization boundary testing with role-based access control
+ * - Token management with automatic refresh and expiration handling
+ * - Input validation testing with injection attack prevention
+ * - Rate limiting validation with throttling scenarios
+ * - CORS policy testing with cross-origin request validation
+ * - HTTPS enforcement testing with security header validation
+ * - API key management with secure storage and rotation
+ * 
+ * PRODUCTION-READY INFRASTRUCTURE:
+ * - Environment management with dev, staging, and production configurations
+ * - Variable abstraction for flexible deployment across environments
+ * - Collection organization with logical folder structure and naming
+ * - Documentation with comprehensive examples and usage guidelines
+ * - Newman CLI integration for automated execution and CI/CD pipelines
+ * - Mock server integration for development and testing isolation
+ * - Data-driven testing with external data sources and parameterization
+ * - Reporting integration with detailed test results and metrics
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (ECommerceAPI, HealthcarePortal, FinanceSystem, etc.)
+ * - [ENTITY_NAME] → Your core entity (Product, Patient, Account, Order, etc.)
+ * - [DOMAIN_NAME] → Your business domain (ecommerce, healthcare, finance, logistics, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (online retail, patient management, financial services, etc.)
+ * - [API_VERSION] → Your API version (v1, v2, 2023-01, etc.)
+ * - [BASE_URL] → Your API base URL (https://api.company.com, localhost:8080, etc.)
+ * - [AUTH_METHOD] → Your authentication method (JWT, OAuth2, API Key, Basic Auth, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, HealthTech, FinanceInc, etc.)
+ * 
+ * POSTMAN COLLECTION CUSTOMIZATIONS:
+ * - Define your specific API endpoints and request structures
+ * - Specify your authentication and authorization requirements
+ * - Configure your test data scenarios and validation rules
+ * - Set up your environment variables and configuration management
+ * - Define your performance testing requirements and thresholds
+ * - Configure your error handling and reporting preferences
+ * - Specify your documentation standards and examples
+ * - Define your CI/CD integration and automation requirements
+ * 
+ * The more specific your [DOMAIN_NAME] and [BUSINESS_PURPOSE] context, the more tailored and effective the Postman collection will be!
+ */
+
