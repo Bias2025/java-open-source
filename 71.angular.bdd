@@ -1,0 +1,114 @@
+# Playwright BDD Automation Testing Prompt - CRAFT Format
+
+```typescript
+// You are a world-class test automation architect and quality assurance expert with 25+ years of experience in enterprise-grade frontend testing frameworks,
+// specializing in Playwright BDD automation, Cucumber integration, and comprehensive end-to-end testing for modern web applications.
+//
+// CONTEXT: Design and implement comprehensive Playwright BDD test automation framework for [PROJECT_NAME] frontend application
+// testing [DOMAIN_NAME] domain user workflows serving [BUSINESS_PURPOSE] with complete BDD integration and reporting
+//
+// REQUIREMENTS:
+// Functional: Complete Playwright BDD framework setup with @cucumber/cucumber integration, Feature file organization with clear Given-When-Then scenarios, Step definition implementation with Page Object Model patterns, Playwright configuration with multiple browser support and parallel execution, BDD configuration with defineBDDConfig for feature and step definition paths, Cucumber JSON reporter integration for comprehensive test reporting, Cross-browser testing with Chrome, Firefox, Safari, and Edge support, Mobile testing with device emulation and responsive design validation, API testing integration with Playwright request fixtures, Visual regression testing with screenshot comparison and baseline management, Accessibility testing with axe-core integration, Performance testing with Lighthouse integration
+// Non-Functional: Comprehensive test coverage for all critical user journeys and edge cases, Enhanced test maintainability through Page Object Model and reusable step definitions, Improved test reliability with robust element selectors and wait strategies, Better test readability with clear BDD scenarios and descriptive step definitions, Reduced test execution time through parallel execution and efficient test organization, Enhanced CI/CD integration with detailed test reporting and failure analysis, Improved debugging capability with detailed error messages and screenshot capture, Better test data management with dynamic test data generation and cleanup
+//
+// ARCHITECTURE: Playwright BDD architecture with feature-driven test organization, Page Object Model implementation with TypeScript classes and inheritance, Step definition modularization with shared steps and domain-specific implementations, Test data management with builders, factories, and realistic dataset creation, Configuration management with environment-specific settings and secret handling, Reporting architecture with multiple reporter integration and dashboard visualization
+//
+// TESTING: BDD scenario testing with Gherkin syntax and comprehensive user story coverage, End-to-end testing with complete user workflow validation, Cross-browser testing with automated browser compatibility validation, Mobile testing with responsive design and touch interaction validation, API testing with request/response validation and contract testing, Visual testing with screenshot comparison and pixel-perfect validation, Accessibility testing with WCAG compliance validation, Performance testing with Core Web Vitals measurement
+//
+// CONSTRAINTS:
+// Quality: Zero functional regression in test automation coverage, Minimum 95% critical path coverage with comprehensive scenario validation, BDD best practices compliance with clear and maintainable scenarios, Cross-browser compatibility validation across all supported browsers, Test stability with reliable selectors and robust wait strategies, Comprehensive error handling and test failure analysis, Code quality gates with TypeScript strict mode and ESLint integration
+// Performance: Test execution time optimization through parallel execution and efficient test organization, Memory usage optimization with proper resource cleanup and browser management, CI/CD pipeline optimization with selective test execution and fast feedback loops, Browser resource optimization with headless execution and efficient page management, Network optimization with request interception and mock response handling
+// Security: Security test implementation without exposing sensitive test data, Test data anonymization with realistic but non-sensitive information, Authentication and authorization testing with proper session management, Input validation testing with XSS and injection attack simulation, HTTPS and SSL certificate validation testing
+//
+// FRAMEWORKS: Playwright 1.40+, @cucumber/cucumber, @playwright/experimental-ct-react, TypeScript 5.0+, Node.js 18+, ESLint, Prettier, Allure Reporter
+//
+// ORIGINALITY REQUIREMENTS:
+// - Create COMPREHENSIVE Playwright configuration with BDD integration for [DOMAIN_NAME] testing requirements
+// - Implement ADVANCED Page Object Model patterns tailored to [PROJECT_NAME] UI components and workflows  
+// - Design SOPHISTICATED step definitions for [BUSINESS_PURPOSE] user scenarios and business rule validation
+// - Generate THOROUGH feature files covering [DOMAIN_NAME] critical paths and edge case scenarios
+// - Create ROBUST test data management for [PROJECT_NAME] realistic dataset creation and cleanup
+// - Implement COMPLETE cross-browser testing strategy for [BUSINESS_PURPOSE] compatibility validation
+// - Design COMPREHENSIVE reporting framework for [DOMAIN_NAME] test execution analysis and failure investigation
+// - Generate ADVANCED visual regression testing for [PROJECT_NAME] UI consistency and design validation
+// - Create DETAILED accessibility testing for [BUSINESS_PURPOSE] WCAG compliance and inclusive design
+// - Implement PERFORMANCE testing integration for [DOMAIN_NAME] Core Web Vitals and user experience metrics
+//
+// Generate comprehensive Playwright BDD automation solution that:
+// - Creates COMPLETE Playwright configuration with BDD integration, multiple browser support, and parallel execution
+// - Implements COMPREHENSIVE Page Object Model with TypeScript classes, inheritance, and reusable components
+// - Develops ADVANCED step definitions with shared steps, domain-specific implementations, and robust element interactions
+// - Generates THOROUGH feature files with clear BDD scenarios covering critical paths and comprehensive edge cases
+// - Creates SOPHISTICATED test data management with builders, factories, and realistic dataset generation
+// - Implements COMPLETE cross-browser and mobile testing with device emulation and responsive validation
+// - Develops COMPREHENSIVE reporting integration with Cucumber JSON, Allure, and custom dashboard visualization
+// - Generates ADVANCED visual and accessibility testing with baseline management and compliance validation
+// - Creates DETAILED CI/CD integration with pipeline optimization and comprehensive test result analysis
+// - Implements ROBUST error handling and debugging with screenshot capture and detailed failure investigation
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE PLAYWRIGHT BDD AUTOMATION FRAMEWORK
+ * This enterprise-grade prompt generates COMPLETE, production-ready test automation solution with:
+ * 
+ * COMPREHENSIVE PLAYWRIGHT BDD INTEGRATION:
+ * - Complete playwright.config.ts with BDD configuration and multi-browser support
+ * - Advanced defineBDDConfig setup with feature file and step definition path configuration
+ * - Cucumber JSON reporter integration with detailed test execution reporting
+ * - Cross-browser testing configuration with Chrome, Firefox, Safari, and Edge
+ * - Mobile device emulation with responsive design testing capabilities
+ * - Parallel execution optimization with worker process management
+ * - Test environment configuration with staging, production, and local setups
+ * - Advanced retry logic with flaky test handling and stability improvements
+ * 
+ * ADVANCED PAGE OBJECT MODEL IMPLEMENTATION:
+ * - TypeScript class-based page objects with inheritance and composition patterns
+ * - Reusable component objects with shared functionality and common interactions
+ * - Advanced element selectors with data-testid, accessibility, and CSS selector strategies
+ * - Robust wait strategies with custom wait conditions and timeout management  
+ * - Dynamic element handling with parameterized selectors and context awareness
+ * - Form interaction utilities with validation and error handling
+ * - Navigation utilities with URL validation and page state verification
+ * - Mobile-specific page objects with touch interactions and gesture handling
+ * 
+ * SOPHISTICATED STEP DEFINITION ARCHITECTURE:
+ * - Modular step definitions with shared steps and domain-specific implementations
+ * - Advanced parameter handling with data table transformation and type conversion
+ * - Context management with test state sharing and data passing between steps
+ * - Error handling with detailed assertion messages and failure investigation
+ * - API integration with request/response validation and contract testing
+ * - Database interaction with test data setup and cleanup procedures
+ * - File handling with upload/download testing and validation
+ * - Authentication and authorization with session management and role-based testing
+ * 
+ * PRODUCTION-READY TEST IMPLEMENTATIONS:
+ * - Thread-safe test execution with proper resource isolation and cleanup
+ * - Memory-efficient browser management with connection pooling and resource optimization
+ * - Performance-optimized test execution with selective running and dependency management
+ * - Error-resilient test scenarios with comprehensive exception handling and recovery
+ * - Configurable test parameters with environment-specific settings and secret management
+ * - Monitored test execution with detailed logging and execution time measurement
+ * - Documented test scenarios with comprehensive feature descriptions and acceptance criteria
+ * - Maintainable test suites with reusable utilities and helper functions
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (ECommerceApp, BankingPortal, HealthcareDashboard, etc.)
+ * - [DOMAIN_NAME] → Your business domain (ecommerce, banking, healthcare, logistics, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (online shopping, account management, patient care, etc.)
+ * - [APP_NAME] → Your application name (ShopifyClone, OnlineBanking, PatientPortal, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, FinanceInc, HealthTech, etc.)
+ * - [BASE_URL] → Your application base URL (https://app.example.com, https://staging.company.com, etc.)
+ * - [API_BASE_URL] → Your API base URL (https://api.example.com, https://api-staging.company.com, etc.)
+ * 
+ * PLAYWRIGHT BDD AUTOMATION CUSTOMIZATIONS:
+ * - Identify your specific UI components and user interaction patterns for comprehensive page object modeling
+ * - Define your test scenarios and user journeys for thorough BDD feature file creation
+ * - Specify your cross-browser and mobile testing requirements for complete compatibility validation
+ * - Configure your test data management strategies for realistic and comprehensive dataset creation
+ * - Set up your CI/CD integration requirements for automated test execution and reporting
+ * - Define your visual regression testing needs for UI consistency and design validation
+ * - Specify your accessibility testing requirements for WCAG compliance and inclusive design
+ * - Configure your performance testing integration for Core Web Vitals and user experience metrics
+ * 
+ * The more specific your frontend application structure and [DOMAIN_NAME] user workflows, the more targeted and effective the Playwright BDD automation will be!
+ */
+
