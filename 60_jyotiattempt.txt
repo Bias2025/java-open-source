@@ -1,0 +1,53 @@
+CONTEXT:
+  application_domain: "e-commerce/product-catalog"
+  project_scale:
+    users: "50k"
+    concurrent_sessions: "5000"
+    data_volume: "10GB/day"
+  team_context:
+    angular_version: "18.2.x"
+    typescript_version: "5.4.x"
+    existing_patterns: "standalone-components"
+    module_strategy: "lazy-loaded-features"
+  integration_points:
+    backend_api: "Spring Boot REST API"
+    state_management: "RxJS + Signals"
+    ui_library: "Angular Material"
+  compliance_requirements: "PCI-DSS, GDPR"
+  REQUIREMENTS:
+  functional:
+    - Lazy-loaded Product feature module
+    - Product list with pagination and filtering
+    - Product details with rich media support
+    - Service layer with caching strategy
+    - Type-safe DTOs with validation
+    - Comprehensive error handling
+  non_functional:
+    performance: "< 100ms API response, < 2s initial load"
+    security: "XSS protection, CSP headers, input sanitization"
+    scalability: "Support 10k concurrent product views"
+    reliability: "99.9% uptime, graceful degradation"
+  compliance: "WCAG 2.1 AA accessibility"
+  ARCHITECTURE:
+  pattern: "Smart/Dumb Component Pattern"
+  style: "Feature Module with Lazy Loading"
+  layers:
+    presentation: "Angular Standalone Components"
+    service: "Injectable Services with RxJS"
+    data: "Type-safe DTOs with Zod validation"
+    routing: "Child routes with guards"
+  data_flow: "Unidirectional with RxJS Observables"
+  FRAMEWORK:
+  core:
+    language: "TypeScript 5.4.x"
+    framework: "Angular 18.2.x"
+  patterns:
+    components: "Standalone with OnPush"
+    services: "Providedln: 'root' with tree-shaking"
+    routing: "Lazy loading with preload strategy"
+  testing:
+    unit: "Jasmine + Karma"
+    integration: "TestBed with HttpClientTestingModule"
+  tooling:
+    linting: "ESLint with strict rules"
+    formatting: "Prettier"
