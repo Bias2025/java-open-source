@@ -1,0 +1,114 @@
+# JUnit 4 Cleanup and Removal Prompt - CRAFT Format
+
+```java
+// You are a world-class legacy code cleanup architect and technical debt elimination expert with 25+ years of experience in enterprise-grade codebase modernization,
+// specializing in JUnit 4 removal, obsolete test elimination, and comprehensive legacy test cleanup for modern Java applications.
+//
+// CONTEXT: Analyze and systematically remove all JUnit 4 test cases, methods, and dependencies from [PROJECT_NAME] codebase
+// while preserving only JUnit 5 test implementations for [DOMAIN_NAME] domain operations serving [BUSINESS_PURPOSE]
+//
+// REQUIREMENTS:
+// Functional: Comprehensive JUnit 4 test detection across entire codebase with import and annotation scanning, Legacy test class identification with @RunWith and JUnit 4 runner detection, JUnit 4 annotation removal including @Test, @Before, @After, @BeforeClass, @AfterClass, Legacy assertion method elimination with assertEquals, assertTrue, assertFalse patterns, JUnit 4 dependency cleanup from pom.xml, build.gradle, and other build configuration files, Test runner class removal for @RunWith(SpringJUnit4ClassRunner.class) and custom runners, Legacy mock framework cleanup including PowerMock and old Mockito patterns, Test suite class elimination with @Suite and @SuiteClasses annotations, Parameterized test runner removal with legacy @Parameterized implementations, Test category cleanup with @Category annotations and custom category interfaces, Legacy test utility removal with JUnit 4 specific helper classes and methods, Build script cleanup removing JUnit 4 Maven/Gradle dependencies and plugins
+// Non-Functional: Zero JUnit 5 test regression during cleanup process, Improved build performance through dependency reduction and faster compilation, Enhanced IDE performance with reduced classpath complexity and faster indexing, Reduced security vulnerabilities through obsolete dependency elimination, Lower maintenance overhead with simplified test framework dependencies, Improved code quality metrics through legacy code elimination, Enhanced CI/CD pipeline performance with faster dependency resolution, Reduced memory footprint through elimination of unused test libraries, Better developer experience with single testing framework consistency, Improved documentation clarity through framework standardization
+//
+// ARCHITECTURE: Clean testing architecture with JUnit 5 only dependencies, Simplified build configuration with minimal and modern test dependencies, Streamlined CI/CD pipeline configuration with JUnit 5 specific reporting, Clean IDE configuration with JUnit 5 test runners and plugins only, Optimized classpath management with eliminated legacy dependencies, Modern test execution configuration with JUnit 5 engines and extensions
+//
+// TESTING: JUnit 5 test validation ensuring all remaining tests use modern annotations and patterns, Build verification with successful compilation and execution after JUnit 4 removal, Dependency validation with clean dependency tree and no JUnit 4 artifacts, IDE integration validation with proper test discovery and execution, CI/CD pipeline validation with successful test execution and reporting, Test coverage validation maintaining coverage levels with JUnit 5 tests only
+//
+// CONSTRAINTS:
+// Quality: Zero functional regression in test execution and validation, Maintained test coverage levels after legacy test removal, Complete elimination of JUnit 4 dependencies and imports, Successful build compilation without JUnit 4 artifacts, Clean dependency tree with no transitive JUnit 4 dependencies, Code quality improvement through technical debt elimination, Documentation updates reflecting JUnit 5 only usage
+// Performance: Build performance improvement through dependency reduction, Test execution optimization with JUnit 5 engine efficiency, Memory usage optimization through eliminated legacy libraries, IDE performance enhancement with reduced classpath complexity, CI/CD pipeline acceleration with streamlined dependencies
+// Security: Security vulnerability elimination through obsolete dependency removal, Dependency scanning compliance with no legacy security issues, Supply chain security improvement through reduced dependency surface, License compliance verification with eliminated legacy dependencies
+//
+// FRAMEWORKS: JUnit 5, Spring Boot 3.4+, Mockito 5.x, AssertJ, Maven/Gradle build tools, SonarQube, Dependency-Check
+//
+// ORIGINALITY REQUIREMENTS:
+// - Identify SPECIFIC JUnit 4 patterns and artifacts in [PROJECT_NAME] codebase related to [DOMAIN_NAME] testing
+// - Create COMPREHENSIVE removal strategy tailored to [PROJECT_NAME] build configuration and dependency management
+// - Implement SYSTEMATIC cleanup approach for [BUSINESS_PURPOSE] testing infrastructure modernization
+// - Generate THOROUGH validation procedures for [DOMAIN_NAME] test execution verification after cleanup
+// - Design COMPLETE dependency elimination for [PROJECT_NAME] build optimization and security improvement
+// - Create ROBUST backup and rollback procedures for [BUSINESS_PURPOSE] safe cleanup execution
+// - Implement ADVANCED detection algorithms for [DOMAIN_NAME] hidden JUnit 4 usage and transitive dependencies
+// - Generate COMPREHENSIVE documentation for [PROJECT_NAME] cleanup process and validation results
+// - Create DETAILED migration verification for [BUSINESS_PURPOSE] test functionality preservation
+// - Design AUTOMATED cleanup scripts for [DOMAIN_NAME] repeatable and reliable legacy removal
+//
+// Generate comprehensive JUnit 4 cleanup and removal solution that:
+// - Performs SYSTEMATIC analysis of entire codebase to identify all JUnit 4 usage patterns and dependencies
+// - Creates DETAILED removal plan with prioritized cleanup strategies and risk mitigation approaches
+// - Implements COMPREHENSIVE cleanup procedures with automated detection and removal of legacy artifacts
+// - Develops THOROUGH validation processes ensuring JUnit 5 test functionality preservation and execution
+// - Generates COMPLETE build configuration cleanup with dependency elimination and optimization
+// - Creates ROBUST backup and rollback procedures for safe cleanup execution and recovery
+// - Implements ADVANCED detection mechanisms for hidden JUnit 4 usage and transitive dependencies
+// - Develops AUTOMATED cleanup scripts for repeatable and reliable legacy test framework removal
+// - Generates DETAILED documentation explaining cleanup decisions and validation results
+// - Creates COMPREHENSIVE verification procedures ensuring complete JUnit 4 elimination and JUnit 5 consistency
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE JUNIT 4 CLEANUP AND REMOVAL
+ * This enterprise-grade prompt generates COMPLETE, production-ready cleanup solution with:
+ * 
+ * COMPREHENSIVE JUNIT 4 DETECTION:
+ * - Systematic scanning of all Java source files for JUnit 4 imports and annotations
+ * - Build configuration analysis for JUnit 4 dependencies in Maven pom.xml and Gradle build files
+ * - Test class identification with @RunWith annotations and legacy test runners
+ * - Legacy assertion pattern detection with assertEquals, assertTrue, assertFalse usage
+ * - Test lifecycle method detection with @Before, @After, @BeforeClass, @AfterClass annotations
+ * - Custom test runner identification with SpringJUnit4ClassRunner and other legacy runners
+ * - Test suite detection with @Suite and @SuiteClasses annotations
+ * - Parameterized test detection with legacy @Parameterized runner implementations
+ * 
+ * ADVANCED CLEANUP STRATEGIES:
+ * - Automated import statement removal with unused import detection and elimination
+ * - Annotation cleanup with systematic replacement or removal of JUnit 4 annotations
+ * - Method signature cleanup for legacy test lifecycle methods and assertions
+ * - Class inheritance cleanup for test base classes extending JUnit 4 patterns
+ * - Dependency removal from build configuration files with version management
+ * - Plugin cleanup for Maven Surefire and Gradle test plugins with JUnit 4 configuration
+ * - IDE configuration cleanup for project settings and test runner preferences
+ * - Documentation cleanup removing references to JUnit 4 patterns and examples
+ * 
+ * SYSTEMATIC REMOVAL PROCEDURES:
+ * - Backup creation with complete codebase snapshot before cleanup execution
+ * - Incremental removal with staged cleanup and validation checkpoints
+ * - Dependency tree analysis with transitive dependency identification and removal
+ * - Build verification with compilation testing after each cleanup phase
+ * - Test execution validation with JUnit 5 test runner verification
+ * - IDE integration testing with project refresh and test discovery validation
+ * - CI/CD pipeline validation with build and test execution verification
+ * - Rollback procedures with automated restoration of original codebase state
+ * 
+ * PRODUCTION-READY CLEANUP IMPLEMENTATIONS:
+ * - Thread-safe cleanup scripts with parallel processing and file locking
+ * - Memory-efficient processing with streaming file analysis and minimal memory footprint
+ * - Error-resilient cleanup procedures with comprehensive exception handling and recovery
+ * - Configurable cleanup parameters with selective removal options and customization
+ * - Monitored cleanup execution with detailed logging and progress tracking
+ * - Documented cleanup procedures with comprehensive process documentation and examples
+ * - Validated cleanup results with automated verification and compliance checking
+ * - Maintainable cleanup scripts with reusable utilities and modular design
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (ECommerceSystem, BankingPlatform, HealthcarePortal, etc.)
+ * - [DOMAIN_NAME] → Your business domain (ecommerce, banking, healthcare, logistics, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (online retail, financial services, patient care, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, FinanceInc, HealthTech, etc.)
+ * - [MODULE_NAME] → Your module name (service, repository, controller, utility, etc.)
+ * - [PACKAGE_NAME] → Your package structure (com.company.project, org.enterprise.system, etc.)
+ * - [BUILD_TOOL] → Your build tool (Maven, Gradle, SBT, etc.)
+ * 
+ * JUNIT 4 CLEANUP CUSTOMIZATIONS:
+ * - Identify your specific JUnit 4 usage patterns and legacy test implementations
+ * - Define your cleanup priorities and risk tolerance for aggressive vs conservative removal
+ * - Specify your build tool configuration and dependency management preferences
+ * - Configure your backup and rollback strategies for safe cleanup execution
+ * - Set up your validation procedures and test execution verification requirements
+ * - Define your CI/CD integration requirements and pipeline compatibility needs
+ * - Specify your IDE configuration preferences and development environment setup
+ * - Configure your documentation update requirements and knowledge management needs
+ * 
+ * The more specific your existing JUnit 4 usage patterns and [DOMAIN_NAME] testing requirements, the more targeted and effective the cleanup will be!
+ */
+
