@@ -1,0 +1,153 @@
+INTERACTIVE_ANALYSIS:
+  mode: REAL_TIME_VALIDATION
+  strategy: 
+    - DETECT missing parameters
+    - PAUSE generation immediately
+    - ASK specific clarifying questions
+    - CONFIRM understanding before proceeding
+    - VALIDATE assumptions with user
+  principle: "No guessing - only precision"
+CONTEXT:
+  project_name: ${PROJECT_NAME}           # REQUIRED: Specific project identifier
+  domain: ${DOMAIN_NAME}                  # REQUIRED: Business domain context
+  business_purpose: ${BUSINESS_PURPOSE}   # REQUIRED: Core business objective
+  scale_metrics:
+    users: ${CONCURRENT_USERS}            # Expected user load
+    rps: ${REQUESTS_PER_SECOND}          # Performance targets
+    data_volume: ${DATA_SIZE}            # Database scale
+  environment:
+    base_url: ${BASE_URL}                # Application URL
+    api_base_url: ${API_BASE_URL}        # API endpoint base
+    deployment: ${DEPLOYMENT_ENV}         # dev/staging/prod
+  team_context:
+    size: ${TEAM_SIZE}                   # Team composition
+    skill_level: ${SKILL_MATRIX}         # Technical expertise
+    existing_stack: ${CURRENT_TECH}      # Current technology
+REQUIREMENTS:
+  functional_testing:
+    bdd_scenarios:                       # Gherkin-based test scenarios
+      - user_journeys: ${CRITICAL_PATHS}
+      - edge_cases: ${EDGE_SCENARIOS}
+      - negative_testing: ${ERROR_PATHS}
+    coverage_targets:
+      critical_path: 95%                 # Minimum coverage requirement
+      overall: 85%                       # Total test coverage
+      
+  test_types:
+    e2e_testing:                         # End-to-end validation
+      - complete_workflows: true
+      - cross_browser: [Chrome, Firefox, Safari, Edge]
+      - mobile_responsive: true
+    api_testing:
+      - contract_validation: true
+      - request_response: true
+      - error_handling: true
+    visual_testing:
+      - screenshot_comparison: true
+      - pixel_perfect: true
+      - baseline_management: true
+    accessibility:
+      - wcag_compliance: AA
+      - screen_reader: true
+      - keyboard_navigation: true
+    performance:
+      - core_web_vitals: true
+      - load_time_targets: ${PERF_TARGETS}
+      
+  non_functional:
+    maintainability: HIGH                # Test code quality
+    reliability: 99.9%                   # Test stability
+    execution_time: ${MAX_DURATION}      # CI/CD constraints
+    parallelization: true                # Concurrent execution
+    ARCHITECTURE:
+  framework_pattern: BDD_PAGE_OBJECT
+  test_organization:
+    structure:
+      - features/                        # Gherkin feature files
+        - ${DOMAIN}/                     # Domain-specific features
+          - *.feature
+      - steps/                           # Step definitions
+        - common/                        # Shared steps
+        - ${DOMAIN}/                     # Domain-specific steps
+      - pages/                           # Page Object Model
+        - base/                          # Base page classes
+        - components/                    # Reusable components
+        - ${DOMAIN}/                     # Domain pages
+      - support/                         # Test utilities
+        - data/                          # Test data management
+        - api/                           # API helpers
+        - visual/                        # Visual testing
+        
+  execution_strategy:
+    parallel: true
+    workers: ${WORKER_COUNT}
+    retry_logic:
+      count: 2
+      only_flaky: true
+    
+  reporting:
+    formats: [json, html, allure]
+    screenshots: on_failure
+    videos: on_failure
+    traces: on_failure
+    FRAMEWORK:
+  core:
+    test_runner: Playwright 1.40+
+    bdd_framework: "@cucumber/cucumber 10+"
+    language: TypeScript 5.0+
+    runtime: Node.js 18+
+    
+  testing_libraries:
+    assertion: "@playwright/test"
+    bdd_config: "playwright-bdd"
+    visual: "@percy/playwright"
+    accessibility: "axe-playwright"
+    performance: "lighthouse"
+    
+  quality_tools:
+    linting: ESLint
+    formatting: Prettier
+    type_checking: "strict: true"
+    
+  ci_cd:
+    pipeline: ${CI_PLATFORM}
+    reporting: Allure/Cucumber-HTML
+    artifacts: screenshots/videos/traces
+    
+  integrations:
+    spring_boot_api: true
+    postgresql_validation: true
+    security_testing: true
+    TESTING:
+  bdd_implementation:
+    gherkin_syntax:
+      - clear_given_when_then
+      - business_readable
+      - reusable_steps
+      - data_tables
+      - scenario_outlines
+      
+  test_data_management:
+    strategy: BUILDER_PATTERN
+    sources:
+      - factories: true
+      - fixtures: true
+      - api_generation: true
+      - database_seeding: true
+    cleanup: AUTOMATIC
+    
+  cross_browser_matrix:
+    desktop:
+      - chrome: [latest, latest-1]
+      - firefox: [latest, latest-1]
+      - safari: [latest]
+      - edge: [latest]
+    mobile:
+      - ios: [iPhone_12, iPhone_13]
+      - android: [Pixel_5, Galaxy_S21]
+      
+  validation_strategies:
+    api_contracts: SCHEMA_VALIDATION
+    visual_regression: BASELINE_COMPARISON
+    accessibility: AXE_CORE_RULES
+    performance: LIGHTHOUSE_METRICS
