@@ -1,0 +1,62 @@
+CONTEXT:
+  domain: REST API Development & Testing
+  scale: Enterprise-grade HTTP endpoints with query parameters
+  constraints: Java 17 compatibility, Postman collection integration
+  team: Professional developers requiring production-ready examples
+  integration: Spring MVC, RestTemplate/WebClient, HTTP parameter passing
+
+REQUIREMENTS:
+  functional:
+    - Generate GET endpoints with query parameters
+    - Create Postman collection with example values
+    - Implement both client and server sides
+    - Handle parameter validation and edge cases
+  non_functional:
+    performance: Sub-100ms response time
+    security: Input validation, SQL injection prevention
+    scalability: Efficient query parameter parsing
+    reliability: Proper error handling for malformed parameters
+  compliance: REST standards, HTTP specifications
+
+ARCHITECTURE:
+  pattern: RESTful API with layered architecture
+  style: Spring MVC synchronous controllers
+  layers:
+    - presentation: REST controllers with parameter binding
+    - application: Service layer for business logic
+    - domain: DTOs and validation rules
+    - infrastructure: RestTemplate/WebClient for client calls
+  data_flow: Request → Controller → Service → Response
+
+FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.x
+  persistence:
+    database: PostgreSQL (if needed)
+    orm: Spring Data JPA
+  messaging: N/A for this scope
+  caching: Optional query result caching
+  monitoring: Request/response logging
+  deployment: Embedded Tomcat
+
+TECHNOLOGY:
+  - Spring Web MVC annotations
+  - Jakarta validation
+  - RestTemplate/WebClient
+  - Postman collection v2.1
+
+TESTING:
+  - MockMvc for controller tests
+  - WireMock for client tests
+  - Parameterized tests for edge cases
+
+PERSONA:
+  - Enterprise API developer
+  - Performance-conscious engineer
+  - Security-aware implementer
+
+ORIGINALITY:
+  - Advanced query parameter patterns
+  - Efficient parameter validation
+  - Production-ready error handling
