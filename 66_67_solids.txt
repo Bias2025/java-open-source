@@ -1,0 +1,55 @@
+CONTEXT:
+  problem_domain: "SOLID Principles Violation - DIP & ISP Combined"
+  violations:
+    DIP: "PaymentService → StripeApi concrete dependency"
+    ISP: "IWorker fat interface forcing unused method implementations"
+  business_impact:
+    vendor_lock: "HIGH - $45K/year maintenance"
+    test_coverage: "12% blocked by concrete dependencies"
+    coupling_coefficient: "0.87 (target: <0.25)"
+  migration_scope: "Dual refactoring - Dependency Inversion + Interface Segregation"
+  
+REQUIREMENTS:
+  functional:
+    - "Decouple PaymentService via PaymentGateway abstraction"
+    - "Decompose IWorker into role-specific interfaces"
+    - "Enable runtime payment gateway switching"
+    - "Support interface composition for multiple capabilities"
+    - "Zero-downtime migration via Flyway 9.22.0"
+    
+  non_functional:
+    performance: "P99 latency <100ms maintained"
+    testing: "95% coverage post-refactoring"
+    maintainability: "Reduce coupling by 70%+"
+    security: "PCI-DSS Level 1, GDPR compliant"
+    
+ARCHITECTURE:
+  pattern: "HEXAGONAL_WITH_ROLE_SEGREGATION"
+  
+  dependency_inversion:
+    ports:
+      outbound: "domain.ports.outbound.PaymentGateway"
+    adapters:
+      - "infrastructure.adapters.payment.StripePaymentAdapter"
+      - "infrastructure.adapters.payment.PayPalPaymentAdapter"
+      
+  interface_segregation:
+    decomposition:
+      from: "IWorker (11 methods)"
+      to:
+        - "Workable (work(), getWorkHours())"
+        - "Eatable (eat(), takeLunchBreak())"
+        - "Manageable (manage(), delegate())"
+        - "Reportable (generateReport(), submitTimesheet())"
+        
+FRAMEWORK:
+  core:
+    java: "17"
+    spring_boot: "3.2.0"
+  migration:
+    tool: "Flyway 9.22.0"
+    strategy: "PARALLEL_RUN_WITH_FEATURE_FLAGS"
+  testing:
+    unit: "JUnit 5 + Mockito 5.x"
+    integration: "TestContainers 1.19.x"
+    contract: "Spring Cloud Contract 4.x"
