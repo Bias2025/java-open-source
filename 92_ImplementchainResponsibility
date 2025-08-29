@@ -1,0 +1,48 @@
+CONTEXT:
+  domain: Enterprise Web Security & Request Processing
+  scale: High-throughput REST API (10K+ RPS)
+  constraints: 
+    - Spring Security integration required
+    - Stateless authentication (JWT/Bearer tokens)
+    - Comprehensive audit logging
+    - Sub-100ms filter processing time
+  team: Senior Java developers familiar with Spring Security
+  integration: 
+    - Spring Boot 3.x ecosystem
+    - Spring Security 6.x
+    - PostgreSQL for audit logs
+    - Redis for token caching
+
+REQUIREMENTS:
+  functional:
+    - AuthenticationFilter: Extract and validate credentials/tokens
+    - AuthorizationFilter: Verify permissions and roles
+    - LoggingFilter: Capture request/response with correlation IDs
+    - Dynamic filter ordering and conditional execution
+    - Graceful error propagation through chain
+  non_functional:
+    performance: <5ms per filter, <15ms total chain processing
+    security: OWASP compliant, timing-attack resistant
+    scalability: Thread-safe, zero shared mutable state
+    reliability: 99.99% uptime, circuit breaker for external calls
+  compliance: SOC2, GDPR audit requirements
+
+ARCHITECTURE:
+  pattern: Chain of Responsibility with Spring's OncePerRequestFilter
+  style: Layered security architecture with fail-fast principle
+  layers:
+    - presentation: Filter chain intercepting HTTP requests
+    - application: Security context establishment
+    - domain: Authentication/Authorization business logic
+    - infrastructure: Token validation, user store, audit persistence
+  data_flow: Request → Authentication → Authorization → Business Logic → Logging → Response
+
+FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2.x, Spring Security 6.2.x
+  persistence:
+    database: PostgreSQL 15 (audit logs)
+    cache: Redis (token validation cache)
+  monitoring: Micrometer metrics, SLF4J/Logback
+  deployment: Kubernetes with horizontal scaling
