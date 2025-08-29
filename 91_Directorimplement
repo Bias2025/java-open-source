@@ -1,0 +1,109 @@
+# CRAFT-TPO ANALYSIS & CODE GENERATION PROMPT
+
+## C - CONTEXT (Environmental Understanding)
+CONTEXT:
+  domain: Enterprise Service Enhancement
+  pattern: Decorator Pattern for Cross-Cutting Concerns
+  scale: 
+    - 10K-100K requests/second
+    - Sub-100ms P99 latency requirement
+    - Distributed caching with Redis
+  constraints:
+    - Java 17 strict mode
+    - Spring Boot 3.2.x
+    - Zero modification to existing service implementations
+    - Production-ready with comprehensive testing
+  team: Senior engineers requiring AOP alternatives
+  integration:
+    - Redis for distributed caching
+    - SLF4J/Logback for structured logging
+    - Micrometer for metrics
+    - OpenTelemetry for tracing
+
+## R - REQUIREMENTS (Explicit Specifications)
+REQUIREMENTS:
+  functional:
+    - Implement pure Decorator pattern (no AOP)
+    - Add transparent caching layer with TTL management
+    - Add comprehensive logging (entry/exit/performance)
+    - Support async operations with CompletableFuture
+    - Enable/disable decorators via configuration
+    - Support cache invalidation strategies
+  non_functional:
+    performance: 
+      - <5ms decorator overhead
+      - 95% cache hit ratio target
+      - Async logging to prevent blocking
+    security:
+      - Sanitize logged parameters (no PII)
+      - Encrypted cache values for sensitive data
+    scalability:
+      - Thread-safe implementations
+      - Connection pooling for Redis
+    reliability:
+      - Circuit breaker for cache failures
+      - Fallback to direct service calls
+
+## A - ARCHITECTURE (Design Decisions)
+ARCHITECTURE:
+  pattern: Layered Decorator with Interface Segregation
+  style: Component-based with dependency injection
+  layers:
+    - Interface Layer: Service contracts
+    - Core Layer: Original service implementations
+    - Decorator Layer: Caching and Logging decorators
+    - Configuration Layer: Spring configuration and profiles
+  data_flow:
+    - Request → LoggingDecorator → CachingDecorator → Service
+    - Response ← LoggingDecorator ← CachingDecorator ← Service
+  principles:
+    - Open/Closed Principle
+    - Single Responsibility
+    - Dependency Inversion
+
+## F - FRAMEWORK (Technical Stack)
+FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2.x
+  caching:
+    provider: Spring Cache with Redis
+    serialization: Jackson JSON
+    eviction: LRU with TTL
+  logging:
+    framework: SLF4J with Logback
+    format: Structured JSON
+    MDC: Correlation IDs
+  testing:
+    unit: JUnit 5, Mockito
+    integration: TestContainers (Redis)
+    performance: JMeter
+
+## T - TECHNOLOGY (Implementation Stack)
+TECHNOLOGY:
+  annotations:
+    - Custom @Decoratable marker
+    - @ConditionalOnProperty for toggles
+  libraries:
+    - Caffeine for local L1 cache
+    - Lettuce for Redis client
+    - Micrometer for metrics
+  patterns:
+    - Builder pattern for decorator configuration
+    - Factory pattern for decorator instantiation
+
+## P - PERSONA (Target Audience)
+PERSONA:
+  role: Senior Backend Engineer
+  expertise: Distributed systems, Spring ecosystem
+  goal: Implement maintainable cross-cutting concerns
+  constraints: Cannot modify existing service code
+
+## O - ORIGINALITY (Unique Aspects)
+ORIGINALITY:
+  innovations:
+    - Stackable decorators with priority ordering
+    - Dynamic decorator chain modification at runtime
+    - Performance-aware logging (auto-disable if slow)
+    - Cache warming strategies
+    - Distributed cache invalidation via Redis Pub/Sub
