@@ -1,0 +1,80 @@
+# CHANGELOG GENERATION REQUEST
+
+## TASK DEFINITION
+Generate a professional changelog entry for a Spring Boot application feature release.
+
+## C - CONTEXT (Clear Task Understanding)
+CONTEXT:
+  task_type: Documentation Generation
+  output_format: CHANGELOG.md
+  purpose: Communicate release changes to developers and stakeholders
+  scope: Single feature release documentation
+  
+## R - REQUIREMENTS (Explicit Documentation Needs)
+REQUIREMENTS:
+  content_structure:
+    - Version number and release date
+    - Feature additions with technical details
+    - Breaking changes with migration paths
+    - Performance improvements with metrics
+    - Security enhancements
+    - Bug fixes
+    - Deprecation notices
+  
+  formatting:
+    - Follow "Keep a Changelog" standard
+    - Use semantic versioning
+    - Include code examples where relevant
+    - Add migration instructions for breaking changes
+  
+  technical_details:
+    - Spring Boot version compatibility
+    - Database schema changes
+    - API endpoint modifications
+    - Configuration changes
+
+## A - ARCHITECTURE (Documentation Architecture)
+DOCUMENTATION_STRUCTURE:
+  format: Markdown
+  sections:
+    - [Added] - New features
+    - [Changed] - Changes in existing functionality  
+    - [Deprecated] - Soon-to-be removed features
+    - [Removed] - Removed features
+    - [Fixed] - Bug fixes
+    - [Security] - Vulnerability fixes
+    - [Performance] - Optimization details
+  
+  audience_levels:
+    - Technical: Developers implementing changes
+    - Operational: DevOps managing deployments
+    - Strategic: Product managers tracking features
+
+## F - FRAMEWORK (Content Framework)
+CONTENT_FRAMEWORK:
+  tone: Professional, technical, concise
+  length: 500-800 words
+  examples_required: true
+  code_snippets: true
+  migration_guides: true
+  
+## T - TECHNOLOGY (Specific Technologies to Document)
+TECHNOLOGIES_MENTIONED:
+  - Spring Boot 3.3.0 features
+  - PostgreSQL 15 optimizations
+  - Redis caching improvements
+  - Kafka event streaming updates
+  - Security: OAuth2/JWT implementations
+  - Monitoring: Micrometer metrics
+
+## P - PERSONA (Writer Perspective)
+WRITER_PERSONA:
+  role: Senior Technical Writer with Spring Boot expertise
+  audience_awareness: Mixed technical levels
+  documentation_style: Clear, example-driven, actionable
+
+## O - ORIGINALITY (Unique Content Generation)
+ORIGINALITY:
+  custom_examples: Project-specific code samples
+  unique_migration_paths: Tailored to this release
+  specific_metrics: Actual performance improvements
