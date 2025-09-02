@@ -1,0 +1,83 @@
+CONTEXT:
+  domain: Financial Services / Real Estate Lending
+  scale: 
+    - 10K-100K daily loan applications
+    - 500K+ active loans
+    - 50M+ transaction records
+    - Sub-100ms response time requirement
+  constraints: 
+    - PCI-DSS compliance required
+    - SOX audit requirements
+    - GDPR/CCPA data privacy
+    - 99.99% uptime SLA
+  team: 
+    - 50-100 developers
+    - High experience levels
+    - Existing Spring ecosystem knowledge
+  integration: 
+    - Credit bureaus (Experian, Equifax, TransUnion)
+    - Property valuation services
+    - Banking core systems
+    - Document management systems
+    REQUIREMENTS:
+  functional:
+    - Loan application processing (create, update, approve, reject)
+    - Real estate property valuation and management
+    - Credit scoring and risk assessment
+    - Payment processing and amortization schedules
+    - Document generation and management
+    - Audit trail for all financial transactions
+  non_functional:
+    performance: 
+      - P99 latency < 100ms for reads
+      - P99 latency < 500ms for writes
+      - 10K concurrent users
+    security: 
+      - OAuth2/JWT authentication
+      - Role-based access control (RBAC)
+      - Field-level encryption for PII
+      - Complete audit logging
+    scalability: 
+      - Horizontal scaling to 20 nodes
+      - Database connection pooling
+      - Redis caching layer
+    reliability: 
+      - 99.99% uptime
+      - Zero data loss
+      - Automated failover
+  compliance: 
+    - PCI-DSS Level 1
+    - SOX Section 404
+    - GDPR Article 17 (Right to be forgotten)
+    - Fair Lending Act
+    ARCHITECTURE:
+  pattern: Clean Architecture with Hexagonal ports/adapters
+  style: Modular Monolith (ready for microservices extraction)
+  layers:
+    - presentation: REST API with OpenAPI 3.0 documentation
+    - application: Service layer with transaction boundaries
+    - domain: Rich domain models with business rules
+    - infrastructure: JPA repositories, external integrations
+  data_flow: 
+    - CQRS for read/write separation
+    - Event sourcing for audit trail
+    - Saga pattern for distributed transactions
+    FRAMEWORK:
+  core:
+    language: Java 17 LTS
+    framework: Spring Boot 3.x.x / Spring 5.x.x
+  persistence:
+    database: PostgreSQL 15+
+    orm: Spring Data JPA with Hibernate
+    migration: Flyway
+    caching: Redis with Spring Cache
+  messaging: Apache Kafka for event streaming
+  monitoring: 
+    - Micrometer + Prometheus
+    - ELK stack for logging
+    - Jaeger for distributed tracing
+  deployment: 
+    - Docker containers
+    - Kubernetes orchestration
+    - AWS/Azure/GCP cloud-native
+    
