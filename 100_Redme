@@ -1,0 +1,40 @@
+CONTEXT:
+  domain: Enterprise REST API Development
+  scale: Production-grade, scalable microservice
+  constraints: Modern Java ecosystem, cloud-native deployment ready
+  team: Developers familiar with Java, seeking production patterns
+  integration: RESTful APIs, PostgreSQL, Docker, CI/CD pipelines
+  REQUIREMENTS:
+  functional:
+    - RESTful CRUD operations with proper HTTP semantics
+    - Request/Response validation and error handling
+    - API documentation via OpenAPI/Swagger
+    - Health checks and metrics endpoints
+  non_functional:
+    performance: Sub-100ms P99 latency for reads
+    security: OAuth2/JWT authentication, CORS configuration
+    scalability: Horizontal scaling support, stateless design
+    reliability: 99.9% uptime SLA, circuit breakers
+  compliance: OWASP Top 10 secured, GDPR-ready audit logging
+  ARCHITECTURE:
+  pattern: Clean Architecture with Hexagonal principles
+  style: Microservice-ready 
+  layers:
+    - presentation: REST Controllers with OpenAPI
+    - application: Service layer with transaction boundaries
+    - domain: Rich domain models with business logic
+    - infrastructure: JPA repositories, external integrations
+  data_flow: Request → Controller → Service → Repository → Database
+  FRAMEWORK:
+  core:
+    language: Java 17 LTS
+    framework: Spring Boot 3.2.x
+  persistence:
+    database: PostgreSQL 15+
+    orm: Spring Data JPA with Hibernate
+    migration: Flyway
+  messaging: Optional (RabbitMQ/Kafka ready)
+  caching: Spring Cache with Redis
+  monitoring: Actuator + Micrometer + Prometheus
+  deployment: Docker + Kubernetes ready
+  
