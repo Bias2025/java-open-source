@@ -1,0 +1,112 @@
+
+// You are a world-class Java performance optimization architect and debugging expert with 25+ years of experience in enterprise-grade Java development,
+// specializing in Stream API debugging, peek() method utilization, and comprehensive functional programming troubleshooting for modern Java applications.
+//
+// CONTEXT: Analyze and implement comprehensive Stream debugging techniques for [PROJECT_NAME] application using peek() method
+// to debug [DOMAIN_NAME] domain data processing pipelines serving [BUSINESS_PURPOSE] with complete stream inspection and troubleshooting
+//
+// REQUIREMENTS:
+// Functional: Comprehensive Stream debugging with peek() method integration for intermediate operation inspection, Advanced logging implementation with structured output and contextual information, Stream pipeline visualization with step-by-step data transformation tracking, Performance monitoring integration with execution time measurement and throughput analysis, Exception handling enhancement with detailed error context and stream state capture, Data validation debugging with intermediate result verification and constraint checking, Complex stream operation debugging with nested streams and parallel processing inspection, Memory usage monitoring with object allocation tracking and garbage collection analysis, Custom peek() implementations with domain-specific debugging logic and business rule validation, Stream state inspection with element count tracking and processing statistics, Conditional debugging with predicate-based peek() activation and selective logging, Multi-threaded debugging with thread-safe logging and parallel stream inspection
+// Non-Functional: Enhanced debugging efficiency through comprehensive stream state visibility, Improved development velocity with rapid issue identification and resolution, Better code maintainability through detailed execution tracing and documentation, Reduced production incidents through thorough stream processing validation, Enhanced performance optimization with bottleneck identification and resource usage monitoring, Improved code quality through systematic debugging practices and stream operation validation, Better collaboration through clear debugging output and shared troubleshooting procedures, Enhanced system reliability through proactive issue detection and stream processing verification
+//
+// ARCHITECTURE: Stream debugging architecture with peek() method integration and logging infrastructure, Modular debugging utilities with reusable peek() implementations and custom debug operators, Performance monitoring architecture with metrics collection and stream execution analysis, Error handling architecture with comprehensive exception context and stream state preservation, Logging architecture with structured output, contextual information, and configurable verbosity levels
+//
+// TESTING: Stream debugging validation with test cases covering various peek() scenarios and edge cases, Performance testing with stream execution time measurement and throughput validation, Memory testing with heap usage monitoring and garbage collection impact assessment, Concurrent testing with parallel stream debugging and thread safety validation, Integration testing with real-world data processing scenarios and production-like workloads
+//
+// CONSTRAINTS:
+// Quality: Zero performance degradation in production with debugging code properly configured, Comprehensive stream operation coverage with peek() integration at all critical points, Clean debugging output with structured logging and readable trace information, Maintainable debugging code with reusable utilities and consistent patterns, Thread-safe debugging implementations for parallel stream processing, Memory-efficient debugging with minimal object allocation and resource usage, Exception-safe debugging with proper error handling and graceful degradation
+// Performance: Minimal performance overhead from debugging code with efficient peek() implementations, Optimized logging output with buffered writing and asynchronous processing, Memory-conscious debugging with object pooling and efficient string operations, CPU-efficient debugging with conditional activation and selective processing, Network-optimized logging with batched output and compression for remote logging, Disk I/O optimization with efficient file writing and log rotation strategies
+// Security: Sensitive data protection in debugging output with data masking and sanitization, Secure logging configuration with appropriate access controls and encryption, Debug information security with proper filtering of confidential business data, Audit trail integration with debugging activities and security event correlation
+//
+// FRAMEWORKS: Java 17+, Spring Boot 3.4+, SLF4J, Logback, Micrometer, JUnit 5, AssertJ, JProfiler, VisualVM
+//
+// ORIGINALITY REQUIREMENTS:
+// - Create COMPREHENSIVE peek() debugging strategies for [PROJECT_NAME] stream processing and [DOMAIN_NAME] data pipelines
+// - Implement ADVANCED stream inspection techniques tailored to [PROJECT_NAME] business logic and [BUSINESS_PURPOSE] requirements
+// - Design SOPHISTICATED debugging utilities for [DOMAIN_NAME] domain-specific data validation and transformation monitoring
+// - Generate THOROUGH performance monitoring for [PROJECT_NAME] stream operations and resource usage optimization
+// - Create ROBUST error handling for [BUSINESS_PURPOSE] exception scenarios and stream processing failures
+// - Implement COMPLETE logging integration for [DOMAIN_NAME] structured debugging output and trace analysis
+// - Design COMPREHENSIVE debugging workflows for [PROJECT_NAME] development and production troubleshooting
+// - Generate ADVANCED concurrent debugging for [BUSINESS_PURPOSE] parallel stream processing and thread safety
+// - Create DETAILED documentation for [DOMAIN_NAME] debugging best practices and troubleshooting procedures
+// - Implement AUTOMATED debugging validation for [PROJECT_NAME] stream processing correctness and performance verification
+//
+// Generate comprehensive Java Stream debugging solution that:
+// - Creates COMPLETE peek() method integration with structured logging and comprehensive stream inspection capabilities
+// - Implements ADVANCED debugging utilities with reusable components and domain-specific debugging logic
+// - Develops SOPHISTICATED performance monitoring with execution time tracking and resource usage analysis
+// - Generates THOROUGH error handling with detailed exception context and stream state preservation
+// - Creates ROBUST logging architecture with structured output and configurable verbosity levels
+// - Implements COMPREHENSIVE concurrent debugging with thread-safe logging and parallel stream inspection
+// - Develops ADVANCED data validation with intermediate result verification and business rule checking
+// - Generates COMPLETE troubleshooting procedures with systematic debugging workflows and issue resolution
+// - Creates DETAILED documentation explaining debugging techniques and best practice implementations
+// - Implements AUTOMATED testing validation ensuring debugging code quality and performance efficiency
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE JAVA STREAM DEBUGGING WITH PEEK()
+ * This enterprise-grade prompt generates COMPLETE, production-ready stream debugging solution with:
+ * 
+ * COMPREHENSIVE PEEK() METHOD INTEGRATION:
+ * - Advanced peek() implementations with structured logging and contextual information
+ * - Custom debugging operators with domain-specific logic and business rule validation
+ * - Performance monitoring integration with execution time measurement and throughput tracking
+ * - Memory usage monitoring with object allocation tracking and garbage collection impact
+ * - Exception handling enhancement with detailed error context and stream state capture
+ * - Conditional debugging with predicate-based activation and selective processing
+ * - Thread-safe debugging implementations for parallel stream processing and concurrent access
+ * - Data validation debugging with intermediate result verification and constraint checking
+ * 
+ * ADVANCED STREAM DEBUGGING TECHNIQUES:
+ * - Stream pipeline visualization with step-by-step transformation tracking and data flow analysis
+ * - Complex nested stream debugging with hierarchical inspection and recursive processing
+ * - Parallel stream debugging with thread-aware logging and concurrent execution monitoring
+ * - Lazy evaluation debugging with deferred operation tracking and terminal operation analysis
+ * - Stream short-circuiting debugging with early termination detection and optimization analysis
+ * - Infinite stream debugging with bounded inspection and resource usage monitoring
+ * - Stream composition debugging with multi-stage pipeline analysis and intermediate results
+ * - Custom collector debugging with accumulation process monitoring and result validation
+ * 
+ * SOPHISTICATED DEBUGGING UTILITIES:
+ * - Reusable debugging operators with configurable verbosity and output formatting
+ * - Domain-specific peek() implementations with business context and validation logic
+ * - Performance profiling utilities with bottleneck identification and optimization recommendations
+ * - Memory debugging utilities with heap usage tracking and object lifecycle monitoring
+ * - Error debugging utilities with comprehensive exception analysis and stack trace enhancement
+ * - Metrics collection utilities with stream processing statistics and performance indicators
+ * - Logging utilities with structured output, contextual information, and correlation IDs
+ * - Testing utilities with stream debugging validation and regression testing support
+ * 
+ * PRODUCTION-READY DEBUGGING IMPLEMENTATIONS:
+ * - Thread-safe debugging code with proper synchronization and concurrent access handling
+ * - Memory-efficient implementations with object pooling and minimal allocation overhead
+ * - Performance-optimized debugging with conditional activation and efficient processing
+ * - Error-resilient debugging with comprehensive exception handling and graceful degradation
+ * - Configurable debugging parameters with external property support and dynamic configuration
+ * - Monitored debugging execution with detailed metrics and performance tracking
+ * - Documented debugging utilities with comprehensive JavaDoc and usage examples
+ * - Maintainable debugging architecture with modular design and reusable components
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (ECommerceSystem, DataProcessingPlatform, AnalyticsEngine, etc.)
+ * - [DOMAIN_NAME] → Your business domain (ecommerce, data-processing, analytics, finance, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (order processing, data transformation, report generation, etc.)
+ * - [ENTITY_NAME] → Your core entity (Order, Transaction, Customer, Product, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, DataInc, AnalyticsPro, etc.)
+ * - [PACKAGE_NAME] → Your package structure (com.company.project, org.enterprise.system, etc.)
+ * - [DATA_TYPE] → Your primary data type (Order, Customer, Transaction, Product, etc.)
+ * 
+ * JAVA STREAM DEBUGGING CUSTOMIZATIONS:
+ * - Identify your specific stream processing patterns and data transformation workflows for targeted debugging
+ * - Define your performance monitoring requirements and bottleneck identification needs for comprehensive analysis
+ * - Specify your error handling strategies and exception debugging requirements for robust troubleshooting
+ * - Configure your logging preferences and output formatting for clear and actionable debugging information
+ * - Set up your testing strategies and validation requirements for debugging code quality assurance
+ * - Define your production debugging requirements and performance impact tolerance for live system monitoring
+ * - Specify your concurrent debugging needs and thread safety requirements for parallel processing scenarios
+ * - Configure your metrics collection and monitoring integration for comprehensive stream processing analysis
+ * 
+ * The more specific your stream processing workflows and [DOMAIN_NAME] data transformation requirements, the more targeted and effective the debugging implementation will be!
+ */
+
