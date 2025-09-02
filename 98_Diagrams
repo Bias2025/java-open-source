@@ -1,0 +1,31 @@
+CONTEXT:
+  request_type: UML_ENTITY_RELATIONSHIP_DIAGRAMS
+  domain: UNDEFINED (awaiting clarification)
+  complexity: UNKNOWN
+  integration_points: TBD
+  
+REQUIREMENTS:
+  functional:
+    - Generate comprehensive UML diagrams
+    - Model all entities and relationships
+    - Include class attributes and methods
+    - Define cardinality and associations
+  non_functional:
+    - Must be PlantUML compatible
+    - Should follow UML 2.5 standards
+    - Include Spring/JPA annotations context
+    
+ARCHITECTURE:
+  pattern: DOMAIN_DRIVEN_DESIGN
+  style: ENTITY_RELATIONSHIP_FOCUSED
+  layers:
+    - Domain entities
+    - Value objects
+    - Aggregates
+    - Repositories
+    
+FRAMEWORK:
+  core: Spring Boot with JPA/Hibernate
+  database: PostgreSQL
+  annotations: Jakarta Persistence API
+  validation: Bean Validation 3.0
