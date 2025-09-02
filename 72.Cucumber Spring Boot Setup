@@ -1,0 +1,113 @@
+
+// You are a world-class BDD test automation architect and Spring Boot integration expert with 25+ years of experience in enterprise-grade testing frameworks,
+// specializing in Cucumber BDD integration, Spring Boot test configuration, and comprehensive behavior-driven development for modern Java applications.
+//
+// CONTEXT: Design and implement comprehensive Cucumber BDD integration with Spring Boot for [PROJECT_NAME] application
+// testing [DOMAIN_NAME] domain user behaviors serving [BUSINESS_PURPOSE] with complete BDD framework setup and configuration
+//
+// REQUIREMENTS:
+// Functional: Complete Cucumber Spring Boot integration with cucumber-java, cucumber-spring, cucumber-junit dependencies, Comprehensive project structure with proper Maven/Gradle build configuration, Test runner class creation with CucumberOptions and Spring Boot integration, Feature file organization with clear Gherkin syntax and business-readable scenarios, Step definition implementation with Spring Boot context and dependency injection, REST endpoint testing with MockMvc integration and HTTP request validation, Database integration testing with @Transactional and test data management, Configuration management with application-test.properties and profile-specific settings, Test fixture setup with @SpringBootTest and custom test configuration, Assertion integration with AssertJ and Hamcrest for comprehensive validation, Test data builders with realistic dataset creation and cleanup procedures, Integration with Spring Security for authenticated endpoint testing
+// Non-Functional: Enhanced test maintainability through clear BDD scenarios and reusable step definitions, Improved test readability with business-friendly Gherkin language and descriptive feature files, Better collaboration between developers, testers, and business analysts through shared BDD vocabulary, Reduced test execution time through efficient Spring context management and test optimization, Enhanced CI/CD integration with detailed BDD test reporting and feature coverage metrics, Improved debugging capability with clear step-by-step execution and detailed error messages, Better test isolation with proper Spring context configuration and test data cleanup, Enhanced documentation through living documentation with executable specifications
+//
+// ARCHITECTURE: Spring Boot test architecture with Cucumber integration and dependency injection, BDD test organization with feature-driven development and domain-specific step definitions, Maven/Gradle build configuration with proper dependency management and plugin integration, Test context management with Spring Boot test slices and configuration optimization, Database test architecture with embedded databases and transactional test management, REST API test architecture with MockMvc integration and endpoint validation
+//
+// TESTING: BDD scenario testing with Gherkin Given-When-Then syntax and comprehensive user story coverage, Integration testing with @SpringBootTest and full application context loading, REST endpoint testing with MockMvc and HTTP request/response validation, Database testing with @DataJpaTest and repository layer validation, Service layer testing with @MockBean and business logic validation, Security testing with @WithMockUser and authentication scenario validation
+//
+// CONSTRAINTS:
+// Quality: Zero regression in application functionality during BDD integration, Complete feature coverage with comprehensive scenario validation, Spring Boot best practices compliance with proper test configuration, Cucumber best practices adherence with clear and maintainable step definitions, Code quality gates with SonarQube BDD test coverage validation, Documentation quality with living documentation and executable specifications, Test stability with reliable step implementations and robust assertion patterns
+// Performance: Test execution optimization through efficient Spring context management, Memory usage optimization with proper test data cleanup and resource management, Build performance improvement with selective test execution and parallel testing, Database test optimization with transaction rollback and data isolation, Spring context optimization with test slice usage and minimal context loading
+// Security: Security test implementation with authentication and authorization scenario validation, Test data security with non-sensitive information and proper data anonymization, Credential management with secure test configuration and environment-specific secrets, Input validation testing with malicious payload simulation and XSS prevention
+//
+// FRAMEWORKS: Spring Boot 3.4+, Cucumber 7.x, JUnit 5, MockMvc, AssertJ, Hamcrest, Maven/Gradle, H2 Database
+//
+// ORIGINALITY REQUIREMENTS:
+// - Create COMPREHENSIVE Cucumber integration setup for [PROJECT_NAME] Spring Boot application and [DOMAIN_NAME] testing
+// - Implement ADVANCED BDD scenarios tailored to [PROJECT_NAME] business requirements and [BUSINESS_PURPOSE] validation
+// - Design SOPHISTICATED step definitions for [DOMAIN_NAME] domain workflows and business rule validation
+// - Generate THOROUGH feature files covering [PROJECT_NAME] critical user journeys and edge case scenarios
+// - Create ROBUST test data management for [BUSINESS_PURPOSE] realistic dataset creation and cleanup
+// - Implement COMPLETE REST endpoint testing for [DOMAIN_NAME] API validation and contract verification
+// - Design COMPREHENSIVE Spring Boot integration for [PROJECT_NAME] dependency injection and context management
+// - Generate ADVANCED test configuration for [BUSINESS_PURPOSE] environment-specific testing and profile management
+// - Create DETAILED documentation for [DOMAIN_NAME] BDD implementation and maintenance procedures
+// - Implement AUTOMATED setup scripts for [PROJECT_NAME] repeatable Cucumber integration and configuration
+//
+// Generate comprehensive Cucumber Spring Boot setup solution that:
+// - Creates COMPLETE project structure with proper Maven/Gradle configuration and dependency management
+// - Implements COMPREHENSIVE Cucumber integration with Spring Boot context and dependency injection
+// - Develops ADVANCED test runner configuration with CucumberOptions and Spring Boot test integration
+// - Generates THOROUGH feature files with clear Gherkin scenarios covering critical business workflows
+// - Creates SOPHISTICATED step definitions with Spring Boot context access and comprehensive validation
+// - Implements COMPLETE REST endpoint testing with MockMvc integration and HTTP validation
+// - Develops ROBUST test data management with builders, fixtures, and realistic dataset creation
+// - Generates COMPREHENSIVE test configuration with environment-specific settings and profile management
+// - Creates DETAILED documentation explaining BDD setup decisions and maintenance procedures
+// - Implements AUTOMATED verification procedures ensuring complete Cucumber integration and functionality
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE CUCUMBER SPRING BOOT SETUP
+ * This enterprise-grade prompt generates COMPLETE, production-ready BDD integration solution with:
+ * 
+ * COMPREHENSIVE CUCUMBER INTEGRATION SETUP:
+ * - Complete Maven/Gradle dependency configuration for cucumber-java, cucumber-spring, cucumber-junit
+ * - Advanced project structure with proper test directory organization and resource management
+ * - Sophisticated test runner class with CucumberOptions and Spring Boot integration
+ * - Comprehensive feature file organization with domain-specific folder structure
+ * - Advanced step definition architecture with Spring Boot context and dependency injection
+ * - Complete REST endpoint testing with MockMvc integration and HTTP validation
+ * - Robust test configuration with application-test.properties and profile management
+ * - Advanced assertion integration with AssertJ and Hamcrest for comprehensive validation
+ * 
+ * ADVANCED BDD IMPLEMENTATION PATTERNS:
+ * - Domain-driven feature organization with business capability alignment
+ * - Reusable step definitions with shared steps and parameterized implementations
+ * - Context management with test state sharing and data passing between steps
+ * - Advanced Gherkin patterns with data tables, scenario outlines, and examples
+ * - Background step implementation for common test setup and preconditions
+ * - Hook implementation with @Before and @After for test lifecycle management
+ * - Tag-based test execution with selective scenario running and environment filtering
+ * - Custom parameter types with transformation and validation logic
+ * 
+ * SPRING BOOT TEST INTEGRATION:
+ * - @SpringBootTest configuration with web environment and random port setup
+ * - Test slice integration with @WebMvcTest for controller layer testing
+ * - MockBean integration for service layer mocking and verification
+ * - TestRestTemplate configuration for full integration testing
+ * - Database testing with @DataJpaTest and embedded database setup
+ * - Transaction management with @Transactional and rollback configuration
+ * - Security testing integration with @WithMockUser and authentication setup
+ * - Configuration property testing with @ConfigurationProperties validation
+ * 
+ * PRODUCTION-READY SETUP IMPLEMENTATIONS:
+ * - Thread-safe step definitions with proper Spring context isolation
+ * - Memory-efficient test execution with optimized Spring context management
+ * - Performance-optimized BDD scenarios with selective test execution and caching
+ * - Error-resilient test implementations with comprehensive exception handling
+ * - Configurable test parameters with environment-specific settings and externalization
+ * - Monitored test execution with detailed logging and step-level reporting
+ * - Documented BDD scenarios with comprehensive feature descriptions and acceptance criteria
+ * - Maintainable test architecture with reusable components and modular design
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (ECommerceSystem, BankingPlatform, HealthcarePortal, etc.)
+ * - [DOMAIN_NAME] → Your business domain (ecommerce, banking, healthcare, logistics, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (online retail, financial services, patient care, etc.)
+ * - [ENTITY_NAME] → Your core entity (User, Product, Account, Patient, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, FinanceInc, HealthTech, etc.)
+ * - [PACKAGE_NAME] → Your package structure (com.company.project, org.enterprise.system, etc.)
+ * - [BASE_URL] → Your application base URL (/api/v1, /rest, /services, etc.)
+ * 
+ * CUCUMBER SPRING BOOT SETUP CUSTOMIZATIONS:
+ * - Identify your specific REST endpoints and API contracts for comprehensive BDD scenario creation
+ * - Define your business workflows and user journeys for thorough feature file development
+ * - Specify your test data requirements and database interaction patterns for robust step definitions
+ * - Configure your Spring Boot test configuration and profile management for environment-specific testing
+ * - Set up your assertion strategies and validation requirements for comprehensive test coverage
+ * - Define your CI/CD integration requirements and BDD reporting expectations
+ * - Specify your security testing needs and authentication scenario validation
+ * - Configure your performance testing integration and load testing requirements
+ * 
+ * The more specific your Spring Boot application structure and [DOMAIN_NAME] business requirements, the more targeted and effective the Cucumber BDD integration will be!
+ */
+
+ucumber.version>
