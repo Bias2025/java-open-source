@@ -1,0 +1,99 @@
+# Spring Boot JDK 8 to JDK 17 Migration Prompt - CRAFT Format
+
+```java
+// You are a world-class Java migration architect and modernization expert with 25+ years of experience in enterprise-grade Java upgrades,
+// specializing in JDK migrations, Spring Boot modernization, and comprehensive application transformation from legacy to modern Java ecosystems.
+//
+// CONTEXT: Analyze and migrate [PROJECT_NAME] Spring Boot application from JDK 8 to JDK 17 with Spring Boot 3.4.x upgrade
+// for [DOMAIN_NAME] domain operations serving [BUSINESS_PURPOSE] with complete compatibility and performance optimization
+//
+// REQUIREMENTS:
+// Functional: Complete JDK 17 migration with Spring Boot 3.4.x compatibility and feature utilization, Comprehensive dependency upgrade with latest compatible versions and security patches, Java language feature modernization with records, sealed classes, pattern matching, and text blocks, Module system integration with JPMS (Java Platform Module System) for improved encapsulation, Deprecated API replacement with modern alternatives and future-proof implementations, Performance optimization with JDK 17 improvements including ZGC, Shenandoah, and enhanced garbage collection, Security enhancement with latest cryptographic standards and vulnerability patches, Build tool migration with Maven/Gradle updates and plugin compatibility, IDE configuration update with modern tooling and debugging capabilities, Third-party library compatibility assessment with upgrade recommendations and alternative solutions, JVM argument optimization with modern GC tuning and performance parameters, Native compilation support with GraalVM integration for containerized deployments
+// Non-Functional: Enhanced application performance through JDK 17 optimizations and modern JVM features, Improved security posture with latest security patches and cryptographic improvements, Better memory management through advanced garbage collection algorithms and heap optimization, Enhanced developer productivity with modern Java language features and tooling, Improved maintainability through code modernization and deprecated API elimination, Better containerization support with optimized Docker images and reduced startup times, Enhanced monitoring capabilities with modern JFR (Java Flight Recorder) and profiling tools, Improved scalability through virtual threads and reactive programming enhancements, Better compliance with modern security standards and regulatory requirements
+//
+// ARCHITECTURE: Modern Spring Boot 3.4.x architecture with JDK 17 features and performance optimizations, Modular application design with JPMS integration and clean separation of concerns, Cloud-native architecture with optimized containerization and microservices patterns, Security architecture with modern authentication, authorization, and cryptographic standards, Performance architecture with advanced garbage collection, memory optimization, and JVM tuning, Monitoring architecture with modern observability tools and JFR integration
+//
+// TESTING: Comprehensive migration testing with JDK 17 compatibility validation and regression prevention, Performance testing with JVM optimization verification and benchmark comparisons, Security testing with vulnerability scanning and compliance validation, Integration testing with third-party library compatibility and API validation, Load testing with modern JVM features and performance characteristics assessment
+//
+// CONSTRAINTS:
+// Quality: Zero functional regression during migration process with comprehensive testing validation, Complete compatibility with Spring Boot 3.4.x and JDK 17 ecosystem, Modern Java best practices compliance with language feature utilization, Security standards adherence with latest cryptographic and authentication protocols, Code quality improvement through modernization and deprecated API elimination, Comprehensive documentation with migration decisions and architectural improvements, Performance improvement validation with benchmarking and monitoring integration
+// Performance: Application performance enhancement through JDK 17 optimizations and modern JVM features, Memory usage optimization with advanced garbage collection and heap management, Startup time improvement through class loading optimization and native compilation support, CPU usage optimization with modern JIT compilation and performance improvements, Network performance enhancement through modern HTTP client and connection pooling, Database performance optimization with connection management and query performance improvements
+// Security: Security vulnerability elimination through dependency updates and patch management, Modern cryptographic standard implementation with algorithm upgrades and key management, Authentication and authorization modernization with OAuth 2.1 and OIDC compliance, Input validation enhancement with modern validation frameworks and security patterns, Audit logging improvement with structured logging and compliance requirements
+//
+// FRAMEWORKS: JDK 17 LTS, Spring Boot 3.4.x, Spring Framework 6.x, Jakarta EE 10+, Maven 3.9+/Gradle 8.x, Docker, GraalVM (optional)
+//
+// ORIGINALITY REQUIREMENTS:
+// - Create COMPREHENSIVE JDK 17 migration strategy for [PROJECT_NAME] application and [DOMAIN_NAME] compatibility requirements
+// - Implement ADVANCED Spring Boot 3.4.x upgrade tailored to [PROJECT_NAME] architecture and [BUSINESS_PURPOSE] needs
+// - Design SOPHISTICATED dependency modernization for [DOMAIN_NAME] third-party library compatibility and security
+// - Generate THOROUGH Java language feature adoption for [PROJECT_NAME] code modernization and performance optimization
+// - Create ROBUST testing strategy for [BUSINESS_PURPOSE] migration validation and regression prevention
+// - Implement COMPLETE performance optimization for [DOMAIN_NAME] JDK 17 feature utilization and JVM tuning
+// - Design COMPREHENSIVE security enhancement for [PROJECT_NAME] modern cryptographic standards and vulnerability mitigation
+// - Generate ADVANCED monitoring integration for [BUSINESS_PURPOSE] observability and performance tracking
+// - Create DETAILED documentation for [DOMAIN_NAME] migration process and maintenance procedures
+// - Implement AUTOMATED validation procedures for [PROJECT_NAME] migration success and ongoing compatibility
+//
+// Generate comprehensive JDK 8 to JDK 17 migration solution that:
+// - Creates COMPLETE migration roadmap with phased approach and risk mitigation strategies
+// - Implements COMPREHENSIVE dependency analysis with upgrade recommendations and compatibility matrix
+// - Develops SOPHISTICATED build configuration updates with Maven/Gradle modernization and plugin compatibility
+// - Generates THOROUGH Java code modernization with language feature adoption and deprecated API replacement
+// - Creates ROBUST testing framework with migration validation and performance benchmarking
+// - Implements COMPLETE Spring Boot 3.4.x integration with feature utilization and configuration modernization
+// - Develops ADVANCED performance optimization with JVM tuning and garbage collection enhancement
+// - Generates COMPREHENSIVE security improvements with modern standards and vulnerability mitigation
+// - Creates DETAILED documentation explaining migration decisions and architectural improvements
+// - Implements AUTOMATED validation and monitoring ensuring migration success and ongoing compatibility
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE JDK 8 TO JDK 17 MIGRATION
+ * This enterprise-grade prompt generates COMPLETE, production-ready migration solution with:
+ * 
+ * COMPREHENSIVE MIGRATION ANALYSIS:
+ * - Systematic assessment of current JDK 8 codebase with compatibility analysis and modernization opportunities
+ * - Detailed dependency analysis with third-party library compatibility matrix and upgrade recommendations
+ * - Complete Spring Boot version compatibility assessment with feature mapping and configuration requirements
+ * - Advanced Java language feature analysis with adoption opportunities and refactoring recommendations
+ * - Thorough security vulnerability assessment with patch requirements and modernization benefits
+ * - Performance baseline analysis with JDK 17 improvement opportunities and optimization potential
+ * - Build tool compatibility analysis with Maven/Gradle upgrade requirements and plugin modernization
+ * - IDE and tooling assessment with modern development environment setup and debugging enhancements
+ * 
+ * ADVANCED MIGRATION STRATEGIES:
+ * - Phased migration approach with incremental upgrades and validation checkpoints
+ * - Risk mitigation strategies with rollback procedures and compatibility testing
+ * - Automated dependency upgrade with version conflict resolution and compatibility validation
+ * - Java language modernization with records, sealed classes, pattern matching, and text block adoption
+ * - Spring Boot 3.4.x feature integration with modern configuration and auto-configuration utilization
+ * - Performance optimization with JDK 17 garbage collection, JIT compilation, and memory management
+ * - Security enhancement with modern cryptographic algorithms and authentication frameworks
+ * - Native compilation preparation with GraalVM integration and containerization optimization
+ * 
+ * SOPHISTICATED MODERNIZATION TECHNIQUES:
+ * - Java language feature adoption with systematic refactoring and code modernization
+ * - Spring Boot 3.x migration with configuration property updates and API modernization
+ * - Jakarta EE namespace migration with import statement updates and annotation changes
+ * - Dependency injection modernization with constructor injection and immutable configuration
+ * - Exception handling modernization with try-with-resources and multi-catch improvements
+ * - Stream API enhancement with modern collectors and functional programming patterns
+ * - Date/Time API migration from legacy Date/Calendar to modern java.time package
+ * - HTTP client modernization from legacy HttpURLConnection to modern HTTP client API
+ * 
+ * PRODUCTION-READY MIGRATION IMPLEMENTATIONS:
+ * - Thread-safe migration procedures with proper synchronization and data consistency
+ * - Memory-efficient migration with optimized processing and minimal resource usage
+ * - Performance-optimized migration with parallel processing and efficient algorithms
+ * - Error-resilient migration with comprehensive exception handling and recovery procedures
+ * - Configurable migration parameters with external property support and customization options
+ * - Monitored migration execution with detailed logging and progress tracking
+ * - Documented migration procedures with comprehensive guides and troubleshooting information
+ * - Maintainable migration architecture with reusable components and modular design
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (ECommerceSystem, BankingPlatform, HealthcarePortal, etc.)
+ * - [DOMAIN_NAME] → Your business domain (ecommerce, banking, healthcare, logistics, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (online retail, financial services, patient care, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, FinanceInc, HealthTech, etc.)
+ * - [PACKAGE_NAME] → Your package structure (com.company.project, org.enterprise.system, etc.)
+ * - [CURRENT_SPRING_VERSION] → Your current Spring Boot version (2.x.x, 1.x.x, etc.)
