@@ -1,0 +1,39 @@
+CONTEXT:
+  domain: Enterprise Application Resource Management
+  scale: Multi-threaded concurrent processing
+  constraints: 
+    - Prevent thread leaks during application lifecycle
+    - Ensure graceful shutdown of executor threads
+    - Maintain zero resource leaks in production
+  team: Spring Boot developers managing concurrent operations
+  integration: Spring lifecycle management, JVM shutdown hooks
+  REQUIREMENTS:
+  functional:
+    - Properly shutdown ExecutorService on application termination
+    - Complete all running tasks before shutdown
+    - Reject new tasks during shutdown phase
+    - Clean up thread pool resources
+  non_functional:
+    performance: Shutdown within configurable timeout (default 30s)
+    security: No dangling threads with sensitive data
+    scalability: Support multiple executor services
+    reliability: 100% resource cleanup guarantee
+  compliance: Thread-safe shutdown, Spring Boot lifecycle compliance
+  ARCHITECTURE:
+  pattern: Spring Lifecycle Management Pattern
+  style: Component-based with lifecycle hooks
+  layers:
+    - presentation: N/A (backend service)
+    - application: Service layer with @PreDestroy hooks
+    - domain: Executor management logic
+    - infrastructure: Thread pool configuration
+  data_flow: Graceful task completion → Thread termination → Resource cleanup
+  FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.x
+  lifecycle:
+    hooks: @PreDestroy, DisposableBean, SmartLifecycle
+    timeout: spring.lifecycle.timeout-per-shutdown-phase
+  monitoring: Thread dump analysis, metrics
+  deployment: Kubernetes-aware graceful shutdown
