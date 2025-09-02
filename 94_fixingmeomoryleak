@@ -1,0 +1,51 @@
+CONTEXT:
+  domain: Enterprise Java Application Performance
+  focus: Memory Management & Leak Detection
+  scale: Production-grade applications with potential high-memory footprint
+  constraints: 
+    - Must maintain application performance
+    - Zero-downtime implementation required
+    - Compliance with enterprise monitoring standards
+  team: Senior Java developers requiring advanced memory profiling
+  integration: 
+    - Java Flight Recorder (JFR)
+    - VisualVM
+    - Spring Boot Actuator
+    - Micrometer metrics
+    REQUIREMENTS:
+  functional:
+    - Identify unclosed resources (DB connections, streams, threads)
+    - Refactor cache implementations with weak references
+    - Fix static collection memory leaks
+    - Detect large object retention
+    - Integrate JFR/VisualVM monitoring
+  non_functional:
+    performance: Sub-5% overhead for monitoring
+    security: No sensitive data in memory dumps
+    scalability: Handle 10K+ objects in cache
+    reliability: 99.99% uptime during refactoring
+  compliance: OWASP memory management guidelines
+  ARCHITECTURE:
+  pattern: Resource Management Pattern with Try-With-Resources
+  style: Aspect-Oriented Programming for cross-cutting concerns
+  layers:
+    - monitoring: JFR integration layer
+    - application: Business logic with resource management
+    - caching: WeakReference-based cache layer
+    - infrastructure: Memory profiling endpoints
+  data_flow: Event-driven memory monitoring with async reporting
+  FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2+
+  monitoring:
+    profiler: Java Flight Recorder
+    visualization: VisualVM
+    metrics: Micrometer + Prometheus
+  caching:
+    implementation: Caffeine with WeakReference
+    fallback: Google Guava Cache
+  testing:
+    memory: JUnit DSL + MemoryProfiler
+    load: JMeter for memory stress testing
+    
