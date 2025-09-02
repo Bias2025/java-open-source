@@ -1,0 +1,45 @@
+CONTEXT:
+  domain: Resource-Constrained Service Management
+  scale: 1000-3000 concurrent users expected
+  constraints: 
+    - Thread pool saturation prevention
+    - Memory leak prevention
+    - Graceful shutdown requirements
+    - Resource cleanup obligations
+  team: Spring Boot developers needing production-grade resource management
+  integration: 
+    - Database connections (JPA/JDBC)
+    - JMS messaging systems
+    - External service calls
+    REQUIREMENTS:
+  functional:
+    - Bounded thread pool executor with configurable limits
+    - Automatic resource cleanup on shutdown
+    - Health monitoring endpoint for thread/memory metrics
+    - Try-with-resources for all closeable resources
+  non_functional:
+    performance: Sub-100ms P99 latency maintained
+    security: No resource exhaustion vulnerabilities
+    scalability: Handle 100-300 concurrent users
+    reliability: Zero resource leaks, graceful shutdown
+  compliance: Production-ready resource management patterns
+  ARCHITECTURE:
+  pattern: Layered Architecture with Resource Management
+  style: Thread-pool bounded synchronous processing
+  layers:
+    - presentation: REST controllers with health endpoints
+    - application: Service layer with managed executors
+    - domain: Business logic with resource safety
+    - infrastructure: Database/JMS with connection pooling
+  data_flow: Request → ThreadPool → Service → Repository → Resource
+  FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.x
+  persistence:
+    database: PostgreSQL/H2
+    orm: Spring Data JPA
+    connection_pool: HikariCP
+  messaging: ActiveMQ (embedded for testing)
+  monitoring: Spring Boot Actuator
+  deployment: Kubernetes-ready with proper shutdown hooks
