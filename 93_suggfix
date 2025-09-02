@@ -1,0 +1,83 @@
+CONTEXT:
+  domain: Enterprise Business Rule Engine
+  challenge: Implement new business rule (v2.0) while maintaining backward compatibility
+  scale: Production system with 10K+ RPS, zero-downtime requirement
+  constraints: 
+    - Existing v1.0 rules must continue functioning
+    - No breaking changes to existing API contracts
+    - Gradual migration path required
+  team: Mixed experience levels, Spring Boot 3.x stack
+  integration: Legacy systems expecting v1.0 behavior, new clients need v2.0
+
+REQUIREMENTS:
+  functional:
+    - Support multiple business rule versions simultaneously
+    - Allow per-request version selection via header/parameter
+    - Provide feature toggle for gradual rollout
+    - Maintain audit trail of rule version applied
+    - Enable A/B testing between versions
+  non_functional:
+    performance: <50ms P99 latency for rule evaluation
+    security: Rule injection prevention, version spoofing protection
+    scalability: Support 100+ concurrent rule versions
+    reliability: 99.99% uptime, graceful fallback to v1.0
+  compliance: SOX audit requirements for financial calculations
+
+ARCHITECTURE:
+  pattern: Strategy Pattern with Version Registry
+  style: Domain-Driven Design with Clean Architecture
+  layers:
+    - presentation: REST controllers with version negotiation
+    - application: Rule orchestration service
+    - domain: Versioned business rule engines
+    - infrastructure: Rule version repository, feature flags
+  data_flow: 
+    - Request → Version Resolver → Rule Engine Selection → Execution → Audit
+
+FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2.x
+  persistence:
+    database: PostgreSQL 15
+    orm: Spring Data JPA
+    migration: Flyway
+  patterns:
+    - Strategy Pattern for rule versions
+    - Chain of Responsibility for edge cases
+    - Decorator for backward compatibility
+  testing:
+    - Parameterized tests for all versions
+    - Contract tests between versions
+    - Property-based testing for edge cases
+
+TECHNOLOGY:
+  versioning: Semantic versioning with API header negotiation
+  feature_flags: FF4J or Spring Cloud Config
+  monitoring: Micrometer metrics per version
+  caching: Caffeine for rule compilation cache
+
+TESTING_REQUIREMENTS:
+  coverage: 95% minimum
+  types:
+    - Unit tests with Mockito
+    - Integration tests with TestContainers
+    - Contract tests for version compatibility
+    - Performance tests with JMeter
+  edge_cases:
+    - Null/empty inputs
+    - Boundary values
+    - Version fallback scenarios
+    - Concurrent version switches
+
+PERSONA:
+  role: Senior Backend Engineer specializing in financial systems
+  expertise: Business rule engines, backward compatibility, gradual migrations
+  mindset: Zero-downtime deployments, data integrity paramount
+
+ORIGINALITY:
+  innovations:
+    - Smart version detection with ML-based usage patterns
+    - Automatic compatibility layer generation
+    - Self-healing rule migration on errors
+    - Performance-based version routing
