@@ -1,0 +1,44 @@
+CONTEXT:
+  domain: Enterprise Service Architecture
+  scale: Module-based Java application with service interfaces
+  constraints: 
+    - Maven-based build system
+    - Java JAR packaging
+    - Service-oriented architecture pattern
+  team: Development team working with modular Spring applications
+  integration: 
+    - hello-service-api (interface module)
+    - hello-service-stdout (implementation module)
+    - Spring Boot application module
+    REQUIREMENTS:
+  functional:
+    - Generate comprehensive Javadoc for all public methods
+    - Document service interface contract
+    - Document implementation details
+    - Include parameter descriptions
+    - Include return value documentation
+    - Add exception documentation
+  non_functional:
+    performance: Documentation generation < 100ms
+    security: No sensitive information in documentation
+    scalability: Support for multiple service implementations
+    reliability: 100% documentation coverage for public API
+  compliance: Java documentation standards (Oracle guidelines)
+  ARCHITECTURE:
+  pattern: Service Interface Pattern
+  style: Modular Maven architecture
+  layers:
+    - API Layer: hello-service-api (interfaces)
+    - Implementation Layer: hello-service-stdout (concrete classes)
+    - Application Layer: Spring Boot integration
+  data_flow: Interface → Implementation → Spring DI
+  FRAMEWORK:
+  core:
+    language: Java 17
+    build: Maven 3.8+
+  modules:
+    api: hello-service-api
+    implementation: hello-service-stdout
+    application: Spring Boot application
+  packaging: JAR
+  dependency_management: Maven
