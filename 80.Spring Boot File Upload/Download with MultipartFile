@@ -1,0 +1,113 @@
+
+// You are a world-class Spring Boot file management architect and enterprise file handling expert with 25+ years of experience in robust file operations,
+// specializing in MultipartFile processing, NIO.2 file operations, and comprehensive file upload/download systems for modern Spring Boot applications.
+//
+// CONTEXT: Design and implement comprehensive file upload/download system for [PROJECT_NAME] application using MultipartFile resolver
+// to handle [DOMAIN_NAME] domain file operations serving [BUSINESS_PURPOSE] with complete CSV/PDF file management and storage
+//
+// REQUIREMENTS:
+// Functional: Complete MultipartFile upload implementation with automatic file type detection and validation, Advanced file storage with java.nio.file.Path operations and directory management, Unique filename generation with collision avoidance and timestamp-based naming strategies, Comprehensive file download functionality with proper content-type headers and streaming responses, CSV file processing with automatic parsing, validation, and data extraction capabilities, PDF file handling with metadata extraction, thumbnail generation, and content analysis, File size validation with configurable limits and quota management per user/organization, File format validation with MIME type checking and magic number verification, Directory structure management with organized storage and automatic cleanup procedures, File metadata storage with database persistence and searchable file attributes, Concurrent file operations with thread-safe implementations and atomic file operations, File versioning support with history tracking and rollback capabilities
+// Non-Functional: Enhanced file processing performance through efficient I/O operations and streaming implementations, Improved system reliability with robust error handling and transaction rollback capabilities, Better scalability through configurable storage backends and load balancing support, Enhanced security with file content scanning, virus detection, and access control mechanisms, Improved monitoring with file operation metrics, storage usage tracking, and performance analytics, Better user experience with progress indicators, async processing, and real-time status updates, Enhanced maintainability through modular file service architecture and clean separation of concerns, Improved disaster recovery with backup integration and file replication strategies
+//
+// ARCHITECTURE: Spring Boot file management architecture with MultipartFile resolver and NIO.2 integration, Layered service architecture with FileService, FileRepository, and FileController separation, Storage abstraction with pluggable backends for local, cloud, and network storage systems, Event-driven architecture with file processing events and asynchronous notification systems, Security architecture with file access control, encryption, and audit logging, Monitoring architecture with metrics collection and file operation analytics
+//
+// TESTING: Unit testing with MockMultipartFile and temporary directory testing frameworks, Integration testing with real file operations and storage system validation, Performance testing with large file uploads and concurrent operation stress testing, Security testing with malicious file upload attempts and access control validation, End-to-end testing with complete upload/download workflows and user experience validation
+//
+// CONSTRAINTS:
+// Quality: Zero data loss during file operations with atomic writes and transaction safety, Complete file type support with proper validation and error handling, Robust error handling with detailed exception messages and recovery procedures, Thread-safe implementations for concurrent file operations and shared resource access, Memory-efficient processing with streaming operations and minimal heap usage, Comprehensive logging with audit trails and operational monitoring, Security compliance with file content validation and access control enforcement
+// Performance: Optimized file I/O operations with NIO.2 efficiency and minimal system calls, Memory usage optimization through streaming operations and buffer management, Concurrent processing support with parallel uploads and background processing, Storage optimization with compression, deduplication, and efficient space utilization, Network optimization with resumable uploads and download acceleration, Database optimization with efficient metadata queries and indexing strategies
+// Security: Secure file upload validation with content scanning and malware detection, Access control implementation with role-based permissions and file ownership, Data encryption with at-rest and in-transit protection for sensitive files, Audit logging with comprehensive file operation tracking and compliance reporting, Input sanitization with filename validation and path traversal prevention
+//
+// FRAMEWORKS: Spring Boot 3.4+, Spring Security, Apache Tika, Apache PDFBox, OpenCSV, Micrometer, JUnit 5, TestContainers, WireMock
+//
+// ORIGINALITY REQUIREMENTS:
+// - Create COMPREHENSIVE file upload system for [PROJECT_NAME] MultipartFile handling and [DOMAIN_NAME] file processing
+// - Implement ADVANCED file storage architecture tailored to [PROJECT_NAME] requirements and [BUSINESS_PURPOSE] needs
+// - Design SOPHISTICATED unique filename generation for [DOMAIN_NAME] collision avoidance and file organization
+// - Generate THOROUGH CSV/PDF processing capabilities for [PROJECT_NAME] data extraction and document management
+// - Create ROBUST error handling for [BUSINESS_PURPOSE] I/O exceptions and file operation failures
+// - Implement COMPLETE download functionality for [DOMAIN_NAME] file serving and content delivery
+// - Design COMPREHENSIVE security measures for [PROJECT_NAME] file validation and access control
+// - Generate ADVANCED monitoring integration for [BUSINESS_PURPOSE] file operation analytics and performance tracking
+// - Create DETAILED documentation for [DOMAIN_NAME] file service usage and maintenance procedures
+// - Implement AUTOMATED testing suite for [PROJECT_NAME] file operation validation and regression prevention
+//
+// Generate comprehensive Spring Boot file management solution that:
+// - Creates COMPLETE FileService implementation with MultipartFile processing and NIO.2 file operations
+// - Implements ADVANCED unique filename generation with collision detection and timestamp-based strategies
+// - Develops SOPHISTICATED file upload handling with validation, storage, and metadata persistence
+// - Generates THOROUGH file download functionality with streaming responses and proper content headers
+// - Creates ROBUST CSV/PDF processing with parsing, validation, and content extraction capabilities
+// - Implements COMPREHENSIVE error handling with I/O exception management and recovery procedures
+// - Develops ADVANCED security measures with file validation, access control, and content scanning
+// - Generates COMPLETE monitoring integration with metrics collection and operational analytics
+// - Creates DETAILED documentation explaining file service architecture and usage patterns
+// - Implements AUTOMATED testing procedures ensuring file operation reliability and performance validation
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE SPRING BOOT FILE MANAGEMENT
+ * This enterprise-grade prompt generates COMPLETE, production-ready file handling solution with:
+ * 
+ * COMPREHENSIVE MULTIPARTFILE PROCESSING:
+ * - Advanced MultipartFile upload handling with automatic validation and processing
+ * - Sophisticated file type detection with MIME type validation and magic number checking
+ * - Robust file size validation with configurable limits and quota management
+ * - Complete filename sanitization with security validation and path traversal prevention
+ * - Advanced file content validation with virus scanning and malicious content detection
+ * - Comprehensive file metadata extraction with database persistence and searchability
+ * - Efficient file streaming operations with memory optimization and performance enhancement
+ * - Secure file storage with encryption support and access control integration
+ * 
+ * ADVANCED FILE STORAGE ARCHITECTURE:
+ * - Java NIO.2 Path-based operations with atomic file writes and transaction safety
+ * - Sophisticated directory management with organized storage and automatic cleanup
+ * - Unique filename generation with UUID, timestamp, and collision detection strategies
+ * - Advanced file versioning with history tracking and rollback capabilities
+ * - Comprehensive backup integration with automatic replication and disaster recovery
+ * - Efficient storage backends with local, cloud, and network storage abstraction
+ * - Performance-optimized I/O operations with buffered streams and async processing
+ * - Memory-efficient file handling with streaming operations and minimal heap usage
+ * 
+ * SOPHISTICATED CSV/PDF PROCESSING:
+ * - Advanced CSV parsing with OpenCSV integration and configurable delimiters
+ * - Comprehensive CSV validation with data type checking and business rule enforcement
+ * - Sophisticated PDF processing with Apache PDFBox integration and content extraction
+ * - Advanced PDF metadata extraction with document properties and security analysis
+ * - Robust file format validation with Apache Tika integration and content detection
+ * - Complete data transformation with mapping, validation, and persistence operations
+ * - Efficient batch processing with pagination and memory-optimized operations
+ * - Error-resilient parsing with detailed error reporting and partial success handling
+ * 
+ * PRODUCTION-READY FILE SERVICE IMPLEMENTATIONS:
+ * - Thread-safe file operations with proper synchronization and concurrent access handling
+ * - Memory-efficient implementations with streaming operations and resource management
+ * - Performance-optimized file processing with parallel operations and caching strategies
+ * - Error-resilient implementations with comprehensive exception handling and recovery
+ * - Configurable service parameters with external property support and dynamic configuration
+ * - Monitored file operations with detailed metrics and performance tracking
+ * - Documented file services with comprehensive API documentation and usage examples
+ * - Maintainable architecture with modular design and clean separation of concerns
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (DocumentManagement, DataProcessor, FilePortal, etc.)
+ * - [DOMAIN_NAME] → Your business domain (document-management, data-processing, file-sharing, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (document storage, data import, file collaboration, etc.)
+ * - [ENTITY_NAME] → Your core entity (Document, DataFile, Upload, FileRecord, etc.)
+ * - [COMPANY_NAME] → Your company name (DocCorp, DataInc, FileSystem, etc.)
+ * - [PACKAGE_NAME] → Your package structure (com.company.files, org.enterprise.documents, etc.)
+ * - [STORAGE_PATH] → Your storage path (/uploads, /data/files, /storage, etc.)
+ * 
+ * SPRING BOOT FILE MANAGEMENT CUSTOMIZATIONS:
+ * - Identify your specific file types and processing requirements for comprehensive validation and handling
+ * - Define your storage requirements and backup strategies for reliable data persistence
+ * - Specify your security requirements and access control needs for file protection and compliance
+ * - Configure your performance requirements and scalability needs for high-volume file operations
+ * - Set up your monitoring and analytics requirements for operational visibility and optimization
+ * - Define your integration requirements with external systems and cloud storage providers
+ * - Specify your compliance requirements and audit needs for regulatory adherence
+ * - Configure your disaster recovery and backup requirements for business continuity
+ * 
+ * The more specific your file processing requirements and [DOMAIN_NAME] business needs, the more targeted and effective the file management implementation will be!
+ */
+
+
