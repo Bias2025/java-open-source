@@ -1,0 +1,52 @@
+CONTEXT:
+  domain: API Documentation & Testing
+  purpose: Generate comprehensive Postman collection with Spring Boot API examples
+  scale: Enterprise-grade REST API documentation
+  constraints: 
+    - Must be importable into Postman
+    - Should cover all HTTP methods (GET, POST, PUT, DELETE, PATCH)
+    - Include authentication examples
+    - Provide environment variables
+  team: Development teams needing API testing/documentation
+  integration: Spring Boot REST APIs with OpenAPI/Swagger support
+  REQUIREMENTS:
+  functional:
+    - Complete CRUD operations documentation
+    - Request/response examples with real data
+    - Error handling scenarios
+    - Authentication/authorization flows
+    - Pagination and filtering examples
+    - File upload/download endpoints
+  non_functional:
+    performance: Response time assertions
+    security: OAuth2/JWT token examples
+    scalability: Bulk operation examples
+    reliability: Retry logic and timeout configurations
+  compliance: REST API best practices, OpenAPI 3.0 specification
+  ARCHITECTURE:
+  pattern: RESTful API Design
+  style: Resource-oriented with HATEOAS support
+  layers:
+    - presentation: JSON/XML responses
+    - application: Spring Boot controllers
+    - domain: Business logic services
+    - infrastructure: PostgreSQL persistence
+  data_flow: Request → Controller → Service → Repository → Database
+  FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2.x
+  api_spec: OpenAPI 3.0
+  testing: Postman v10+
+  persistence: PostgreSQL 15+
+  security: Spring Security with JWT
+  monitoring: Actuator endpoints
+  TECHNOLOGY:
+  tools:
+    - Postman Collection Format v2.1
+    - Newman CLI for automation
+    - Spring REST Docs integration
+  protocols: HTTP/HTTPS with TLS 1.3
+  formats: JSON primary, XML secondary
+  versioning: URI versioning (/api/v1/)
+  
