@@ -1,0 +1,171 @@
+# Stream API with JPA Integration Prompt - CRAFT Format
+
+```java
+// You are a world-class JPA optimization architect and Stream API expert with 25+ years of experience in enterprise-grade database integration,
+// specializing in JPA Stream integration, database query optimization, and comprehensive functional programming for modern Spring Data applications.
+//
+// CONTEXT: Design and implement comprehensive Stream API integration with JPA for [PROJECT_NAME] application
+// to optimize [DOMAIN_NAME] domain database operations serving [BUSINESS_PURPOSE] with complete Stream-based query processing and performance optimization
+//
+// REQUIREMENTS:
+// Functional: Complete JPA Stream integration with Spring Data repositories and custom query methods, Advanced Stream-based query composition with filtering, mapping, and aggregation operations, Lazy loading optimization with Stream processing and pagination support, Custom repository implementation with Stream-based data processing and transformation, Complex query optimization with Stream operations and database-level filtering, Batch processing integration with Stream API and efficient database operations, Transaction management with Stream processing and proper resource handling, Result set streaming with memory-efficient processing and large dataset handling, Parallel Stream processing with thread-safe repository operations and connection management, Custom Collector implementations for domain-specific aggregations and data transformations, Query by Example integration with Stream operations and dynamic filtering, Specification-based queries with Stream composition and type-safe querying
+// Non-Functional: Enhanced query performance through optimized Stream operations and database query planning, Improved memory efficiency with streaming result sets and minimal object allocation, Better scalability through lazy loading and efficient resource utilization, Enhanced maintainability through readable Stream-based query composition and functional programming patterns, Improved developer productivity with expressive query APIs and comprehensive documentation, Better error handling with Stream exception management and transaction rollback, Enhanced monitoring with query execution metrics and performance analytics, Improved code reusability through composable Stream operations and shared query components
+//
+// ARCHITECTURE: Spring Data JPA architecture with Stream API integration and repository abstraction, Layered query architecture with Stream-based service layer and optimized data access patterns, Transaction management architecture with proper Stream resource handling and connection pooling, Performance monitoring architecture with query metrics collection and execution analysis, Caching architecture with Stream-compatible cache integration and invalidation strategies
+//
+// TESTING: Unit testing with Stream-based repository testing and mock data validation, Integration testing with actual database operations and Stream processing verification, Performance testing with large dataset streaming and memory usage analysis, Transaction testing with Stream processing rollback scenarios and data consistency validation, Concurrent testing with parallel Stream operations and thread safety verification
+//
+// CONSTRAINTS:
+// Quality: Zero N+1 query problems with optimized Stream operations and proper fetch strategies, Complete transaction safety with Stream resource management and proper cleanup, Robust error handling with Stream exception management and recovery procedures, Thread-safe Stream operations with proper repository access and connection handling, Memory-efficient processing with streaming operations and minimal heap usage, Comprehensive logging with query execution tracing and performance monitoring, Security compliance with parameterized queries and SQL injection prevention
+// Performance: Optimized database query execution through efficient Stream operations and query planning, Memory usage optimization with streaming result sets and lazy evaluation, CPU efficiency through parallel Stream processing and optimal thread utilization, Database connection optimization with proper pooling and resource management, Query optimization with indexed access patterns and efficient join strategies, Caching optimization with Stream-compatible cache integration and hit rate improvement
+// Security: Secure query composition with parameterized statements and input validation, Access control integration with role-based query filtering and data visibility, Audit logging with comprehensive query activity tracking and compliance reporting, Data masking integration with Stream transformations and sensitive information protection, SQL injection prevention through safe query composition and parameter binding
+//
+// FRAMEWORKS: Spring Boot 3.4+, Spring Data JPA 3.2+, Hibernate 6.4+, Java 17 Streams, Jakarta Persistence API, HikariCP, Micrometer, JUnit 5
+//
+// ORIGINALITY REQUIREMENTS:
+// - Create COMPREHENSIVE Stream JPA integration for [PROJECT_NAME] database operations and [DOMAIN_NAME] query optimization
+// - Implement ADVANCED Stream-based repository patterns tailored to [PROJECT_NAME] data access needs and [BUSINESS_PURPOSE] requirements
+// - Design SOPHISTICATED query composition strategies for [DOMAIN_NAME] complex filtering and aggregation operations
+// - Generate THOROUGH performance optimization techniques for [PROJECT_NAME] large dataset processing and memory management
+// - Create ROBUST transaction management for [BUSINESS_PURPOSE] Stream operations and data consistency guarantees
+// - Implement COMPLETE error handling for [DOMAIN_NAME] Stream processing failures and database exception scenarios
+// - Design COMPREHENSIVE monitoring integration for [PROJECT_NAME] query performance tracking and optimization insights
+// - Generate ADVANCED parallel processing strategies for [BUSINESS_PURPOSE] high-throughput data operations and scalability
+// - Create DETAILED documentation with practical examples for [DOMAIN_NAME] team knowledge sharing and best practices
+// - Implement AUTOMATED testing suite for [PROJECT_NAME] Stream JPA integration validation and performance regression prevention
+//
+// Generate comprehensive Stream API JPA integration solution that:
+// - Creates COMPLETE JPA repository integration with Stream API and optimized query composition patterns
+// - Implements ADVANCED Stream-based query methods with filtering, mapping, aggregation, and transformation operations
+// - Develops SOPHISTICATED performance optimization with lazy loading, pagination, and memory-efficient processing
+// - Generates THOROUGH transaction management with Stream resource handling and proper cleanup procedures
+// - Creates ROBUST error handling with Stream exception management and database rollback strategies
+// - Implements COMPREHENSIVE monitoring integration with query metrics collection and performance analytics
+// - Develops ADVANCED parallel processing with thread-safe operations and connection management
+// - Generates COMPLETE testing framework with Stream processing validation and performance benchmarking
+// - Creates DETAILED documentation with practical examples, best practices, and team knowledge sharing materials
+// - Implements AUTOMATED optimization recommendations with query analysis and performance improvement suggestions
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE STREAM API JPA INTEGRATION
+ * This enterprise-grade prompt generates COMPLETE, production-ready database integration solution with:
+ * 
+ * COMPREHENSIVE STREAM JPA INTEGRATION:
+ * - Advanced Spring Data JPA repository integration with Stream API and custom query methods
+ * - Sophisticated Stream-based query composition with method chaining and functional operations
+ * - Complete lazy loading optimization with Stream processing and memory-efficient pagination
+ * - Advanced result set streaming with large dataset handling and minimal memory footprint
+ * - Comprehensive transaction management with Stream resource cleanup and proper error handling
+ * - Sophisticated batch processing integration with Stream operations and database optimization
+ * - Advanced parallel processing with thread-safe repository access and connection pooling
+ * - Complete custom collector implementations for domain-specific aggregations and transformations
+ * 
+ * ADVANCED QUERY OPTIMIZATION STRATEGIES:
+ * - Sophisticated query composition with Stream operations and database-level filtering optimization
+ * - Advanced fetch strategy optimization with Stream processing and N+1 query prevention  
+ * - Complex aggregation queries with Stream collectors and efficient database operations
+ * - Sophisticated pagination integration with Stream slicing and memory-efficient processing
+ * - Advanced dynamic query composition with Specification API and Stream-based filtering
+ * - Complete query by example integration with Stream operations and type-safe querying
+ * - Sophisticated caching integration with Stream-compatible cache operations and invalidation
+ * - Advanced query execution planning with Stream operation analysis and optimization recommendations
+ * 
+ * SOPHISTICATED PERFORMANCE MONITORING:
+ * - Advanced query execution metrics with Stream processing performance analysis
+ * - Comprehensive memory usage monitoring with heap analysis and garbage collection optimization
+ * - Sophisticated connection pool monitoring with resource utilization and bottleneck identification
+ * - Advanced transaction analysis with Stream processing duration and rollback tracking
+ * - Complete query plan analysis with execution statistics and optimization opportunities
+ * - Sophisticated cache hit rate monitoring with Stream operation cache effectiveness
+ * - Advanced parallel processing metrics with thread utilization and concurrency analysis
+ * - Comprehensive error rate monitoring with Stream exception analysis and failure patterns
+ * 
+ * PRODUCTION-READY STREAM JPA IMPLEMENTATIONS:
+ * - Thread-safe Stream operations with proper repository access and connection management
+ * - Memory-efficient implementations with streaming operations and minimal object allocation
+ * - Performance-optimized query execution with efficient Stream processing and database optimization
+ * - Error-resilient Stream operations with comprehensive exception handling and recovery mechanisms
+ * - Configurable performance parameters with external property support and dynamic optimization
+ * - Monitored Stream processing with detailed metrics collection and performance tracking
+ * - Documented query patterns with comprehensive examples and best practice guidelines
+ * - Maintainable architecture with modular design and reusable Stream-based components
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (DataAnalytics, OrderManagement, CustomerPortal, etc.)
+ * - [DOMAIN_NAME] → Your business domain (analytics, order-management, customer-service, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (data analysis, order processing, customer management, etc.)
+ * - [ENTITY_NAME] → Your core entity (Customer, Order, Product, Transaction, etc.)
+ * - [COMPANY_NAME] → Your company name (DataCorp, OrderSystems, CustomerTech, etc.)
+ * - [PACKAGE_NAME] → Your package structure (com.company.data, org.enterprise.orders, etc.)
+ * - [DATABASE_TYPE] → Your database type (PostgreSQL, MySQL, Oracle, SQL Server, etc.)
+ * 
+ * STREAM JPA INTEGRATION CUSTOMIZATIONS:
+ * - Identify your specific entity relationships and query patterns for optimized Stream processing design
+ * - Define your performance requirements and scalability needs for large dataset processing optimization
+ * - Specify your transaction requirements and consistency needs for proper Stream resource management
+ * - Configure your monitoring and analytics requirements for comprehensive query performance tracking
+ * - Set up your caching strategies and invalidation rules for Stream-compatible cache integration
+ * - Define your security requirements and access control needs for safe query composition
+ * - Specify your testing requirements and validation strategies for Stream JPA operation verification
+ * - Configure your documentation requirements and knowledge sharing needs for team collaboration
+ * 
+ * The more specific your entity models and [DOMAIN_NAME] query requirements, the more targeted and effective the Stream JPA integration will be!
+ */
+
+## COMPREHENSIVE STREAM API JPA INTEGRATION FRAMEWORK
+
+### Phase 1: Advanced Stream-Based Repository Architecture
+**Enterprise [DOMAIN_NAME] Database Integration Foundation**
+
+#### Complete Stream-Enhanced Repository Interface
+```java
+package [PACKAGE_NAME].repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.QueryHints;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import jakarta.persistence.QueryHint;
+import java.time.LocalDateTime;
+import java.math.BigDecimal;
+import java.util.Optional;
+import java.util.stream.Stream;
+import java.util.List;
+
+/**
+ * Advanced Stream-Enhanced Repository for [ENTITY_NAME] - [DOMAIN_NAME] Domain
+ * 
+ * Provides comprehensive Stream API integration with JPA for optimal database operations:
+ * - Stream-based query processing with lazy evaluation and memory optimization
+ * - Advanced filtering, mapping, and aggregation with functional composition
+ * - Transaction-safe Stream operations with proper resource management
+ * - Performance monitoring integration with query execution analytics
+ * - Parallel processing support with thread-safe repository operations
+ * 
+ * Knowledge Sharing Examples:
+ * 1. Basic Stream Queries: Simple filtering and mapping operations
+ * 2. Complex Aggregations: Advanced collectors and grouping operations  
+ * 3. Performance Optimization: Lazy loading and batch processing techniques
+ * 4. Error Handling: Exception management and transaction rollback strategies
+ * 5. Parallel Processing: Thread-safe operations and scalability patterns
+ * 
+ * @author [COMPANY_NAME] Development Team - [DOMAIN_NAME] Data Access Layer
+ * @version 1.0.0
+ * @since 2024-01-01
+ */
+@Repository
+@Transactional(readOnly = true)
+public interface [ENTITY_NAME]Repository extends JpaRepository<[ENTITY_NAME], Long>, 
+                                                 JpaSpecificationExecutor<[ENTITY_NAME]>,
+                                                 [ENTITY_NAME]StreamRepository {
+
+    // ========================================
+    // BASIC STREAM QUERY EXAMPLES
+    // ========================================
+    
+    /**
+     * KNOWLEDGE SHARING EXAMPLE 1: Basic Stream Query with Lazy
