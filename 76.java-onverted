@@ -1,0 +1,114 @@
+# Spring JSON Data Binding with Jackson ObjectMapper Prompt - CRAFT Format
+
+```java
+// You are a world-class Spring Boot JSON serialization architect and Jackson configuration expert with 25+ years of experience in enterprise-grade data binding,
+// specializing in Jackson ObjectMapper customization, JSON serialization/deserialization optimization, and comprehensive data transformation for modern Spring applications.
+//
+// CONTEXT: Design and implement comprehensive JSON data binding system for [PROJECT_NAME] application using Jackson ObjectMapper
+// to handle [DOMAIN_NAME] domain object serialization/deserialization serving [BUSINESS_PURPOSE] with complete customization and optimization
+//
+// REQUIREMENTS:
+// Functional: Complete Jackson ObjectMapper configuration with custom serialization and deserialization strategies, Advanced JSON property mapping with @JsonProperty, @JsonIgnore, and @JsonInclude annotations, Custom serializer implementation with domain-specific formatting and business rule application, Custom deserializer development with validation, transformation, and error handling, Date/Time serialization configuration with ISO-8601 formatting and timezone management, Enum serialization customization with value mapping and backward compatibility, Nested object handling with circular reference detection and lazy loading support, Polymorphic serialization with @JsonTypeInfo and @JsonSubTypes for inheritance hierarchies, Collection serialization optimization with efficient processing and memory management, Null value handling with configurable strategies and default value assignment, Field naming strategy customization with snake_case, camelCase, and domain-specific conventions, JSON view implementation with @JsonView for selective property exposure and security
+// Non-Functional: Enhanced serialization performance through optimized ObjectMapper configuration and caching strategies, Improved memory efficiency with streaming serialization and minimal object allocation, Better error handling with detailed exception messages and recovery mechanisms, Enhanced security through sensitive data filtering and sanitization during serialization, Improved maintainability through consistent JSON formatting and standardized serialization patterns, Better API compatibility through version-aware serialization and backward compatibility support, Enhanced debugging capability with detailed serialization logging and introspection tools, Improved thread safety with properly configured ObjectMapper instances and concurrent access handling
+//
+// ARCHITECTURE: Spring Boot JSON architecture with centralized ObjectMapper configuration and dependency injection, Layered serialization architecture with custom serializers, deserializers, and validation components, Modular JSON configuration with profile-specific settings and environment-aware customization, Event-driven serialization with pre/post processing hooks and transformation pipelines, Security architecture with data masking, encryption, and access control integration, Monitoring architecture with serialization metrics and performance analytics
+//
+// TESTING: Unit testing with ObjectMapper serialization validation and round-trip testing, Integration testing with REST endpoint JSON validation and contract verification, Performance testing with large object serialization benchmarks and memory usage analysis, Security testing with sensitive data filtering and injection attack prevention, Compatibility testing with different JSON formats and API version validation
+//
+// CONSTRAINTS:
+// Quality: Zero data loss during serialization/deserialization with comprehensive validation and error handling, Complete JSON compatibility with API contracts and external system integration requirements, Robust error handling with detailed exception context and recovery procedures, Thread-safe ObjectMapper configuration with proper singleton management and concurrent access, Memory-efficient serialization with streaming operations and optimal buffer management, Comprehensive logging with serialization audit trails and debugging information, Security compliance with data masking and sensitive information protection
+// Performance: Optimized serialization performance through efficient ObjectMapper configuration and caching strategies, Memory usage optimization with streaming operations and minimal object creation, CPU efficiency through optimized Jackson modules and feature configuration, Concurrent processing support with thread-safe ObjectMapper instances and parallel serialization, Network optimization with compressed JSON output and efficient payload management, Database optimization with efficient JSON column mapping and query performance
+// Security: Secure serialization with sensitive data masking and encryption integration, Input validation during deserialization with schema validation and constraint checking, Access control integration with role-based property filtering and visibility rules, Audit logging with comprehensive serialization activity tracking and compliance reporting, SQL injection prevention through parameterized JSON queries and safe deserialization
+//
+// FRAMEWORKS: Spring Boot 3.4+, Jackson 2.16+, Spring Security, Bean Validation (JSR-303), Micrometer, JUnit 5, TestContainers, WireMock
+//
+// ORIGINALITY REQUIREMENTS:
+// - Create COMPREHENSIVE Jackson ObjectMapper configuration for [PROJECT_NAME] serialization needs and [DOMAIN_NAME] data binding
+// - Implement ADVANCED custom serializers tailored to [PROJECT_NAME] business objects and [BUSINESS_PURPOSE] requirements
+// - Design SOPHISTICATED deserialization strategies for [DOMAIN_NAME] data validation and transformation
+// - Generate THOROUGH JSON property mapping for [PROJECT_NAME] API contracts and external integrations
+// - Create ROBUST error handling for [BUSINESS_PURPOSE] serialization failures and data integrity issues
+// - Implement COMPLETE security measures for [DOMAIN_NAME] sensitive data protection and access control
+// - Design COMPREHENSIVE performance optimization for [PROJECT_NAME] high-volume serialization and memory efficiency
+// - Generate ADVANCED monitoring integration for [BUSINESS_PURPOSE] serialization metrics and performance tracking
+// - Create DETAILED documentation for [DOMAIN_NAME] JSON binding patterns and maintenance procedures
+// - Implement AUTOMATED testing suite for [PROJECT_NAME] serialization validation and regression prevention
+//
+// Generate comprehensive Spring JSON data binding solution that:
+// - Creates COMPLETE Jackson ObjectMapper configuration with custom serialization strategies and optimization settings
+// - Implements ADVANCED custom serializers and deserializers with domain-specific logic and validation rules
+// - Develops SOPHISTICATED JSON property mapping with annotation-based configuration and naming strategies
+// - Generates THOROUGH error handling with detailed exception context and recovery mechanisms
+// - Creates ROBUST security implementation with data masking, filtering, and access control integration
+// - Implements COMPREHENSIVE performance optimization with caching, streaming, and memory management
+// - Develops ADVANCED polymorphic serialization with inheritance handling and type information preservation
+// - Generates COMPLETE testing framework with serialization validation and contract verification
+// - Creates DETAILED documentation explaining JSON binding decisions and customization approaches
+// - Implements AUTOMATED monitoring and metrics collection for serialization performance and reliability
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE SPRING JACKSON JSON DATA BINDING
+ * This enterprise-grade prompt generates COMPLETE, production-ready JSON serialization solution with:
+ * 
+ * COMPREHENSIVE JACKSON OBJECTMAPPER CONFIGURATION:
+ * - Advanced ObjectMapper bean configuration with custom modules and feature settings
+ * - Sophisticated serialization configuration with property naming strategies and inclusion rules
+ * - Custom date/time formatting with ISO-8601 standards and timezone handling
+ * - Advanced null value handling with configurable strategies and default assignments
+ * - Complete enum serialization with value mapping and backward compatibility
+ * - Comprehensive error handling with custom exception mappers and recovery mechanisms
+ * - Performance optimization with caching, streaming, and memory management
+ * - Security integration with data masking and sensitive information protection
+ * 
+ * ADVANCED CUSTOM SERIALIZATION STRATEGIES:
+ * - Domain-specific custom serializers with business logic integration and formatting rules
+ * - Advanced custom deserializers with validation, transformation, and error handling
+ * - Polymorphic serialization with type information preservation and inheritance handling
+ * - Circular reference detection with lazy loading and recursive object management
+ * - Collection serialization optimization with efficient processing and memory usage
+ * - Nested object handling with depth control and performance optimization
+ * - Conditional serialization with @JsonView and role-based property filtering
+ * - Version-aware serialization with backward compatibility and API evolution support
+ * 
+ * SOPHISTICATED JSON PROPERTY MANAGEMENT:
+ * - Advanced property mapping with @JsonProperty and custom naming strategies
+ * - Selective property inclusion with @JsonInclude and conditional serialization
+ * - Property filtering with @JsonIgnore and security-aware data hiding
+ * - Dynamic property handling with @JsonAnyGetter and @JsonAnySetter
+ * - Property transformation with @JsonSerialize and @JsonDeserialize annotations
+ * - Validation integration with Bean Validation and custom constraint checking
+ * - Property ordering with @JsonPropertyOrder and consistent JSON structure
+ * - Metadata handling with @JsonCreator and constructor-based deserialization
+ * 
+ * PRODUCTION-READY JSON BINDING IMPLEMENTATIONS:
+ * - Thread-safe ObjectMapper configuration with proper singleton management
+ * - Memory-efficient serialization with streaming operations and buffer optimization
+ * - Performance-optimized JSON processing with caching and efficient algorithms
+ * - Error-resilient serialization with comprehensive exception handling and logging
+ * - Configurable JSON binding with external property support and environment awareness
+ * - Monitored serialization operations with metrics collection and performance tracking
+ * - Documented JSON binding patterns with comprehensive API documentation and examples
+ * - Maintainable serialization architecture with modular design and reusable components
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (ECommerceAPI, DataProcessor, UserManagement, etc.)
+ * - [DOMAIN_NAME] → Your business domain (ecommerce, data-processing, user-management, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (order processing, data transformation, user operations, etc.)
+ * - [ENTITY_NAME] → Your core entity (Order, User, Product, Customer, etc.)
+ * - [COMPANY_NAME] → Your company name (TechCorp, DataInc, UserSystems, etc.)
+ * - [PACKAGE_NAME] → Your package structure (com.company.api, org.enterprise.data, etc.)
+ * - [API_VERSION] → Your API version (v1, v2, 2024-01, etc.)
+ * 
+ * SPRING JACKSON JSON BINDING CUSTOMIZATIONS:
+ * - Identify your specific domain objects and serialization requirements for comprehensive JSON mapping
+ * - Define your API contract requirements and external system integration needs for consistent formatting
+ * - Specify your performance requirements and scalability needs for high-volume JSON processing
+ * - Configure your security requirements and data protection needs for sensitive information handling
+ * - Set up your validation requirements and error handling strategies for robust data binding
+ * - Define your monitoring and analytics requirements for serialization performance tracking
+ * - Specify your testing requirements and contract validation needs for API compatibility
+ * - Configure your documentation requirements and maintenance procedures for JSON binding patterns
+ * 
+ * The more specific your domain objects and [DOMAIN_NAME] serialization requirements, the more targeted and effective the JSON binding implementation will be!
+ */
+
