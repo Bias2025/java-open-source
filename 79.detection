@@ -1,0 +1,114 @@
+# Java OOM Detection and Memory Monitoring Prompt - CRAFT Format
+
+```java
+// You are a world-class Java memory optimization architect and performance monitoring expert with 25+ years of experience in enterprise-grade memory management,
+// specializing in OutOfMemoryError prevention, Java Mission Control (JMC) analysis, Java Flight Recorder (JFR) integration, and comprehensive JMX monitoring for modern Java applications.
+//
+// CONTEXT: Design and implement comprehensive memory monitoring and OOM detection system for [PROJECT_NAME] application
+// to prevent [DOMAIN_NAME] domain memory issues serving [BUSINESS_PURPOSE] with complete dynamic analysis, static detection, and production monitoring
+//
+// REQUIREMENTS:
+// Functional: Comprehensive OOM detection with Java Flight Recorder integration and real-time memory analysis, Advanced Java Mission Control configuration for memory profiling and allocation tracking, Static analysis integration with development-time memory pattern detection and code review automation, JMX monitoring implementation with custom MBeans and memory threshold alerting, Large collection instantiation detection with size-based warnings and allocation pattern analysis, Memory leak detection with reference tracking and garbage collection analysis, Heap dump analysis automation with MAT (Memory Analyzer Tool) integration and root cause identification, Custom memory profiling with allocation rate monitoring and object lifecycle tracking, Real-time alerting system with threshold-based notifications and automated remediation triggers, Memory usage visualization with dashboards and trend analysis for capacity planning, Garbage collection optimization with algorithm selection and tuning recommendations, Performance degradation correlation with memory usage patterns and allocation hotspots
+// Non-Functional: Enhanced application stability through proactive OOM prevention and memory leak detection, Improved system reliability with comprehensive memory monitoring and automated alerting, Better performance optimization through detailed allocation analysis and garbage collection tuning, Enhanced debugging capability with comprehensive memory profiling and root cause analysis, Improved capacity planning through historical memory usage analysis and trend prediction, Better development velocity with early memory issue detection and prevention, Enhanced production monitoring with real-time memory metrics and automated response, Improved system observability through comprehensive memory analytics and visualization
+//
+// ARCHITECTURE: Multi-layered memory monitoring architecture with JFR, JMC, and JMX integration, Event-driven alerting architecture with threshold monitoring and automated response systems, Distributed monitoring architecture with centralized metrics collection and analysis, Development-time analysis architecture with IDE integration and CI/CD pipeline monitoring, Production monitoring architecture with real-time dashboards and alerting systems
+//
+// TESTING: Memory leak testing with long-running scenarios and allocation pattern validation, Load testing with memory pressure simulation and OOM condition reproduction, Performance testing with GC tuning validation and allocation optimization verification, Integration testing with monitoring system validation and alerting mechanism verification, Stress testing with extreme memory conditions and recovery scenario validation
+//
+// CONSTRAINTS:
+// Quality: Zero false positive alerts with accurate memory threshold detection and intelligent filtering, Complete memory coverage with comprehensive allocation tracking and leak detection, Reliable monitoring with consistent metric collection and data accuracy, Low-overhead profiling with minimal performance impact and efficient data collection, Comprehensive error handling with monitoring system resilience and failover capabilities, Detailed documentation with memory analysis procedures and troubleshooting guides, Security compliance with memory data protection and access control
+// Performance: Minimal monitoring overhead with efficient JFR configuration and optimized data collection, Memory-conscious monitoring with bounded buffer sizes and efficient data structures, CPU-efficient analysis with optimized algorithms and parallel processing, Network-optimized metrics transmission with compressed data and batched reporting, Storage-optimized data retention with efficient compression and archival strategies, Real-time processing with low-latency alerting and immediate response capabilities
+// Security: Secure memory data handling with sensitive information protection and data anonymization, Access control for monitoring data with role-based permissions and audit logging, Secure communications with encrypted metric transmission and authenticated access, Data privacy compliance with memory content filtering and sensitive data masking
+//
+// FRAMEWORKS: Java Flight Recorder (JFR), Java Mission Control (JMC), JMX, Micrometer, Prometheus, Grafana, Eclipse MAT, VisualVM, Spring Boot Actuator
+//
+// ORIGINALITY REQUIREMENTS:
+// - Create COMPREHENSIVE OOM detection system for [PROJECT_NAME] memory management and [DOMAIN_NAME] stability requirements
+// - Implement ADVANCED JFR integration tailored to [PROJECT_NAME] allocation patterns and [BUSINESS_PURPOSE] monitoring needs
+// - Design SOPHISTICATED memory analysis for [DOMAIN_NAME] leak detection and performance optimization
+// - Generate THOROUGH JMX monitoring for [PROJECT_NAME] production memory tracking and alerting
+// - Create ROBUST static analysis for [BUSINESS_PURPOSE] development-time memory issue prevention
+// - Implement COMPLETE alerting system for [DOMAIN_NAME] proactive memory management and automated response
+// - Design COMPREHENSIVE visualization dashboards for [PROJECT_NAME] memory usage analysis and capacity planning
+// - Generate ADVANCED automation for [BUSINESS_PURPOSE] memory optimization and garbage collection tuning
+// - Create DETAILED documentation for [DOMAIN_NAME] memory monitoring procedures and team knowledge sharing
+// - Implement AUTOMATED remediation for [PROJECT_NAME] memory issues and system recovery procedures
+//
+// Generate comprehensive Java memory monitoring and OOM detection solution that:
+// - Creates COMPLETE JFR configuration with memory event monitoring and allocation tracking
+// - Implements ADVANCED JMC integration with automated analysis and report generation
+// - Develops SOPHISTICATED JMX monitoring with custom MBeans and threshold-based alerting
+// - Generates THOROUGH static analysis with development-time memory pattern detection
+// - Creates ROBUST production monitoring with real-time dashboards and automated alerting
+// - Implements COMPREHENSIVE memory leak detection with root cause analysis and remediation
+// - Develops ADVANCED visualization with memory usage trends and capacity planning insights
+// - Generates COMPLETE automation with memory optimization and garbage collection tuning
+// - Creates DETAILED documentation explaining memory monitoring methodology and best practices
+// - Implements AUTOMATED testing procedures ensuring monitoring system reliability and accuracy
+
+/*
+ * ENHANCED CRAFT METHOD FOR COMPREHENSIVE JAVA MEMORY MONITORING AND OOM DETECTION
+ * This enterprise-grade prompt generates COMPLETE, production-ready memory management solution with:
+ * 
+ * COMPREHENSIVE JFR AND JMC INTEGRATION:
+ * - Advanced Java Flight Recorder configuration with memory-specific event monitoring
+ * - Sophisticated JMC analysis automation with custom templates and automated report generation
+ * - Complete allocation tracking with object lifecycle monitoring and leak detection
+ * - Advanced garbage collection analysis with algorithm performance evaluation
+ * - Comprehensive heap usage monitoring with region-specific analysis and optimization
+ * - Sophisticated memory pool analysis with generation-specific monitoring and tuning
+ * - Advanced thread-local allocation tracking with per-thread memory usage analysis
+ * - Complete exception monitoring with OOM correlation and root cause identification
+ * 
+ * ADVANCED STATIC ANALYSIS TECHNIQUES:
+ * - Sophisticated code analysis with large collection detection and size validation
+ * - Advanced pattern recognition with memory anti-pattern identification and warnings
+ * - Complex dependency analysis with memory usage prediction and capacity estimation
+ * - Comprehensive annotation processing with memory constraint validation and enforcement
+ * - Advanced IDE integration with real-time memory analysis and developer feedback
+ * - Sophisticated CI/CD integration with build-time memory validation and quality gates
+ * - Complex code review automation with memory-focused analysis and recommendations
+ * - Advanced refactoring suggestions with memory optimization opportunities and improvements
+ * 
+ * SOPHISTICATED JMX MONITORING ARCHITECTURE:
+ * - Advanced custom MBean implementation with memory-specific metrics and operations
+ * - Comprehensive threshold monitoring with dynamic adjustment and intelligent alerting
+ * - Sophisticated metrics collection with efficient data structures and minimal overhead
+ * - Complex alerting system with escalation procedures and automated response mechanisms
+ * - Advanced dashboard integration with real-time visualization and trend analysis
+ * - Comprehensive historical analysis with data retention and capacity planning insights
+ * - Sophisticated correlation analysis with performance metrics and memory usage patterns
+ * - Advanced automation with self-healing capabilities and proactive optimization
+ * 
+ * PRODUCTION-READY MONITORING IMPLEMENTATIONS:
+ * - Thread-safe monitoring with proper synchronization and concurrent access handling
+ * - Memory-efficient monitoring with bounded buffers and optimized data structures
+ * - Performance-optimized analysis with efficient algorithms and parallel processing
+ * - Error-resilient monitoring with comprehensive exception handling and recovery procedures
+ * - Configurable monitoring parameters with external property support and dynamic adjustment
+ * - Monitored monitoring systems with meta-monitoring and self-diagnostics capabilities
+ * - Documented monitoring procedures with comprehensive guides and troubleshooting materials
+ * - Maintainable monitoring architecture with modular design and extensible framework
+ * 
+ * PARAMETERIZED PLACEHOLDERS - Replace with your specific values:
+ * - [PROJECT_NAME] → Your project name (MemoryGuard, OOMDetector, PerformanceMonitor, etc.)
+ * - [DOMAIN_NAME] → Your business domain (memory-management, performance-monitoring, system-optimization, etc.)
+ * - [BUSINESS_PURPOSE] → Your business purpose (stability assurance, performance optimization, capacity planning, etc.)
+ * - [COMPANY_NAME] → Your company name (MemoryCorp, PerformanceInc, MonitoringSystems, etc.)
+ * - [PACKAGE_NAME] → Your package structure (com.company.monitoring, org.enterprise.memory, etc.)
+ * - [ALERT_EMAIL] → Your alert email (alerts@company.com, monitoring-team@org.com, etc.)
+ * - [METRICS_ENDPOINT] → Your metrics endpoint (/metrics, /actuator/prometheus, etc.)
+ * 
+ * JAVA MEMORY MONITORING CUSTOMIZATIONS:
+ * - Identify your specific memory usage patterns and allocation hotspots for targeted monitoring configuration
+ * - Define your memory threshold requirements and alerting criteria for proactive issue prevention
+ * - Specify your garbage collection requirements and tuning goals for performance optimization
+ * - Configure your visualization requirements and dashboard needs for effective memory analysis
+ * - Set up your integration requirements with existing monitoring and alerting systems
+ * - Define your automation requirements and self-healing capabilities for proactive memory management
+ * - Specify your compliance requirements and audit needs for memory usage tracking and reporting
+ * - Configure your capacity planning requirements and growth prediction needs for infrastructure scaling
+ * 
+ * The more specific your application memory patterns and [DOMAIN_NAME] performance requirements, the more targeted and effective the memory monitoring solution will be!
+ */
+
