@@ -1,0 +1,161 @@
+PROMPT_TITLE: "Generate Complete OAuth 2.0 ROPC Authorization Server & Client Implementation in Spring Boot"
+
+CONTEXT:
+  domain: "OAuth 2.0 Security Implementation"
+  pattern: "Resource Owner Password Credentials Grant Type"
+  scale_metrics:
+    - expected_users: "10,000 concurrent"
+    - token_requests_per_second: "500 RPS"
+    - token_expiry: "3600 seconds (access), 86400 seconds (refresh)"
+  constraints:
+    - "Direct username/password collection required (legacy system migration)"
+    - "Must support both JWT and opaque tokens"
+    - "PostgreSQL for token persistence"
+    - "Redis for token caching"
+  security_context:
+    - "Internal trusted applications only"
+    - "No third-party client access"
+    - "Corporate network deployment"
+
+REQUIREMENTS:
+  functional:
+    - "Authorization server accepting username/password credentials"
+    - "Token generation with configurable expiry"
+    - "Token validation endpoints"
+    - "Token revocation capability"
+    - "Refresh token support"
+    - "Client credential validation"
+    - "User authentication against PostgreSQL"
+    - "Rate limiting per client"
+    - "Audit logging for all token operations"
+  non_functional:
+    performance:
+      - "Sub-50ms token generation"
+      - "Sub-10ms token validation (cached)"
+      - "99.99% availability"
+    security:
+      - "BCrypt password hashing"
+      - "Token encryption at rest"
+      - "TLS 1.3 only"
+      - "Client secret rotation support"
+      - "Brute force protection"
+    scalability:
+      - "Horizontal scaling support"
+      - "Stateless token validation"
+      - "Redis cluster compatible"
+
+ARCHITECTURE:
+  pattern: "Hexagonal Architecture with Domain-Driven Design"
+  components:
+    authorization_server:
+      - "Token endpoint (/oauth/token)"
+      - "Token introspection endpoint (/oauth/introspect)"
+      - "Token revocation endpoint (/oauth/revoke)"
+      - "JWK Set endpoint for JWT validation"
+    resource_server:
+      - "Protected resource endpoints"
+      - "Token validation filter"
+      - "Scope-based authorization"
+    client_application:
+      - "ROPC grant type implementation"
+      - "Token refresh logic"
+      - "Automatic retry with refresh token"
+  layers:
+    presentation: "REST Controllers with OpenAPI documentation"
+    application: "OAuth2 Services, Token Management"
+    domain: "User, Client, Token, Scope entities"
+    infrastructure: "PostgreSQL, Redis, Security filters"
+
+FRAMEWORK:
+  core:
+    language: "Java 17"
+    framework: "Spring Boot 3.2.x"
+    build: "Maven with multi-module structure"
+  security:
+    - "Spring Security 6.2.x"
+    - "Spring Authorization Server 1.2.x"
+    - "Nimbus JOSE JWT library"
+  persistence:
+    database: "PostgreSQL 15"
+    orm: "Spring Data JPA with Hibernate"
+    migration: "Flyway"
+    caching: "Redis with Lettuce client"
+  monitoring:
+    - "Micrometer metrics"
+    - "Spring Boot Actuator"
+    - "Structured logging with Logback"
+  testing:
+    - "JUnit 5"
+    - "Mockito"
+    - "TestContainers for PostgreSQL/Redis"
+    - "RestAssured for API testing"
+
+TECHNOLOGY_STACK:
+  dependencies:
+    - spring-boot-starter-security
+    - spring-boot-starter-oauth2-authorization-server
+    - spring-boot-starter-oauth2-resource-server
+    - spring-boot-starter-data-jpa
+    - spring-boot-starter-data-redis
+    - postgresql driver
+    - flyway-core
+    - nimbus-jose-jwt
+    - spring-boot-starter-actuator
+    - micrometer-registry-prometheus
+    - testcontainers
+
+TESTING_REQUIREMENTS:
+  unit_tests:
+    - "Token generation logic"
+    - "User authentication"
+    - "Client validation"
+    - "Scope authorization"
+  integration_tests:
+    - "Full ROPC flow with TestContainers"
+    - "Token refresh scenarios"
+    - "Token revocation"
+    - "Rate limiting verification"
+  security_tests:
+    - "Invalid credentials handling"
+    - "Expired token rejection"
+    - "SQL injection prevention"
+    - "Token replay attack prevention"
+
+PERSONA:
+  developer_profile: "Senior backend engineer implementing OAuth2 for enterprise"
+  expertise_required:
+    - "Spring Security deep knowledge"
+    - "OAuth 2.0 RFC 6749 compliance"
+    - "JWT token structure understanding"
+    - "PostgreSQL optimization skills"
+
+ORIGINALITY:
+  unique_features:
+    - "Adaptive token expiry based on user behavior"
+    - "Geo-location based token validation"
+    - "Automatic client throttling on suspicious activity"
+    - "Token family tracking for refresh token rotation"
+    - "Prometheus metrics for token lifecycle monitoring"
+
+IMPLEMENTATION_INSTRUCTIONS:
+  1. "Generate complete Authorization Server configuration with ROPC grant type enabled"
+  2. "Create PostgreSQL schema with optimized indexes for token storage"
+  3. "Implement Redis caching layer with TTL matching token expiry"
+  4. "Generate comprehensive test suite with 90%+ coverage"
+  5. "Include Docker Compose for local development environment"
+  6. "Provide curl examples for all OAuth flows"
+  7. "Generate Postman collection for API testing"
+  8. "Include performance tuning configuration for production"
+  9. "Generate security hardening checklist"
+  10. "Provide migration guide from Spring Security OAuth (deprecated)"
+
+EXPECTED_OUTPUT:
+  - "Complete multi-module Maven project structure"
+  - "Authorization Server module with all endpoints"
+  - "Resource Server module with protected resources"
+  - "Client application demonstrating ROPC usage"
+  - "Database migration scripts"
+  - "Docker configuration files"
+  - "Comprehensive README with setup instructions"
+  - "Performance benchmarking results"
+  - "Security audit report template"
