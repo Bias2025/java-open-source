@@ -1,0 +1,60 @@
+CONTEXT:
+  domain: Enterprise Java Development
+  framework_version: Spring Boot 2.x with Spring 5.x
+  java_version: Java 17 LTS
+  scale: Educational to Production-Grade Applications
+  deployment: Standalone JAR execution via embedded servers
+  team_context: Developers transitioning from traditional Java EE to cloud-native
+  integration_points:
+    - RESTful APIs (JSON/XML)
+    - Relational databases (PostgreSQL/MySQL)
+    - NoSQL databases (MongoDB)
+    - Security frameworks (Spring Security)
+    - Testing frameworks (JUnit/Spock)
+    REQUIREMENTS:
+  functional:
+    - Bootstrap standalone Spring applications
+    - Auto-configure components via classpath scanning
+    - Implement dependency injection and IoC
+    - Support RESTful service development
+    - Enable data persistence layers
+    - Provide security mechanisms
+  non_functional:
+    performance: Sub-100ms startup for microservices
+    security: OWASP Top 10 compliance by default
+    scalability: Support for distributed systems
+    reliability: Production-grade with health checks
+    developer_experience: Minimal configuration overhead
+  compliance: Enterprise-grade standards
+  ARCHITECTURE:
+  pattern: Convention-over-Configuration
+  style: Opinionated defaults with override capability
+  layers:
+    - presentation: REST Controllers / Thymeleaf Views
+    - application: Service Components with @Service
+    - domain: Entity models and business logic
+    - infrastructure: Repository layer with Spring Data
+  core_patterns:
+    - Dependency Injection via @Autowired
+    - Component Scanning via @ComponentScan
+    - Auto-Configuration via @EnableAutoConfiguration
+    - Starter Dependencies for rapid setup
+    FRAMEWORK:
+  core:
+    language: Java 17 LTS
+    framework: Spring Boot 2.x
+    build_tools: Maven/Gradle
+  web:
+    mvc: Spring MVC with @RestController
+    template: Thymeleaf/JSP
+  persistence:
+    jpa: Spring Data JPA
+    jdbc: Spring JDBC Template
+  testing:
+    unit: JUnit 5
+    integration: @SpringBootTest
+    mocking: Mockito
+  deployment:
+    packaging: Executable JAR with embedded Tomcat
+    execution: java -jar application.jar
+    
