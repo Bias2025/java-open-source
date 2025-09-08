@@ -1,0 +1,168 @@
+CONTEXT:
+  domain: Financial Services / Investment Banking
+  system_type: Trading Platform UI Components
+  scale_metrics:
+    - 50,000+ concurrent traders
+    - 2M transactions/day
+    - $500B daily volume
+    - 99.999% uptime SLA
+  constraints:
+    - SOX compliance mandatory
+    - PCI-DSS Level 1 certification required
+    - Zero-downtime deployment only
+    - 48-hour remediation window for critical vulnerabilities
+  team_context:
+    - 12 senior developers
+    - Mixed Spring Boot/Angular expertise
+    - LegoUX component library v3.2.4
+    - Existing CI/CD with SonarQube + BlackDuck
+  integration_points:
+    - Bloomberg Terminal API
+    - FIX Protocol gateways
+    - Internal risk management systems
+    - Regulatory reporting engines
+    REQUIREMENTS:
+  functional:
+    - Remediate 23 critical FOSS vulnerabilities from BlackDuck scan
+    - Update LegoUX components without breaking existing functionality
+    - Maintain backward compatibility with legacy trading screens
+    - Preserve all audit logging capabilities
+    - Zero regression in transaction processing speed
+  
+  non_functional:
+    performance:
+      - Sub-50ms UI response time maintained
+      - No increase in memory footprint
+      - Bundle size increase < 5%
+    security:
+      - CVE-2024-38095 (Log4j) - CRITICAL
+      - CVE-2024-29025 (Spring Security) - HIGH
+      - NPM audit vulnerabilities in LegoUX dependencies
+      - XSS vulnerabilities in toast notifications
+      - CSRF token validation gaps
+    scalability:
+      - Support 100K concurrent WebSocket connections
+      - Handle 10K orders/second peak load
+    reliability:
+      - 99.999% uptime during market hours
+      - Graceful degradation for non-critical components
+  
+  compliance:
+    - SOX Section 404 controls
+    - FINRA Rule 4511 record keeping
+    - MiFID II transaction reporting
+    - GDPR for EU client data
+    ARCHITECTURE:
+  pattern: Clean Architecture with Domain-Driven Design
+  style: Microservices with BFF (Backend for Frontend)
+  
+  layers:
+    presentation:
+      - Angular 18.2.x with LegoUX components
+      - WebSocket for real-time updates
+      - Service Workers for offline capability
+    
+    application:
+      - Spring Boot 3.2.x REST APIs
+      - GraphQL for complex queries
+      - CQRS for read/write separation
+    
+    domain:
+      - Trading domain aggregates
+      - Event sourcing for audit trail
+      - Saga pattern for distributed transactions
+    
+    infrastructure:
+      - PostgreSQL 15 with partitioning
+      - Redis for session/cache
+      - Kafka for event streaming
+      - Kubernetes with Istio service mesh
+  
+  security_layers:
+    - API Gateway with rate limiting
+    - OAuth2/OIDC with MFA
+    - Field-level encryption for PII
+    - Network segmentation with zero-trust
+    FRAMEWORK:
+  core:
+    language: Java 17 LTS
+    framework: Spring Boot 3.2.1
+    build: Maven 3.9.x
+  
+  frontend:
+    framework: Angular 18.2.x
+    ui_library: "@lego/ux": "3.2.4" → "3.3.1"
+    state: NgRx for predictable state
+    testing: Karma/Jasmine + Cypress E2E
+  
+  persistence:
+    primary: PostgreSQL 15.4
+    orm: Spring Data JPA with Hibernate 6.x
+    migration: Flyway 9.x
+    caching: Redis 7.x with Redisson
+  
+  messaging:
+    broker: Apache Kafka 3.5
+    protocol: Avro with Schema Registry
+  
+  security_tools:
+    sast: SonarQube Enterprise
+    sca: BlackDuck + Snyk
+    dast: OWASP ZAP
+    secrets: HashiCorp Vault
+  
+  monitoring:
+    apm: Datadog APM
+    logs: ELK Stack
+    metrics: Prometheus + Grafana
+    tracing: OpenTelemetry
+    TECHNOLOGY:
+  vulnerability_fixes:
+    log4j_upgrade:
+      from: "2.17.1"
+      to: "2.23.1"
+      impact: All logging configurations reviewed
+      
+    spring_security:
+      from: "6.1.5"
+      to: "6.2.3"
+      breaking_changes: JWT validation logic updated
+      
+    lego_ux_patches:
+      toast_xss:
+        issue: HTML injection in toast messages
+        fix: DOMPurify integration + CSP headers
+      grid_csrf:
+        issue: Missing CSRF tokens in grid actions
+        fix: Angular HttpInterceptor with token injection
+  
+  performance_optimizations:
+    - Virtual scrolling for large datasets
+    - Lazy loading for feature modules
+    - Tree shaking for unused LegoUX components
+    - PostgreSQL query optimization with EXPLAIN ANALYZE
+    - Connection pool tuning (HikariCP)
+    TESTING:
+  unit_tests:
+    coverage: 95% minimum
+    tools: JUnit 5, Mockito, Jasmine/Karma
+    
+  integration_tests:
+    tools: TestContainers, Spring Boot Test
+    scenarios:
+      - Full trade lifecycle
+      - Regulatory reporting flow
+      - Disaster recovery procedures
+    
+  security_tests:
+    - Penetration testing post-remediation
+    - OWASP Top 10 validation
+    - Dependency scanning in CI/CD
+    
+  performance_tests:
+    tools: JMeter, K6
+    targets:
+      - 10K concurrent users
+      - Sub-100ms P99 latency
+      - Zero memory leaks over 72 hours
+      
