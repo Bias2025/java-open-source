@@ -1,0 +1,138 @@
+CONTEXT:
+  domain: Financial Services / Trading Platform
+  scale: 
+    - 100K+ concurrent users
+    - 1M+ RPS during market hours
+    - Sub-50ms P99 latency requirement
+  constraints:
+    - Zero data staleness for regulatory compliance
+    - Audit trail for all data modifications
+    - GDPR/SOX compliance mandatory
+  team: Senior engineering team with distributed systems expertise
+  integration:
+    - Market data feeds (real-time)
+    - Payment gateways
+    - Regulatory reporting systems
+
+REQUIREMENTS:
+  functional:
+    - Implement ETag-based caching for all GET endpoints
+    - Support If-None-Match conditional requests
+    - Handle concurrent modifications gracefully
+    - Maintain audit log of all ETag generations
+  non_functional:
+    performance: 
+      - ETag generation < 5ms
+      - Cache hit ratio > 85%
+      - Bandwidth reduction > 60%
+    security:
+      - ETags must not leak sensitive data
+      - Cryptographically secure hash generation
+    scalability:
+      - Distributed cache coherency
+      - Horizontal scaling support
+    reliability:
+      - 99.99% uptime SLA
+      - Zero data corruption tolerance
+
+ARCHITECTURE:
+  pattern: Hexagonal Architecture with CQRS
+  style: Microservices with API Gateway
+  layers:
+    - presentation: REST API with Spring WebFlux
+    - application: Command/Query handlers with ETag interceptors
+    - domain: Financial entities with version tracking
+    - infrastructure: Redis for ETag cache, PostgreSQL for persistence
+  data_flow:
+    - Read path: DB → Entity → ETag Generator → Cache → Response
+    - Write path: Request → Validation → DB Update → Cache Invalidation
+
+FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2.x
+  persistence:
+    database: PostgreSQL 15 with JSONB
+    orm: Spring Data JPA with optimistic locking
+    migration: Flyway
+  caching:
+    primary: Redis 7.x cluster
+    strategy: Write-through with TTL
+  monitoring:
+    - Micrometer metrics
+    - OpenTelemetry tracing
+    - ELK stack for logging
+
+TECHNOLOGY:
+  etag_generation:
+    algorithm: SHA-256 with salt
+    components:
+      - Entity version
+      - Last modified timestamp
+      - User context (for personalized data)
+  implementation_stack:
+    - Spring Boot WebFilter for ETag handling
+    - Custom @ETagEnabled annotation
+    - Aspect-oriented ETag computation
+    - Redis-based distributed cache
+
+TESTING:
+  unit:
+    - ETag generation consistency
+    - Hash collision tests
+    - Cache invalidation logic
+  integration:
+    - Concurrent modification scenarios
+    - Cache coherency across nodes
+    - If-None-Match header processing
+  performance:
+    - Load testing with 100K concurrent users
+    - Cache hit ratio validation
+    - Network bandwidth measurements
+
+PERSONA:
+  You are a Principal Engineer at a Tier-1 investment bank, responsible for:
+  - Ultra-low latency trading systems
+  - Regulatory compliance implementation
+  - Performance optimization at scale
+  - Security hardening for financial APIs
+  
+  Your expertise includes:
+  - 15+ years building financial systems
+  - Deep understanding of HTTP caching mechanisms
+  - Distributed systems architecture
+  - Regulatory compliance (SOX, GDPR, MiFID II)
+
+ORIGINALITY:
+  Unique aspects of this implementation:
+  - Composite ETag strategy for hierarchical financial data
+  - Regulatory-compliant audit trail for all ETag operations
+  - Smart cache warming for predictable access patterns
+  - Circuit breaker for cache failures with fallback to DB
+  - Multi-tenant ETag isolation for B2B platforms
+
+IMPLEMENTATION_DIRECTIVE:
+  Generate production-ready Spring Boot code that:
+  1. Implements a complete ETag solution with If-None-Match support
+  2. Includes distributed cache management with Redis
+  3. Provides comprehensive audit logging
+  4. Handles race conditions and concurrent modifications
+  5. Includes performance metrics and monitoring
+  6. Supports both strong and weak ETags
+  7. Implements cache invalidation strategies
+  8. Provides curl examples for testing
+  9. Includes JMeter performance test scripts
+  10. Generates 95%+ test coverage
+
+EXPECTED_OUTPUT:
+  - Complete Spring Boot application structure
+  - ETag filter/interceptor implementation
+  - Repository layer with version tracking
+  - Service layer with caching logic
+  - Controller with conditional GET support
+  - Redis configuration and cache manager
+  - Comprehensive test suite
+  - Performance benchmarking code
+  - Deployment configuration (K8s ready)
+  - Monitoring and alerting setup
+
