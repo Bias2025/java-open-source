@@ -1,0 +1,135 @@
+CONTEXT:
+  domain: 
+    sector: "Financial Services & Trading Systems"
+    sub_domain: "Source Control Management"
+    regulatory_environment: "High-Compliance Banking Infrastructure"
+  
+  scale:
+    repositories: "500+ microservices"
+    developers: "300+ concurrent"
+    merge_frequency: "2000+ merges/day"
+    conflict_rate: "15-20% of merges"
+    resolution_time_target: "<30 seconds"
+  
+  constraints:
+    audit_trail: "100% traceable decisions"
+    rollback_capability: "Instant with zero data loss"
+    compliance: "Every merge must be SOX compliant"
+    downtime_tolerance: "ZERO during trading hours"
+  
+  team:
+    skill_level: "Senior Java/Spring Boot developers"
+    automation_maturity: "Level 4 - Managed"
+    current_tools: ["GitLab EE", "Jenkins", "SonarQube", "BlackDuck"]
+  
+  integration:
+    vcs: "GitLab Enterprise"
+    ci_cd: "Jenkins/ArgoCD"
+    monitoring: "Datadog/Splunk"
+    notification: "Slack/PagerDuty"
+    REQUIREMENTS:
+  functional:
+    - "Detect conflict markers (<<<<<<, ======, >>>>>>) in real-time"
+    - "Parse and understand semantic context of conflicting code blocks"
+    - "Auto-resolve trivial conflicts (imports, formatting, comments)"
+    - "Generate resolution proposals for complex conflicts"
+    - "Maintain compilation integrity post-resolution"
+    - "Preserve business logic correctness"
+    - "Create audit log with decision rationale"
+    
+  non_functional:
+    performance:
+      detection_latency: "<100ms"
+      resolution_time: "<5s for simple, <30s for complex"
+      throughput: "100 conflicts/minute"
+    
+    security:
+      code_injection_prevention: "100% sanitized"
+      access_control: "Role-based with MFA"
+      encryption: "AES-256 for stored resolutions"
+    
+    scalability:
+      horizontal: "Auto-scale to 10x load"
+      queue_depth: "Handle 1000+ pending conflicts"
+    
+    reliability:
+      availability: "99.99% SLA"
+      data_integrity: "Zero corruption tolerance"
+      recovery_time: "<60 seconds"
+  
+  compliance:
+    - "SOX Section 404: Internal controls over financial reporting"
+    - "Change management audit trail per ISO 27001"
+    - "Segregation of duties for production merges"
+    ARCHITECTURE:
+  pattern: "Event-Driven Microservices with CQRS"
+  
+  components:
+    conflict_detector:
+      type: "Reactive Stream Processor"
+      tech: "Spring WebFlux + Project Reactor"
+      
+    semantic_analyzer:
+      type: "AST Parser + ML Model"
+      tech: "JavaParser + Spring AI"
+      
+    resolution_engine:
+      type: "Rule Engine + LLM Integration"
+      tech: "Drools + OpenAI API"
+      
+    audit_service:
+      type: "Event Sourcing"
+      tech: "Spring Cloud Stream + Kafka"
+  
+  data_flow:
+    pattern: "CQRS with Event Sourcing"
+    command_side: "Conflict resolution commands"
+    query_side: "Audit trails and analytics"
+    event_store: "PostgreSQL with JSONB"
+  
+  deployment:
+    style: "Kubernetes StatefulSets"
+    resilience: "Circuit breakers + Bulkheads"
+    monitoring: "OpenTelemetry + Prometheus"
+    FRAMEWORK:
+  core:
+    language: "Java 17 LTS"
+    framework: "Spring Boot 3.2.x"
+    build: "Gradle 8.x"
+  
+  persistence:
+    primary: "PostgreSQL 15 (JSONB for conflict data)"
+    cache: "Redis 7.x (conflict detection cache)"
+    search: "Elasticsearch 8.x (audit search)"
+  
+  messaging:
+    broker: "Apache Kafka 3.x"
+    protocol: "CloudEvents specification"
+  
+  ml_integration:
+    provider: "Spring AI with OpenAI/Azure OpenAI"
+    fallback: "Local Ollama deployment"
+  
+  observability:
+    tracing: "OpenTelemetry"
+    metrics: "Micrometer + Prometheus"
+    logging: "Structured JSON to Splunk"
+    TECHNOLOGY:
+  git_integration:
+    library: "JGit 6.x"
+    conflict_parser: "Custom ANTLR4 grammar"
+  
+  code_analysis:
+    ast: "JavaParser 3.x"
+    semantic: "Spoon Framework"
+    style: "Checkstyle API"
+  
+  ml_models:
+    conflict_classification: "Fine-tuned BERT"
+    resolution_suggestion: "CodeT5+"
+    risk_assessment: "Custom XGBoost"
+  
+  security:
+    secrets: "HashiCorp Vault"
+    scanning: "Snyk + OWASP Dependency Check"
+    
