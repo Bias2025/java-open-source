@@ -1,0 +1,77 @@
+CONTEXT:
+  domain: Financial Services / Banking / FinTech
+  security_criticality: MAXIMUM (PCI-DSS, SOX, GDPR compliance)
+  scale_metrics:
+    - concurrent_users: 1M+
+    - transactions_per_second: 50,000+
+    - data_sensitivity: PII, Financial Records, Transaction History
+  regulatory_constraints:
+    - PCI-DSS Level 1
+    - SOX Compliance
+    - GDPR/CCPA
+    - Basel III
+    - FINRA/SEC regulations
+  threat_landscape:
+    - XSS attacks on payment forms
+    - CSRF on transaction endpoints
+    - Content injection attacks
+    - Clickjacking on banking portals
+  integration_requirements:
+    - Legacy banking systems
+    - Payment gateways (Stripe, PayPal, Square)
+    - Credit bureaus
+    - KYC/AML services
+    REQUIREMENTS:
+  functional_security:
+    - Implement CSP headers for all responses
+    - Enable HSTS with minimum 1-year duration
+    - XSS protection via multiple layers
+    - Content-Type sniffing prevention
+    - Frame options for clickjacking defense
+    - Cache control for sensitive data
+  performance_with_security:
+    - Sub-100ms header processing
+    - Zero-trust architecture
+    - Real-time fraud detection
+    - Encrypted data at rest/transit
+  compliance_headers:
+    - PCI-DSS compliant response headers
+    - OWASP Top 10 mitigation
+    - Financial regulatory compliance
+    ARCHITECTURE:
+  security_pattern: Defense-in-Depth
+  header_strategy: Strict-by-Default
+  layers:
+    - presentation: 
+        CSP: "default-src 'self'; script-src 'self' 'unsafe-inline' https://trusted-cdn.com"
+        X-Frame-Options: DENY
+    - application:
+        X-Content-Type-Options: nosniff
+        X-XSS-Protection: "1; mode=block"
+    - transport:
+        Strict-Transport-Security: "max-age=31536000; includeSubDomains; preload"
+    - caching:
+        Cache-Control: "no-store, no-cache, must-revalidate, private"
+        Pragma: no-cache
+        Expires: 0
+        FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2.x
+    security: Spring Security 6.x
+  security_headers_implementation:
+    method: SecurityFilterChain
+    scope: Global with endpoint overrides
+  monitoring:
+    - Security header validation
+    - CSP violation reporting
+    - HSTS preload status
+    TECHNOLOGY:
+  security_libraries:
+    - Spring Security
+    - OWASP Security Headers
+    - Content Security Policy Builder
+  testing_tools:
+    - SecurityHeaders.com API
+    - OWASP ZAP
+    - Burp Suite
