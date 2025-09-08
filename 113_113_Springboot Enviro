@@ -1,0 +1,70 @@
+CONTEXT:
+  domain: Finance/Banking/Trading Systems
+  criticality: HIGH (configuration errors = potential financial loss)
+  scale: Enterprise-grade with multiple environments
+  deployment_targets: [DEV, QA, UAT, PROD]
+  team_expertise: Mixed (Junior to Senior Spring Boot developers)
+  regulatory: SOX compliance, audit trail requirements
+  existing_issues:
+    - Profile-specific configurations not loading correctly
+    - Unclear which properties are active at runtime
+    - Bean initialization order causing intermittent failures
+    - Configuration drift between environments
+    REQUIREMENTS:
+  functional:
+    - Compare application.yml vs application-prod.yml configurations
+    - Detect and log active Spring profiles at startup
+    - Log ALL loaded properties with their sources
+    - Track bean initialization sequence
+    - Provide diff analysis between configurations
+    - Create audit trail for configuration changes
+  non_functional:
+    performance: Startup analysis < 500ms overhead
+    security: Mask sensitive properties (passwords, keys, tokens)
+    reliability: 100% accurate profile detection
+    observability: Structured JSON logging for ELK stack
+  compliance:
+    - PCI-DSS (mask card numbers)
+    - SOX (configuration change audit)
+    - GDPR (no PII in logs)
+    ARCHITECTURE:
+  pattern: Observer Pattern for startup events
+  approach: Spring Boot ApplicationListener & EnvironmentPostProcessor
+  layers:
+    - Configuration Layer: YAML parsing and comparison
+    - Logging Layer: Structured JSON with masking
+    - Analysis Layer: Diff generation and reporting
+    - Monitoring Layer: Metrics and alerts
+  integration_points:
+    - Spring Environment abstraction
+    - ApplicationContext lifecycle
+    - Spring Boot Actuator endpoints
+    FRAMEWORK:
+  core:
+    java: 17
+    spring_boot: 3.2.x
+    spring_framework: 6.1.x
+  libraries:
+    yaml_processing: SnakeYAML
+    diff_generation: java-diff-utils
+    json_logging: Logback with Logstash encoder
+    masking: Custom SensitiveDataMasker
+  monitoring:
+    actuator: Custom endpoints for config inspection
+    metrics: Micrometer with Prometheus
+    TECHNOLOGY:
+  startup_hooks:
+    - ApplicationListener<ApplicationReadyEvent>
+    - EnvironmentPostProcessor
+    - BeanPostProcessor
+  logging_framework:
+    - SLF4J with Logback
+    - Structured JSON output
+    - MDC for correlation IDs
+  configuration_sources:
+    - System properties
+    - Environment variables
+    - application.yml
+    - application-{profile}.yml
+    - Cloud Config Server
+    
