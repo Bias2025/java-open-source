@@ -1,0 +1,86 @@
+CONTEXT:
+  domain: "API Testing & Quality Assurance"
+  framework_purpose: "Enterprise REST API Validation"
+  scale_metrics:
+    - concurrent_tests: "1000+"
+    - api_endpoints: "500+"
+    - test_execution_time: "<5min for full suite"
+  team_context:
+    - qa_engineers: "mixed_experience_levels"
+    - developers: "need_readable_test_reports"
+    - ci_cd_integration: "mandatory"
+  existing_ecosystem:
+    - build_tool: "Maven/Gradle"
+    - ci_platform: "Jenkins/GitLab/GitHub Actions"
+    - api_types: "REST, GraphQL, SOAP"
+    REQUIREMENTS:
+  functional:
+    - "Generate complete REST Assured test framework with zero boilerplate"
+    - "Support OAuth2, JWT, API Key authentication mechanisms"
+    - "Implement request/response validation with JSON Schema"
+    - "Generate data-driven tests from OpenAPI/Swagger specs"
+    - "Create reusable test components and utilities"
+    - "Support parallel test execution"
+  non_functional:
+    performance:
+      - "Test execution < 100ms per endpoint"
+      - "Memory footprint < 512MB for 1000 tests"
+    maintainability:
+      - "Self-documenting test names"
+      - "Fluent API design patterns"
+      - "Clear separation of concerns"
+    reporting:
+      - "Allure/ExtentReports integration"
+      - "Real-time test monitoring"
+      - "Failure screenshot/logs capture"
+  compliance:
+    - "OWASP API Security Top 10 validation"
+    - "GDPR data handling in test data"
+    ARCHITECTURE:
+  pattern: "Page Object Model adapted for APIs"
+  layers:
+    test_layer:
+      - "Test classes with BDD annotations"
+      - "Parameterized test scenarios"
+    service_layer:
+      - "API endpoint abstractions"
+      - "Request/Response builders"
+    utility_layer:
+      - "Authentication handlers"
+      - "Data generators"
+      - "Assertion helpers"
+    config_layer:
+      - "Environment configurations"
+      - "Test data management"
+  design_patterns:
+    - "Builder Pattern for request construction"
+    - "Factory Pattern for test data"
+    - "Strategy Pattern for auth mechanisms"
+    - "Chain of Responsibility for validations"
+    FRAMEWORK:
+  core:
+    rest_assured: "5.4.0"
+    java: "17"
+    junit5: "5.10.0"
+  validation:
+    json_schema_validator: "5.4.0"
+    hamcrest: "2.2"
+    assertj: "3.24.2"
+  reporting:
+    allure: "2.24.0"
+    extent_reports: "5.1.1"
+  utilities:
+    jackson: "2.15.3"
+    lombok: "1.18.30"
+    faker: "1.0.2"
+  build:
+    maven: "3.9.5"
+    maven_surefire: "3.2.2"
+    TECHNOLOGY:
+  http_client: "Apache HttpClient 5"
+  serialization: "Jackson for JSON/XML"
+  logging: "SLF4J with Logback"
+  test_data: "JSON/YAML/CSV files"
+  mocking: "WireMock for service virtualization"
+  performance: "Gatling integration for load testing"
+  
