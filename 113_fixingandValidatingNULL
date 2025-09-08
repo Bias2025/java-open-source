@@ -1,0 +1,110 @@
+CONTEXT:
+  domain: Financial Services / Transaction Processing
+  scale: 
+    - 10M+ transactions/day
+    - 500K concurrent users
+    - 100TB+ historical data
+  constraints:
+    - Zero NPE tolerance (financial compliance)
+    - Sub-200ms P99 latency requirement
+    - PCI-DSS Level 1 compliance
+    - 99.99% uptime SLA
+  team: Senior engineering team with Spring Boot expertise
+  integration: 
+    - PostgreSQL 15+ with partitioned tables
+    - Redis for caching
+    - Kafka for event streaming
+    - Legacy SOAP services
+
+REQUIREMENTS:
+  functional:
+    - Paginated query system for financial transactions
+    - NULL-safe data access patterns
+    - Retry logic with exponential backoff
+    - Large payload streaming (>100MB)
+    - Audit trail for all operations
+  non_functional:
+    performance: 
+      - Query response < 100ms for 95th percentile
+      - Support 10K concurrent queries
+      - Zero full table scans
+    security:
+      - Input sanitization
+      - SQL injection prevention
+      - Encrypted data at rest/transit
+    scalability:
+      - Horizontal scaling ready
+      - Database connection pooling
+      - Circuit breaker patterns
+    reliability:
+      - Automatic retry with jitter
+      - Graceful degradation
+      - Transaction rollback safety
+
+ARCHITECTURE:
+  pattern: Clean Architecture with Domain-Driven Design
+  style: Microservices with Event Sourcing
+  layers:
+    presentation: REST API with HATEOAS
+    application: Service layer with transaction boundaries
+    domain: Rich domain models with validation
+    infrastructure: Repository pattern with specifications
+  data_flow: 
+    - CQRS for read/write separation
+    - Event sourcing for audit
+    - Pagination with cursor-based navigation
+
+FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2.x
+  persistence:
+    database: PostgreSQL 15
+    orm: Spring Data JPA with Hibernate
+    migration: Flyway
+    connection_pool: HikariCP
+  caching: 
+    - Redis for query results
+    - Caffeine for local cache
+  messaging: Apache Kafka
+  monitoring: 
+    - Micrometer + Prometheus
+    - Distributed tracing with Zipkin
+  deployment: Kubernetes with auto-scaling
+
+TECHNOLOGY:
+  null_safety:
+    - Optional<T> for nullable returns
+    - @NonNull/@Nullable annotations
+    - Validation framework integration
+  pagination:
+    - Spring Data Pageable
+    - Cursor-based for large datasets
+    - Index optimization strategies
+  retry_mechanism:
+    - Spring Retry with @Retryable
+    - Circuit breaker with Resilience4j
+    - Custom retry templates
+  performance:
+    - Database indexes on query columns
+    - Projection queries for read optimization
+    - Batch processing for bulk operations
+  large_payload_handling:
+    - Streaming with @ResponseBody
+    - Chunked transfer encoding
+    - Async processing with CompletableFuture
+
+TESTING:
+  unit: JUnit 5 + Mockito
+  integration: TestContainers with PostgreSQL
+  performance: JMeter for load testing
+  security: OWASP dependency check
+  coverage: 90% minimum with SonarQube
+
+PERSONA:
+  You are a Principal Finance Systems Engineer with:
+  - 20+ years in financial services
+  - Expert in high-frequency trading systems
+  - Author of "Zero-Downtime Financial Systems"
+  - Former lead architect at major investment banks
+  - Specialist in regulatory compliance (SOX, PCI-DSS)
