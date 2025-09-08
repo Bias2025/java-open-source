@@ -1,0 +1,167 @@
+CONTEXT:
+  domain: Finance/Financial Services
+  component: Search Infrastructure
+  scale: 
+    - Expected RPS: 1000-10000
+    - Data volume: 10M+ financial records
+    - Response time: <100ms P99
+  constraints:
+    - Regulatory: SOX, PCI-DSS compliance
+    - Security: Financial data sensitivity
+    - Performance: Real-time search requirements
+  team: Enterprise development team
+  integration:
+    - PostgreSQL with financial data
+    - Elasticsearch for advanced search
+    - Redis for caching
+    REQUIREMENTS:
+  functional:
+    - Multi-parameter search capability
+    - Pagination with cursor/offset
+    - Sorting by multiple fields
+    - Filtering with complex predicates
+    - Full-text search on descriptions
+  non_functional:
+    performance: <100ms P99 latency
+    security: Input sanitization, SQL injection prevention
+    scalability: Horizontal scaling ready
+    reliability: 99.99% uptime SLA
+  compliance: 
+    - Audit logging for all searches
+    - Data masking for sensitive fields
+    ARCHITECTURE:
+  pattern: Clean Architecture with Repository Pattern
+  style: RESTful API with HATEOAS
+  layers:
+    - presentation: REST Controllers with OpenAPI
+    - application: Service layer with DTOs
+    - domain: Entity models with validation
+    - infrastructure: JPA repositories with Specifications
+  data_flow: 
+    - Request → Validation → Service → Repository → Cache → Response
+    - Query optimization with database indexes
+    FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2.x
+  persistence:
+    database: PostgreSQL 15
+    orm: Spring Data JPA with Specifications
+    search: PostgreSQL full-text search with tsvector
+  caching: Redis with Spring Cache
+  validation: Jakarta Bean Validation
+  documentation: SpringDoc OpenAPI 3.0
+  monitoring: Micrometer + Prometheus
+  
+
+
+**Alt Format Prompt**
+# DIRECTIVE: Generate Production-Ready Finance Search Endpoint
+
+You are tasked with creating a comprehensive, production-ready search endpoint for a financial services application using Spring Boot 3.2.x and Java 17.
+
+## CONTEXT
+- **Domain**: Financial services with transactions, accounts, portfolios, instruments
+- **Scale**: 10M+ records, 1000+ concurrent users, <100ms response requirement
+- **Compliance**: SOX audit trails, PCI-DSS data protection, GDPR-compliant
+
+## REQUIREMENTS
+
+### Functional Requirements
+1. **Multi-Parameter Search**:
+   - Account number (exact/partial match)
+   - Transaction date range
+   - Amount range with currency
+   - Instrument type (stocks, bonds, derivatives)
+   - Customer name (fuzzy matching)
+   - Transaction status
+   - Full-text search on descriptions
+
+2. **Advanced Features**:
+   - Pagination (cursor-based and offset)
+   - Multi-field sorting
+   - Complex filter combinations (AND/OR)
+   - Result highlighting for text matches
+   - Faceted search for categories
+   - Search suggestions/autocomplete
+
+3. **Response Requirements**:
+   - Include metadata (total count, page info)
+   - HATEOAS links for navigation
+   - Field projection (select specific fields)
+   - Nested resource expansion
+
+### Non-Functional Requirements
+- **Performance**: Sub-100ms P99, use database indexes, query optimization
+- **Security**: Input validation, SQL injection prevention, rate limiting
+- **Caching**: Redis integration for frequent queries
+- **Monitoring**: Metrics for search performance, query patterns
+- **Audit**: Log all searches with user context
+
+## TECHNICAL SPECIFICATIONS
+
+### Generate the following components:
+
+1. **Entity Model** (`FinancialTransaction.java`):
+   - JPA entity with proper indexes
+   - Audit fields (created_at, updated_at, created_by)
+   - PostgreSQL-specific features (JSONB for metadata)
+   - Full-text search configuration
+
+2. **Search DTO** (`TransactionSearchRequest.java`):
+   - All search parameters with validation
+   - Date range validation
+   - Amount range with currency
+   - Pagination parameters
+   - Sort specifications
+
+3. **Response DTO** (`TransactionSearchResponse.java`):
+   - Transaction data with field masking
+   - Pagination metadata
+   - HATEOAS links
+   - Search statistics
+
+4. **Repository** (`TransactionSearchRepository.java`):
+   - JPA Specifications for dynamic queries
+   - PostgreSQL full-text search integration
+   - Native queries for complex searches
+   - Query hints for optimization
+
+5. **Service Layer** (`TransactionSearchService.java`):
+   - Business logic for search
+   - Caching strategy with @Cacheable
+   - Audit logging
+   - Performance monitoring
+
+6. **REST Controller** (`TransactionSearchController.java`):
+   - GET /api/v1/transactions/search endpoint
+   - Request parameter validation
+   - OpenAPI documentation
+   - Rate limiting
+   - Error handling
+
+7. **Configuration** (`SearchConfiguration.java`):
+   - Cache configuration
+   - Thread pool for async operations
+   - Query timeout settings
+   - Index hints
+
+8. **Tests**:
+   - Unit tests with Mockito
+   - Integration tests with @DataJpaTest
+   - Performance tests with large datasets
+   - Security tests for injection attacks
+
+## CODE GENERATION RULES
+
+1. **Use Spring Boot 3.2.x features**:
+   - Record DTOs where applicable
+   - Virtual threads for I/O operations
+   - Problem Details for error responses
+
+2. **PostgreSQL Optimizations**:
+   ```java
+   @Query(value = "SELECT * FROM transactions WHERE " +
+          "to_tsvector('english', description) @@ plainto_tsquery('english', :searchTerm) " +
+          "AND amount BETWEEN :minAmount AND :maxAmount", 
+          nativeQuery = true)
