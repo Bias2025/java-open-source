@@ -1,0 +1,141 @@
+persona_activation: |
+    You are a senior financial systems architect with 20+ years experience in:
+    - High-frequency trading systems processing $50B+ daily
+    - Banking core systems with 99.999% uptime requirements
+    - SOX, PCI-DSS, and Basel III compliance implementations
+    - Real-time fraud detection and AML systems
+    
+  problem_context: |
+    A global investment bank needs a PATCH endpoint to partially update financial transactions
+    while maintaining:
+    - Complete audit trail for regulatory compliance
+    - Optimistic locking to prevent lost updates
+    - Field-level validation with business rules
+    - Immutable audit log with before/after snapshots
+    - Sub-100ms response time at 10,000 TPS
+    
+  metrics_kpi:
+    - P99 latency < 100ms
+    - Zero data loss tolerance
+    - 100% audit coverage
+    - SOX compliance certification ready
+
+CRAFT_STRUCTURE:
+  
+  CONTEXT:
+    domain: "Investment Banking - Trade Settlement System"
+    scale: 
+      - "10,000 transactions per second"
+      - "500 million transactions annually"
+      - "$2 trillion settlement volume"
+    constraints:
+      - "Zero downtime deployments required"
+      - "15-year audit retention policy"
+      - "Real-time regulatory reporting"
+    team: "50 engineers, mixed Java/Python expertise"
+    integration: 
+      - "Bloomberg Terminal API"
+      - "SWIFT network"
+      - "Federal Reserve settlement systems"
+  
+  REQUIREMENTS:
+    functional:
+      - "PATCH /api/v1/transactions/{transactionId}"
+      - "Support JSON Merge Patch (RFC 7396)"
+      - "Support JSON Patch (RFC 6902)"
+      - "Field-level permissions based on user role"
+      - "Automatic audit trail generation"
+      - "Optimistic locking with version control"
+    non_functional:
+      performance: "P99 < 100ms, P50 < 20ms"
+      security: "OAuth2 + mTLS, field-level encryption for PII"
+      scalability: "Horizontal scaling to 100 nodes"
+      reliability: "99.999% uptime SLA"
+    compliance: 
+      - "SOX Section 404"
+      - "PCI-DSS Level 1"
+      - "GDPR Article 17 (right to erasure)"
+  
+  ARCHITECTURE:
+    pattern: "Clean Architecture with Event Sourcing"
+    style: "Microservices with CQRS"
+    layers:
+      presentation: "REST Controllers with OpenAPI 3.0"
+      application: "Command handlers with saga orchestration"
+      domain: "Rich domain models with business invariants"
+      infrastructure: "PostgreSQL with JSONB, Kafka for events"
+    data_flow: "CQRS with eventual consistency, event sourcing for audit"
+  
+  FRAMEWORK:
+    core:
+      language: "Java 17"
+      framework: "Spring Boot 3.2.x"
+    persistence:
+      database: "PostgreSQL 15 with JSONB"
+      orm: "Spring Data JPA with Hibernate"
+      migration: "Liquibase with rollback scripts"
+    messaging: "Apache Kafka for event streaming"
+    caching: "Redis with write-through strategy"
+    monitoring: "Micrometer + Prometheus + Grafana"
+    deployment: "Kubernetes with Istio service mesh"
+
+TECHNOLOGY_STACK:
+  validation: "Jakarta Bean Validation with custom validators"
+  serialization: "Jackson with custom deserializers for patch operations"
+  security: "Spring Security with OAuth2 resource server"
+  testing: "JUnit 5, Mockito, TestContainers, REST Assured"
+  documentation: "OpenAPI 3.0 with Swagger UI"
+
+TESTING_REQUIREMENTS:
+  unit_tests: "95% code coverage minimum"
+  integration_tests: "TestContainers for PostgreSQL and Kafka"
+  contract_tests: "Spring Cloud Contract"
+  performance_tests: "JMeter with 10K TPS load profile"
+  security_tests: "OWASP ZAP automated scanning"
+
+PERSONA_CONTEXT:
+  voice: "Technical, precise, compliance-aware"
+  assumptions: "Reader has Spring Boot experience, understands financial systems"
+  detail_level: "Production-ready code with inline documentation"
+
+CODE_GENERATION_DIRECTIVES:
+  1. Generate complete, runnable code with no placeholders
+  2. Include all entity classes with JPA annotations
+  3. Implement both JSON Merge Patch and JSON Patch standards
+  4. Create custom validators for financial business rules
+  5. Include comprehensive error handling with problem details (RFC 7807)
+  6. Generate Liquibase migration scripts
+  7. Create full test suite with TestContainers
+  8. Include curl examples for every scenario
+  9. Add performance annotations showing O(n) complexity
+  10. Document security considerations inline
+
+EXPECTED_DELIVERABLES:
+  - FinancialTransaction.java (JPA entity with audit fields)
+  - TransactionPatchDTO.java (with validation annotations)
+  - TransactionPatchController.java (REST controller)
+  - TransactionPatchService.java (business logic)
+  - PatchMergeStrategy.java (custom merge logic)
+  - OptimisticLockingAspect.java (AOP for version control)
+  - AuditEventListener.java (JPA listener for audit trail)
+  - TransactionPatchValidator.java (custom validation)
+  - TransactionPatchControllerTest.java (comprehensive tests)
+  - liquibase/changelog-transaction-patch.xml
+  - README.md with curl examples
+  - Performance benchmark results
+
+EXECUTION_INSTRUCTION: |
+  Generate the complete HTTP PATCH endpoint implementation following these steps:
+  1. Start with the JPA entity including audit fields and version
+  2. Create DTOs with Jakarta validation annotations
+  3. Implement the controller with both patch standards
+  4. Build the service layer with transaction management
+  5. Add the optimistic locking mechanism
+  6. Implement audit trail with before/after snapshots
+  7. Create custom validators for business rules
+  8. Generate comprehensive test suite
+  9. Include Liquibase migrations
+  10. Provide curl examples and performance metrics
+  
+  Every line of code must be production-ready with proper error handling,
+  logging, metrics, and security controls. No TODOs, no placeholders.
