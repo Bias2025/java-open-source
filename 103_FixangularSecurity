@@ -1,0 +1,67 @@
+CONTEXT:
+  domain: Financial Services / Banking
+  security_focus: FOSS vulnerability remediation
+  compliance: PCI-DSS, SOX, GDPR, Basel III
+  threat_landscape: 
+    - CVE database critical/high vulnerabilities
+    - OWASP Top 10 2024
+    - Financial sector specific threats
+  scan_sources:
+    - Snyk/WhiteSource/BlackDuck FOSS reports
+    - npm audit
+    - OWASP Dependency Check
+    - GitHub Dependabot alerts
+
+REQUIREMENTS:
+  functional:
+    - Auto-parse FOSS vulnerability reports (JSON/XML/CSV)
+    - Generate remediation code with zero manual intervention
+    - Maintain backward compatibility during fixes
+    - Preserve all business logic integrity
+  non_functional:
+    - Fix application time: <5 minutes per vulnerability
+    - Zero runtime performance degradation
+    - 100% audit trail for compliance
+    - Automated regression testing post-fix
+  security_mandates:
+    - No vulnerable dependencies in production
+    - All data encrypted at rest/transit
+    - Input sanitization on all user inputs
+    - CSP headers properly configured
+
+ARCHITECTURE:
+  pattern: Security-First Hexagonal Architecture
+  layers:
+    - presentation: Angular 17+ with strict CSP
+    - security: Multi-layer defense (WAF → API Gateway → App)
+    - application: Spring Boot microservices
+    - data: PostgreSQL with row-level security
+  security_boundaries:
+    - DMZ for public-facing components
+    - Internal zone for core banking logic
+    - Restricted zone for PII/financial data
+
+FRAMEWORK:
+  frontend:
+    angular: ^17.0.0
+    typescript: ~5.4.5
+    rxjs: ^7.8.0
+  security_tools:
+    - @angular/platform-browser/sanitizer
+    - helmet-csp
+    - angular-auth-oidc-client
+  testing:
+    - karma/jasmine for unit
+    - cypress for E2E
+    - OWASP ZAP for security testing
+
+TECHNOLOGY:
+  scanning_pipeline:
+    - GitLab CI/GitHub Actions integration
+    - Automated FOSS scanning on every commit
+    - Break build on HIGH/CRITICAL vulnerabilities
+  remediation_tools:
+    - npm-check-updates with safe upgrade paths
+    - patch-package for immediate hotfixes
+    - Renovate bot configuration
+    
