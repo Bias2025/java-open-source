@@ -1,0 +1,106 @@
+## CONTEXT (Environmental Understanding)
+CONTEXT:
+  domain: Financial Services / Banking / Trading Systems
+  criticality: PRODUCTION_CRITICAL
+  scale_metrics:
+    - concurrent_users: 10000+
+    - transactions_per_second: 5000+
+    - data_volume: TB-scale
+    - latency_requirement: <100ms P99
+  constraints:
+    - regulatory: PCI-DSS, SOX, GDPR compliance
+    - availability: 99.99% SLA
+    - audit: Full transaction traceability
+  integration_points:
+    - payment_gateways: Stripe, PayPal, ACH
+    - market_data: Bloomberg, Reuters
+    - core_banking: Legacy COBOL systems
+    - message_queues: Kafka, RabbitMQ
+
+## REQUIREMENTS (Explicit Specifications)
+REQUIREMENTS:
+  functional:
+    - Analyze stack traces for root cause identification
+    - Trace complete data flow from REST controller to database
+    - Identify performance bottlenecks in real-time
+    - Validate configuration properties across environments
+    - Generate actionable remediation steps
+  non_functional:
+    performance:
+      - Analysis completion: <30 seconds
+      - Memory footprint: <500MB for analysis
+      - Concurrent analysis: Support 10+ parallel investigations
+    security:
+      - No sensitive data exposure in logs
+      - Encrypted trace storage
+      - Role-based access to debug information
+    compliance:
+      - Maintain audit trail of all investigations
+      - PII data masking in traces
+
+## ARCHITECTURE (Design Decisions)
+ARCHITECTURE:
+  analysis_pattern: Multi-Layer Trace Analysis
+  components:
+    - stack_trace_analyzer: Pattern matching with ML-enhanced detection
+    - data_flow_tracer: AspectJ-based interception
+    - performance_profiler: JVM metrics + custom instrumentation
+    - config_validator: Environment-specific verification
+  data_collection:
+    - Spring Boot Actuator endpoints
+    - Micrometer metrics
+    - Custom @Traced annotations
+    - Database query interceptors
+
+## FRAMEWORK (Technical Stack)
+FRAMEWORK:
+  core:
+    language: Java 17+
+    framework: Spring Boot 3.2+
+    build: Maven/Gradle with AOT compilation
+  observability:
+    tracing: OpenTelemetry + Jaeger
+    metrics: Micrometer + Prometheus
+    logging: SLF4J + Logback with structured logging
+    alerting: PagerDuty integration
+  analysis_tools:
+    - Spring Boot Admin
+    - Arthas for runtime diagnostics
+    - JProfiler/YourKit for deep profiling
+    - Custom FailureAnalyzer implementations
+
+## TECHNOLOGY (Implementation Details)
+TECHNOLOGY:
+  stack_trace_analysis:
+    - Pattern recognition for common issues
+    - Service dependency mapping
+    - Automatic root cause ranking
+  data_flow_tracing:
+    - Controller → Service → Repository → Database
+    - External API call tracking
+    - Message queue interaction logging
+  performance_monitoring:
+    - Method-level timing with @Timed
+    - Database query analysis with p6spy
+    - Connection pool monitoring
+    - GC impact assessment
+
+## TESTING (Validation Strategy)
+TESTING:
+  chaos_engineering:
+    - Simulated service failures
+    - Network latency injection
+    - Database connection exhaustion
+  load_testing:
+    - JMeter scenarios for peak load
+    - Gatling for realistic user patterns
+  integration_testing:
+    - TestContainers for database layer
+    - WireMock for external services
+
+## PERSONA (User Context)
+PERSONA:
+  role: Senior DevOps/SRE Engineer
+  expertise_level: Advanced Spring Boot, intermediate finance domain
+  tools_available: Full production access, APM tools
+  time_constraint: Must resolve within SLA window
