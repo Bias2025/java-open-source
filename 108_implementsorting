@@ -1,0 +1,181 @@
+CONTEXT:
+  domain: Financial Services / Banking / Investment Management
+  scale: 
+    - 10M+ transactions/day
+    - 500K+ concurrent users
+    - 100TB+ historical data
+  constraints:
+    - Regulatory compliance (SOX, GDPR, PCI-DSS)
+    - Sub-100ms query response time
+    - Audit trail requirements
+    - Real-time reporting needs
+  team: 
+    - Senior Java developers with Spring expertise
+    - DevOps team familiar with PostgreSQL optimization
+  integration:
+    - Legacy banking systems
+    - Real-time market data feeds
+    - Risk management systems
+    - Regulatory reporting APIs
+REQUIREMENTS:
+  functional:
+    - Sort financial transactions by multiple criteria (date, amount, type, status)
+    - Dynamic sorting based on user preferences
+    - Combine sorting with pagination for large datasets
+    - Sort complex financial aggregations
+    - Multi-column sorting with null handling
+  non_functional:
+    performance: 
+      - P99 latency < 100ms for sorted queries
+      - Support 10K+ concurrent sorted requests
+    security:
+      - Column-level access control for sorting
+      - Prevent SQL injection in dynamic sorts
+    scalability:
+      - Handle 1B+ records efficiently
+      - Index-optimized sorting strategies
+    reliability:
+      - 99.99% uptime for query operations
+  compliance:
+    - Maintain audit logs for all sorted queries
+    - GDPR-compliant data access patterns
+ARCHITECTURE:
+  pattern: Repository Pattern with Service Layer
+  style: Microservices with Event Sourcing
+  layers:
+    - presentation: REST APIs with sorting parameters
+    - application: Service layer with sorting logic
+    - domain: Financial entities with sort metadata
+    - infrastructure: JPA repositories with sort capabilities
+  data_flow:
+    - Client → Controller → Service → Repository → Database
+    - Caching layer for frequently sorted datasets
+    - Read replicas for sort-heavy operations
+FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2.x
+  persistence:
+    database: PostgreSQL 15
+    orm: Spring Data JPA 3.2.x
+    indexing: B-tree, GiST for complex sorts
+  caching: Redis for sorted result sets
+  monitoring: Micrometer + Prometheus
+  deployment: Kubernetes with HPA
+TECHNOLOGY:
+  sorting_methods:
+    - Method name keywords (OrderBy clauses)
+    - Sort parameter injection
+    - Pageable with Sort
+    - @Query with ORDER BY
+    - Specification API for complex sorts
+  optimizations:
+    - Database indexes aligned with sort columns
+    - Query plan analysis
+    - Connection pooling
+    - Result set streaming
+
+
+
+**Completed Alt Format Prompt**
+You are a Senior Financial Systems Architect implementing a high-performance sorting solution for a financial services platform using Spring Data JPA. Generate production-ready code that demonstrates ALL sorting methodologies with finance-specific optimizations.
+
+CONTEXT:
+- Financial trading platform processing millions of transactions
+- Regulatory requirement for auditable, deterministic sorting
+- Multi-currency, multi-timezone transaction data
+- Real-time and historical data queries
+- Performance SLA: 100ms P99 latency
+
+REQUIREMENTS:
+Generate a complete Spring Boot application with:
+
+1. **Domain Model**: Create financial entities
+   - Transaction (id, accountId, amount, currency, type, status, timestamp, settlementDate)
+   - Account (id, accountNumber, balance, type, customerId, createdDate)
+   - Portfolio (id, name, totalValue, riskScore, lastRebalanced)
+   
+2. **Repository Layer with ALL Sorting Approaches**:
+   
+   a) Method Name Keywords Sorting:
+   - findByAccountIdOrderByTimestampDesc
+   - findByStatusOrderByAmountDescTimestampAsc
+   - findByCurrencyAndTypeOrderBySettlementDateAsc
+   
+   b) Dynamic Sorting with Sort Object:
+   - Repository methods accepting Sort parameter
+   - Service layer building Sort dynamically based on user input
+   - Multi-column sorting with null handling
+   
+   c) Pagination with Sorting:
+   - Pageable parameter with embedded Sort
+   - Page<Transaction> responses with total counts
+   - Slice<Transaction> for infinite scroll scenarios
+   
+   d) @Query Annotation Sorting:
+   - JPQL queries with ORDER BY clauses
+   - Native SQL queries with database-specific optimizations
+   - Named queries with parameterized sorting
+   
+   e) Specification API for Complex Sorting:
+   - Dynamic query building with sorting
+   - Combining multiple predicates with sort orders
+
+3. **Service Layer**:
+   - TransactionService with all sorting strategies
+   - Performance monitoring annotations
+   - Caching for frequently accessed sorted data
+   - Audit logging for compliance
+
+4. **Controller Layer**:
+   - REST endpoints accepting sort parameters
+   - Sort parameter validation and sanitization
+   - API documentation with sorting examples
+
+5. **Performance Optimizations**:
+   - Database indexes matching sort patterns
+   - Query hints for optimizer
+   - Connection pool configuration
+   - Result streaming for large datasets
+
+6. **Security Measures**:
+   - Input validation to prevent SQL injection
+   - Column-level access control
+   - Rate limiting for expensive sorts
+
+7. **Testing Suite**:
+   - Unit tests for each sorting method
+   - Integration tests with TestContainers
+   - Performance tests validating SLA
+   - Tests for edge cases (nulls, empty sets)
+
+8. **Configuration**:
+   - application.yml with JPA settings
+   - Database index creation scripts
+   - Monitoring and metrics configuration
+
+DELIVERABLES:
+- Complete, runnable Spring Boot application
+- No placeholders or TODOs
+- Production-ready error handling
+- Comprehensive JavaDoc
+- curl examples for each endpoint
+- Performance analysis comments
+- PostgreSQL-specific optimizations
+
+CONSTRAINTS:
+- Java 17 syntax only
+- Spring Boot 3.2.x
+- PostgreSQL 15 features utilized
+- Sub-100ms query performance
+- Thread-safe implementations
+- Immutable where possible
+
+OUTPUT FORMAT:
+Provide complete Java classes with:
+- Package structure
+- All imports
+- Configuration files
+- Database scripts
+- Test cases
+- README with setup instructions
