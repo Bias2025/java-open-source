@@ -1,0 +1,72 @@
+CONTEXT:
+  domain: Finance/Banking/FinTech
+  scale: 
+    - 100K-10M transactions/day
+    - Sub-100ms query response time
+    - Multi-tenant architecture
+  constraints: 
+    - PCI-DSS compliance required
+    - GDPR/SOX regulatory requirements
+    - Zero-downtime deployments
+  team: 
+    - Senior Java developers
+    - Familiar with Spring ecosystem
+    - Need dynamic query capabilities
+  integration: 
+    - Legacy banking systems
+    - Real-time fraud detection
+    - Audit logging mandatory
+    REQUIREMENTS:
+  functional:
+    - Dynamic multi-field filtering on financial entities
+    - Complex date range queries for transactions
+    - Amount range filtering with currency conversion
+    - Account status and risk score filtering
+    - Nested entity filtering (customer->accounts->transactions)
+  non_functional:
+    performance: <50ms P99 for filtered queries
+    security: Row-level security, encrypted PII fields
+    scalability: Handle 1M+ records with pagination
+    reliability: 99.99% uptime SLA
+  compliance: 
+    - Audit trail for all queries
+    - Data masking for sensitive fields
+    - Query result caching for compliance reports
+    ARCHITECTURE:
+  pattern: Clean Architecture with Specification Pattern
+  style: Microservices with API Gateway
+  layers:
+    - presentation: REST Controllers with OpenAPI docs
+    - application: Service layer with DTOs
+    - domain: Specification builders and criteria
+    - infrastructure: JPA Specifications with PostgreSQL
+  data_flow: 
+    - CQRS for read/write separation
+    - Specification chaining for complex queries
+    - Result caching with Redis
+    FRAMEWORK:
+  core:
+    language: Java 17
+    framework: Spring Boot 3.2.x
+  persistence:
+    database: PostgreSQL 15
+    orm: Spring Data JPA with Specifications
+    migration: Flyway
+  caching: Redis with Spring Cache
+  monitoring: Micrometer + Prometheus
+  deployment: Kubernetes with ConfigMaps
+  TECHNOLOGY:
+  specifications:
+    - JPA Criteria API
+    - Type-safe queries with Metamodel
+    - Dynamic specification composition
+  optimization:
+    - Index hints for PostgreSQL
+    - Query plan caching
+    - Connection pooling with HikariCP
+  security:
+    - Field-level encryption
+    - Query parameter sanitization
+    - Rate limiting per API key
+
+    
