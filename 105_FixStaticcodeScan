@@ -1,0 +1,132 @@
+## C - CONTEXT (Environmental Understanding)
+CONTEXT:
+  domain: 
+    sector: "Financial Services / Banking"
+    compliance: ["PCI-DSS", "SOX", "GDPR", "ISO-27001"]
+    criticality: "TIER-1 Production System"
+  
+  security_context:
+    scan_tool: "Fortify Static Code Analyzer v23.x"
+    vulnerability_categories: ["OWASP Top 10", "CWE Top 25", "SANS Top 25"]
+    risk_tolerance: "ZERO for Critical/High findings"
+    audit_requirements: "100% remediation with evidence trail"
+  
+  technical_environment:
+    runtime: "Java 17.0.9 LTS"
+    framework: "Spring Boot 3.2.x"
+    database: "PostgreSQL 15.x"
+    deployment: "Kubernetes 1.28 / AWS EKS"
+    monitoring: ["Datadog", "Splunk", "AppDynamics"]
+  
+  team_context:
+    size: "8-12 developers"
+    security_maturity: "Level 3 - Defined Process"
+    code_review: "Mandatory PR reviews + SonarQube gates"
+
+## R - REQUIREMENTS (Explicit Specifications)
+REQUIREMENTS:
+  functional:
+    - "Fix all Critical and High severity Fortify findings"
+    - "Maintain backward compatibility with existing APIs"
+    - "Preserve transaction integrity during remediation"
+    - "Zero downtime deployment capability"
+    
+  security_requirements:
+    - "SQL Injection prevention (CWE-89)"
+    - "XSS protection (CWE-79)"
+    - "XXE prevention (CWE-611)"
+    - "Path Traversal defense (CWE-22)"
+    - "Insecure Deserialization protection (CWE-502)"
+    - "Sensitive Data Exposure prevention (CWE-200)"
+    - "CSRF protection (CWE-352)"
+    - "Authentication/Authorization flaws (CWE-287/285)"
+    
+  compliance_requirements:
+    - "PCI-DSS: Encrypt cardholder data at rest and in transit"
+    - "GDPR: Implement privacy by design, data minimization"
+    - "SOX: Maintain audit trail for all financial transactions"
+    - "Cryptography: FIPS 140-2 Level 2 minimum"
+    
+  performance_requirements:
+    - "Remediation must not degrade response time >5%"
+    - "Memory footprint increase <10%"
+    - "Database query performance maintained"
+
+## A - ARCHITECTURE (Design Decisions)
+ARCHITECTURE:
+  security_patterns:
+    input_validation:
+      strategy: "Whitelist validation at boundaries"
+      implementation: "Spring Validation + Custom validators"
+      
+    authentication:
+      pattern: "OAuth2 + JWT with refresh tokens"
+      session: "Stateless with Redis-backed token store"
+      mfa: "TOTP-based 2FA mandatory for privileged operations"
+      
+    authorization:
+      model: "RBAC with dynamic permissions"
+      enforcement: "Spring Security Method Security + Custom annotations"
+      
+    data_protection:
+      encryption_at_rest: "AES-256-GCM"
+      encryption_in_transit: "TLS 1.3 minimum"
+      key_management: "AWS KMS / HashiCorp Vault"
+      
+    audit_logging:
+      pattern: "Event Sourcing for financial transactions"
+      storage: "Immutable audit log in separate database"
+      retention: "7 years minimum"
+      
+  defensive_layers:
+    - "WAF (AWS WAF / CloudFlare)"
+    - "API Gateway with rate limiting"
+    - "Input validation layer"
+    - "Business logic validation"
+    - "Database constraints"
+    - "Output encoding"
+
+## F - FRAMEWORK (Technical Stack)
+FRAMEWORK:
+  core_stack:
+    language: "Java 17.0.9"
+    framework: "Spring Boot 3.2.x"
+    build: "Maven 3.9.x / Gradle 8.x"
+    
+  security_libraries:
+    validation: "Hibernate Validator 8.x + custom validators"
+    encoding: "OWASP Java Encoder 1.2.3"
+    crypto: "Bouncy Castle FIPS 1.0.2"
+    jwt: "Nimbus JOSE+JWT 9.x"
+    
+  database_security:
+    orm: "Spring Data JPA with criteria queries"
+    connection: "HikariCP with SSL required"
+    migration: "Flyway with checksum validation"
+    
+  monitoring_security:
+    sast: "Fortify SCA + SonarQube Enterprise"
+    dast: "OWASP ZAP / Burp Suite Enterprise"
+    rasp: "Contrast Security / Sqreen"
+    secrets: "HashiCorp Vault / AWS Secrets Manager"
+
+## T - TECHNOLOGY (Implementation Stack)
+TECHNOLOGY:
+  remediation_tools:
+    - "Fortify Security Assistant IntelliJ plugin"
+    - "OWASP Dependency Check Maven plugin"
+    - "SpotBugs with FindSecBugs plugin"
+    
+  testing_stack:
+    unit: "JUnit 5 + Mockito + SecurityMockMvc"
+    integration: "TestContainers + WireMock"
+    security: "OWASP ZAP API scan + custom penetration tests"
+    
+  ci_cd_security:
+    pipeline: "GitLab CI / GitHub Actions"
+    gates:
+      - "Fortify scan: 0 Critical/High findings"
+      - "SonarQube: Security hotspots reviewed"
+      - "OWASP Dependency Check: No vulnerable dependencies"
+      - "Container scan: Trivy/Snyk for base images"
+
